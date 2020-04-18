@@ -1,0 +1,41 @@
+
+@startuml
+title Domænemodel
+
+hide circle
+hide methods
+
+class Kunde{
+    kunde_id
+    navn
+    adresse
+    tlf
+    e-mail
+}
+
+class Ordre{
+    kunde_id
+    ordre_id
+    dato
+}
+
+class OrdreLinje{
+    ordre_id
+    carport_id
+}
+
+class Carport{
+    carport_id
+    længde
+    bredde
+    tagType
+    skur
+}
+
+Kunde "1"-right-"*" Ordre: afgiver >
+Ordre "1"-right-"*" OrdreLinje: indeholder >
+OrdreLinje "*" -right- "1" Carport: består af  >
+
+
+@enduml
+

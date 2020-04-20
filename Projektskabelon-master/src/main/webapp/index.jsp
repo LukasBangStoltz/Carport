@@ -4,16 +4,36 @@
     Author     : kasper
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="includes/header.inc"%>
 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome page</title>
-    </head>
-    <body>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+
+<head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="jumbotron text-center">
+        <h1 style="color: dimgray; font-family: sans-serif; font-weight: bold">Velkommen til Fog byggemarked</h1>
+    </div>
+
+    <div class="upcon">
+        <a href="FrontController?target=redirect&destination=carportvalgpage"> <img src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto"
+                                                     alt="Fog image"/></a>
+    </div>
+
+</div>
+</body>
+</head>
         <h1>Welcome to Sem 2</h1>
         
         <table>
@@ -53,5 +73,5 @@
            <h2>Error ! </h2>
             ${requestScope.error}
         </c:if>
-    </body>
-</html>
+
+<%@include file="includes/footer.inc"%>

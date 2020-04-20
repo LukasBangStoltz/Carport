@@ -25,7 +25,8 @@
     </div>
 
     <div class="upcon">
-        <a href="#"> <img src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto" alt="Responsive image"/></a>
+        <a href="FrontController?target=redirect&destination=carportvalgpage"> <img src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto"
+                                                     alt="Fog image"/></a>
     </div>
 
 </div>

@@ -20,6 +20,10 @@
 
 <div class="container-fluid">
 
+    <div class="jumbotron text-center">
+        <h1 style="color: dimgray; font-family: sans-serif; font-weight: bold">Velkommen til Fog byggemarked</h1>
+    </div>
+
     <div class="upcon">
         <a href="#"> <img src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto" alt="Responsive image"/></a>
     </div>

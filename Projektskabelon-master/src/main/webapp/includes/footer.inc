@@ -31,7 +31,7 @@
                 </li>
             </ul>
         </div>
-        <
+        
 
         <div class="copyright col-xs-12 col-sm-3 col-sm-pull-6">
             <p> &copy; Me from now to eternity </p>

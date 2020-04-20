@@ -7,15 +7,15 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/farver.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="container-fluid">
 
-        <div class="navbar navbar-expand-sm navbar-dark" style="background: linear-gradient(to right, #004687 30%, #0066ff 100%);">
+        <div class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #004687 30%, #0066ff 100%);">
             <img src="images/logo.png" height="80" alt="Logo fog"/>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu">
@@ -43,5 +43,4 @@
                 </ul>
             </div>
         </div>
-</head>
-<body>
+

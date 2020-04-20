@@ -13,8 +13,10 @@ public class Redirect extends Command {
         String destination = request.getParameter("destination");
 
         switch (destination){
-            case "index":
-            case "carportvalgpage":
+            case "index": break;
+            case "carportvalgpage": break;
+            case "carportmedrejsning": break;
+            case "carportmedfladttag": break;
         }
 
         return destination;

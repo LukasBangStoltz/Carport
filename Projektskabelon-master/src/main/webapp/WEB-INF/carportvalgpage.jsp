@@ -9,41 +9,33 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<%@include file="../includes/header.inc"%>
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
-
-<html>
-<head>
     <div class="container-fluid">
 
-        <div class="jumbotron text-center mb-5">
+        <div class="jumbotron text-center my-3">
             <h1 style="color: dimgray; font-family: sans-serif; font-weight: bold">Vælg hvilken carport du gerne vil
                 designe</h1>
         </div>
 
-        <div class="row text-center mb-5">
+        <div class="row text-center mb-2">
             <div class="col"></div>
-            <div class="col">
-                <h3 style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport med rejsning</h3>
-                <a href="#">
-                    <img src="images/fog_carport_fladt_tag.jpg">
+            <div class="col mb-5">
+                <h3 class="mb-3" style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport med rejsning</h3>
+                <a href="FrontController?target=redirect&destination=carportmedrejsning">
+                    <img src="images/fog_carport_med_rejsning.jpg">
                 </a>
             </div>
-            <div class="col">
-                <h3 style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport uden rejsning</h3>
-                <a href="#">
-                    <img src="images/fog_carport_med_rejsning.jpg">
+            <div class="col mb-5">
+                <h3 class="mb-3" style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport med fladt tag</h3>
+                <a href="FrontController?target=redirect&destination=carportmedfladttag">
+                    <img src="images/fog_carport_fladt_tag.jpg">
                 </a>
             </div>
             <div class="col"></div>
         </div>
 
-        <div class="row">
+        <div class="row mb-5">
             <div class="card mx-auto" style="width: 40rem;">
                 <div class="card-body">
                     <h5 color: dimgray; font-family: sans-serif; font-weight: bold>
@@ -63,9 +55,7 @@
             </div>
         </div>
 
-    </div>
-</head>
-<body>
 
-</body>
-</html>
+
+
+<%@include file="../includes/footer.inc"%>

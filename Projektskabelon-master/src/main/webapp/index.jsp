@@ -26,6 +26,6 @@
 
     </div>
 </div>
-
+<!--Test af branch-->
 <%@include file="/includes/footer.inc" %>
 

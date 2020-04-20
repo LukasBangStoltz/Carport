@@ -111,6 +111,17 @@
                         </select>
                     </div>
 
+                    <div class="form-group col-md-7 mt-2">
+                    <label for="taghældning"><b>Taghældning </b></label>
+                    <select class="form-control" id="taghældning">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
                     <div class="col-md-7">
 
                         <b> Redskabsrum: </b> <br>
@@ -175,7 +186,7 @@
 
             <div class="jumbotron">
 
-                <img src="img/carportbillede.png" width="400" height="100" alt="Computer Hope" class="img-fluid" alt="Responsive image">
+                <img src="img/carportbillederejsning.png" width="400" height="100" alt="Computer Hope" class="img-fluid" alt="Responsive image">
             </div>
 
         </div>
@@ -198,6 +209,10 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
 
 
 

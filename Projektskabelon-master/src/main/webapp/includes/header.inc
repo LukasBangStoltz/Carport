@@ -16,8 +16,9 @@
 <div class="container-fluid">
 
         <div class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #004687 30%, #0066ff 100%);">
-            <img src="images/logo.png" height="80" alt="Logo fog"/>
-
+            <a href="FrontController?target=redirect&destination=index">
+            <img src="images/logo.png" height="80" alt="Logo fog "/>
+                </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +27,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=index">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ny kunde</a>

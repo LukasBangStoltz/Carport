@@ -22,7 +22,7 @@ footer {
 }
 
 .containerFooter {
-    background-color: lightgrey;
+    background: linear-gradient(to right, #B8B8B8 0%, lightgrey 100%);
 }
 
 .copyright, .impressum {

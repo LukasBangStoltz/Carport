@@ -1,6 +1,9 @@
 package FunctionLayer;
 
+import DBAccess.CarportMapper;
 import DBAccess.UserMapper;
+
+import java.util.List;
 
 /**
  * The purpose of LogicFacade is to...
@@ -17,5 +20,16 @@ public class LogicFacade {
         UserMapper.createUser( user );
         return user;
     }
+
+    public static List<CarportBredde> getAllWidths() throws LoginSampleException {
+        return CarportMapper.GetAllWidths();
+    }
+
+
+
+
+
+
+
 
 }

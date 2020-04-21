@@ -36,7 +36,7 @@
                         <a class="nav-link" href="#">Log ind</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">
+                        <a href="FrontController?target=redirect&destination=kurvpage">
                         <img src="images\shoppingCart.png" height="35">
                         </a>
                     </li>

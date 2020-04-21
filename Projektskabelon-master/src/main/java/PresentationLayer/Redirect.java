@@ -17,6 +17,7 @@ public class Redirect extends Command {
             case "carportvalgpage": break;
             case "carportmedrejsning": break;
             case "carportmedfladttag": break;
+            case "kurvpage": break;
         }
 
         return destination;

@@ -14,6 +14,11 @@
             if (request.getServletContext().getAttribute("raisedroofdegreelist") == null) {
                 request.getServletContext().setAttribute("raisedroofdegreelist", Initializer.getAllRaisedRoofDegrees());
             }
-
+            if (request.getServletContext().getAttribute("toolshedlengthslist") == null) {
+                 request.getServletContext().setAttribute("toolshedlengthslist", Initializer.getAllToolShedLengths());
+            }
+            if (request.getServletContext().getAttribute("toolshedwidthslist") == null) {
+                 request.getServletContext().setAttribute("toolshedwidthslist", Initializer.getAllToolShedWidths());
+            }
 
         %>

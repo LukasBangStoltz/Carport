@@ -12,6 +12,8 @@ public class Initializer {
     private static List<FlatRoofType> flatrooftypelist = null;
     private static List<RaisedRoofType> raisedRoofTypeList = null;
     private static List<RoofTilt> raisedRoofDegreeList = null;
+    private static List<ToolShedLength> toolShedLengthList = null;
+    private static List<ToolShedWidth> toolShedWidthList = null;
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -90,9 +92,36 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
         return raisedRoofDegreeList;
 
 }
+    public static List<ToolShedLength> getAllToolShedLengths(){
 
+        if(toolShedLengthList == null){
 
+            try {
+                toolShedLengthList = LogicFacade.GetAllToolShedLengths();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
 
+        }
+
+        return toolShedLengthList;
+
+    }
+    public static List<ToolShedWidth> getAllToolShedWidths(){
+
+        if(toolShedWidthList == null){
+
+            try {
+                toolShedWidthList = LogicFacade.GetAllToolShedWidhts();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return toolShedWidthList;
+
+    }
 
 
 

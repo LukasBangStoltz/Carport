@@ -1,12 +1,12 @@
 package FunctionLayer;
 
-public class CarportBredde {
+public class CarportWidth {
 
     private int width_id;
     private int width_cm;
 
 
-    public CarportBredde(int width_id, int width_cm) {
+    public CarportWidth(int width_id, int width_cm) {
         this.width_id = width_id;
         this.width_cm = width_cm;
     }

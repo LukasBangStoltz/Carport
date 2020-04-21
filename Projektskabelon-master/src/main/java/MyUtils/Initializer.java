@@ -1,17 +1,18 @@
 package MyUtils;
 
-import FunctionLayer.CarportBredde;
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
+import FunctionLayer.*;
+import FunctionLayer.CarportWidth;
 
 import java.util.List;
 
 public class Initializer {
 
-    private static List<CarportBredde> widthList = null;
+    private static List<CarportWidth> widthList = null;
+    private static List<CarportLength> lengthList = null;
+    private static List<FlatRoofType> flatrooftypelist = null;
 
 
-    public static List<CarportBredde> getCarportWidthList() {
+    public static List<CarportWidth> getCarportWidthList() {
 
         if (widthList == null) {
 
@@ -26,6 +27,35 @@ public class Initializer {
         return widthList;
 
     }
+    public static List<CarportLength> getCarportLengthList() {
 
+        if (lengthList == null) {
+
+            try {
+                lengthList = LogicFacade.getAllLengths();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return lengthList;
+
+    }
+    public static List<FlatRoofType> getFlatRoofTypes() {
+
+        if (flatrooftypelist == null) {
+
+            try {
+                flatrooftypelist = LogicFacade.getAllFlatRootTypes();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return flatrooftypelist;
+
+    }
 
 }

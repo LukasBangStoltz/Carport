@@ -1,4 +1,4 @@
-<%--
+<%@ page import="MyUtils.Initializer" %><%--
   Created by IntelliJ IDEA.
   User: Bruger
   Date: 20-04-2020
@@ -12,6 +12,19 @@
 <%@include file="../includes/header.inc"%>
 
     <div class="container-fluid">
+
+        <%
+            if (request.getServletContext().getAttribute("widthList") == null) {
+                request.getServletContext().setAttribute("widthList", Initializer.getCarportWidthList());
+            }
+            if (request.getServletContext().getAttribute("lengthList") == null) {
+                request.getServletContext().setAttribute("lengthList", Initializer.getCarportLengthList());
+            }
+            if (request.getServletContext().getAttribute("flatrooftypelist") == null) {
+                request.getServletContext().setAttribute("flatrooftypelist", Initializer.getFlatRoofTypes());
+            }
+
+        %>
 
         <div class="jumbotron text-center my-3">
             <h1 style="color: dimgray; font-family: sans-serif; font-weight: bold">Vælg hvilken carport du gerne vil

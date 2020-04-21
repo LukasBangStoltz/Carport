@@ -5,18 +5,8 @@
 <%@include file="../includes/header.inc" %>
 
 
-
-
-
 <div class="container-fluid">
 
-    <%
-        if (request.getServletContext().getAttribute("widthList") == null) {
-            request.getServletContext().setAttribute("widthList", Initializer.getCarportWidthList());
-        }
-
-
-    %>
 
     <div class="row">
 
@@ -78,18 +68,20 @@
                     <div class="form-group col-md-7">
                         <label for="carportlængde"><p>Carport længde </p></label>
                         <select class="form-control" id="carportlængde">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <c:forEach var="length" items="${applicationScope.lengthList}">
+
+                                <option value="${length.length_id}">${length.length_cm}</option>
+
+                            </c:forEach>
+
+
                         </select>
                     </div>
 
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="exampleFormControlSelect1">Angiv din primære idræt</label>
-                        <select class="form-control" name="sport" id="exampleFormControlSelect1">
+                        <label for="carportbredde">Carport bredde</label>
+                        <select class="form-control" name="sport" id="carportbredde">
 
                             <c:forEach var="width" items="${applicationScope.widthList}">
                                 <option value="${width.width_id}">${width.width_cm}</option>

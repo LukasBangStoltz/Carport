@@ -21,11 +21,15 @@ public class LogicFacade {
         return user;
     }
 
-    public static List<CarportBredde> getAllWidths() throws LoginSampleException {
+    public static List<CarportWidth> getAllWidths() throws LoginSampleException {
         return CarportMapper.GetAllWidths();
     }
-
-
+    public static List<CarportLength> getAllLengths() throws LoginSampleException {
+        return CarportMapper.GetAllLengths();
+    }
+    public static List<FlatRoofType> getAllFlatRootTypes() throws LoginSampleException {
+        return CarportMapper.GetAllFlatRoofType();
+    }
 
 
 

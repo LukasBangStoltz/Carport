@@ -7,6 +7,7 @@
 
 <div class="container-fluid">
 
+
     <div class="jumbotron">
         <h1 class="text-center">Velkommen til Fog byggemarked</h1>
     </div>

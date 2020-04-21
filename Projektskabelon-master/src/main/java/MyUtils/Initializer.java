@@ -10,6 +10,8 @@ public class Initializer {
     private static List<CarportWidth> widthList = null;
     private static List<CarportLength> lengthList = null;
     private static List<FlatRoofType> flatrooftypelist = null;
+    private static List<RaisedRoofType> raisedRoofTypeList = null;
+    private static List<RoofTilt> raisedRoofDegreeList = null;
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -42,7 +44,7 @@ public class Initializer {
         return lengthList;
 
     }
-    public static List<FlatRoofType> getFlatRoofTypes() {
+    public static List<FlatRoofType> getFlatRoofTypeList() {
 
         if (flatrooftypelist == null) {
 
@@ -57,5 +59,42 @@ public class Initializer {
         return flatrooftypelist;
 
     }
+
+    public static List<RaisedRoofType> getRaisedRoofTypeList(){
+
+        if(raisedRoofTypeList == null){
+
+            try {
+                raisedRoofTypeList = LogicFacade.GetAllRaisedRoofType();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return raisedRoofTypeList;
+    }
+
+public static List<RoofTilt> getAllRaisedRoofDegrees(){
+
+        if(raisedRoofDegreeList == null){
+
+            try {
+                raisedRoofDegreeList = LogicFacade.GetAllRaisedRoofDegress();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return raisedRoofDegreeList;
+
+}
+
+
+
+
+
+
 
 }

@@ -92,24 +92,27 @@
                     </div>
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="carporttag"><p>Tag </p></label>
-                        <select class="form-control" id="carporttag">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="raisedRoofType"><p>Tag </p></label>
+                        <select class="form-control" id="raisedRoofType">
+
+                        <c:forEach var="raisedRoof" items="${applicationScope.raisedrooftypelist}">
+                            <option value="${raisedRoof.raisedRoof_id}">${raisedRoof.raisedRoof_type} </option>
+                        </c:forEach>
+
                         </select>
                     </div>
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="taghældning"><p>Taghældning </p></label>
-                        <select class="form-control" id="taghældning">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="roofdegree"><p>Taghældning </p></label>
+                        <select class="form-control" id="roofdegree">
+
+                           <c:forEach var="roofdegree" items="${applicationScope.raisedroofdegreelist}">
+
+                               <option value="${roofdegree.roofTilt_id}">${roofdegree.roofTilt_degree} grader</option>
+
+                           </c:forEach>
+
+
                         </select>
                     </div>
 

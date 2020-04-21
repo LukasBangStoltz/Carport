@@ -62,6 +62,7 @@
 
 
                 <form action="Frontcontroller" method="post">
+                    <input type="hidden" name="target" value="...">
                     <div class="form-group col-md-7">
                         <label for="carportlængde"><p>Carport længde </p></label>
                         <select class="form-control" id="carportlængde">

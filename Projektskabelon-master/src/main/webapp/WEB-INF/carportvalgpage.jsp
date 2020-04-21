@@ -10,21 +10,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@include file="../includes/header.inc"%>
+<%@include file="../includes/initializearraylister.inc"%>
 
     <div class="container-fluid">
-
-        <%
-            if (request.getServletContext().getAttribute("widthList") == null) {
-                request.getServletContext().setAttribute("widthList", Initializer.getCarportWidthList());
-            }
-            if (request.getServletContext().getAttribute("lengthList") == null) {
-                request.getServletContext().setAttribute("lengthList", Initializer.getCarportLengthList());
-            }
-            if (request.getServletContext().getAttribute("flatrooftypelist") == null) {
-                request.getServletContext().setAttribute("flatrooftypelist", Initializer.getFlatRoofTypes());
-            }
-
-        %>
 
         <div class="jumbotron text-center my-3">
             <h1 style="color: dimgray; font-family: sans-serif; font-weight: bold">Vælg hvilken carport du gerne vil

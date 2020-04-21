@@ -10,6 +10,10 @@ public class Initializer {
     private static List<CarportWidth> widthList = null;
     private static List<CarportLength> lengthList = null;
     private static List<FlatRoofType> flatrooftypelist = null;
+    private static List<RaisedRoofType> raisedRoofTypeList = null;
+    private static List<RoofTilt> raisedRoofDegreeList = null;
+    private static List<ToolShedLength> toolShedLengthList = null;
+    private static List<ToolShedWidth> toolShedWidthList = null;
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -42,7 +46,7 @@ public class Initializer {
         return lengthList;
 
     }
-    public static List<FlatRoofType> getFlatRoofTypes() {
+    public static List<FlatRoofType> getFlatRoofTypeList() {
 
         if (flatrooftypelist == null) {
 
@@ -57,5 +61,69 @@ public class Initializer {
         return flatrooftypelist;
 
     }
+
+    public static List<RaisedRoofType> getRaisedRoofTypeList(){
+
+        if(raisedRoofTypeList == null){
+
+            try {
+                raisedRoofTypeList = LogicFacade.GetAllRaisedRoofType();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return raisedRoofTypeList;
+    }
+
+public static List<RoofTilt> getAllRaisedRoofDegrees(){
+
+        if(raisedRoofDegreeList == null){
+
+            try {
+                raisedRoofDegreeList = LogicFacade.GetAllRaisedRoofDegress();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return raisedRoofDegreeList;
+
+}
+    public static List<ToolShedLength> getAllToolShedLengths(){
+
+        if(toolShedLengthList == null){
+
+            try {
+                toolShedLengthList = LogicFacade.GetAllToolShedLengths();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return toolShedLengthList;
+
+    }
+    public static List<ToolShedWidth> getAllToolShedWidths(){
+
+        if(toolShedWidthList == null){
+
+            try {
+                toolShedWidthList = LogicFacade.GetAllToolShedWidhts();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return toolShedWidthList;
+
+    }
+
+
+
 
 }

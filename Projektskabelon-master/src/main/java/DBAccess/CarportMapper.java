@@ -1,9 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.CarportLength;
-import FunctionLayer.CarportWidth;
-import FunctionLayer.FlatRoofType;
-import FunctionLayer.LoginSampleException;
+import FunctionLayer.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -71,7 +68,7 @@ public class CarportMapper {
         return carportlengthlist;
     }
 
-    public static List<FlatRoofType> GetAllFlatRoofType() throws LoginSampleException {
+    public static List<FlatRoofType> GetAllFlatRoofTypes() throws LoginSampleException {
         List<FlatRoofType> flatRoofTypeList = null;
 
         try {
@@ -97,7 +94,126 @@ public class CarportMapper {
             throw new LoginSampleException(ex.getMessage());
         }
         return flatRoofTypeList;
+    }
+
+    public static List<RaisedRoofType> GetAllRaisedRoofTypes() throws LoginSampleException {
+        List<RaisedRoofType> raisedRoofTypeList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM hældningtagtype";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (raisedRoofTypeList == null) {
+                    raisedRoofTypeList = new ArrayList<>();
+                }
+
+                int raisedRoof_id = rs.getInt("hældningtag_id");
+                String raisedRoof_type = rs.getString("hældningtag_type");
+                RaisedRoofType raisedRoofType = new RaisedRoofType(raisedRoof_id, raisedRoof_type);
+                raisedRoofTypeList.add(raisedRoofType);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return raisedRoofTypeList;
+    }
+
+    public static List<RoofTilt> GetAllRaisedRoofDegress() throws LoginSampleException {
+        List<RoofTilt> raisedRoofDegressList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM taghældning";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (raisedRoofDegressList == null) {
+                    raisedRoofDegressList = new ArrayList<>();
+                }
+
+                int degreeRoof_id = rs.getInt("taghældning_id");
+                int raisedRoof_degree = rs.getInt("taghældning_grader");
+                RoofTilt roofTilt = new RoofTilt(degreeRoof_id, raisedRoof_degree);
+                raisedRoofDegressList.add(roofTilt);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return raisedRoofDegressList;
+    }
+
+    public static List<ToolShedLength> GetAllToolShedLengths() throws LoginSampleException {
+        List<ToolShedLength> toolShedLengthList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM skurlængde";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (toolShedLengthList == null) {
+                    toolShedLengthList = new ArrayList<>();
+                }
+
+                int toolShedLength_id = rs.getInt("skurlængde_id");
+                int toolShedLength_cm = rs.getInt("skurlængde_cm");
+                ToolShedLength toolShed = new ToolShedLength(toolShedLength_id, toolShedLength_cm);
+                toolShedLengthList.add(toolShed);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return toolShedLengthList;
 
 
     }
+
+    public static List<ToolShedWidth> GetAllToolShedWidths() throws LoginSampleException {
+        List<ToolShedWidth> toolShedWidthList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM skurbredde";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (toolShedWidthList == null) {
+                    toolShedWidthList = new ArrayList<>();
+                }
+
+                int toolShedWidth_id = rs.getInt("skurbredde_id");
+                int toolShedWidth_cm = rs.getInt("skurbredde_cm");
+                ToolShedWidth toolShedWidth = new ToolShedWidth(toolShedWidth_id, toolShedWidth_cm);
+                toolShedWidthList.add(toolShedWidth);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return toolShedWidthList;
+
+
+    }
+
+
+
+
+
 }

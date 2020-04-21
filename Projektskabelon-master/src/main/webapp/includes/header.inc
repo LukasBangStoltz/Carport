@@ -85,7 +85,7 @@
                             <input type="hidden" name="target" value="loginuser"/>
                             <div class="imgcontainer">
                                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                                <img src="img_avatar2.png" alt="Login" class="avatar">
                             </div>
 
                             <div class="container">
@@ -122,7 +122,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a href="FrontController?target=redirect&destination=kurvpage">
                         <img src="images\shoppingCart.png" height="35">
                     </a>
                 </li>

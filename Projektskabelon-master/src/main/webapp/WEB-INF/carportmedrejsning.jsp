@@ -66,8 +66,8 @@
 
                 <form action="Frontcontroller" method="post">
                     <div class="form-group col-md-7">
-                        <label for="carportlængde"><p>Carport længde </p></label>
-                        <select class="form-control" id="carportlængde">
+                        <label for="carportlength"><p>Carport længde </p></label>
+                        <select class="form-control" name="carportlength" id="carportlength">
                             <c:forEach var="length" items="${applicationScope.lengthList}">
 
                                 <option value="${length.length_id}">${length.length_cm}</option>
@@ -80,8 +80,8 @@
 
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="carportbredde">Carport bredde</label>
-                        <select class="form-control" name="sport" id="carportbredde">
+                        <label for="carportwidth">Carport bredde</label>
+                        <select class="form-control" name="carportwidth" id="carportwidth">
 
                             <c:forEach var="width" items="${applicationScope.widthList}">
                                 <option value="${width.width_id}">${width.width_cm}</option>
@@ -92,8 +92,8 @@
                     </div>
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="raisedRoofType"><p>Tag </p></label>
-                        <select class="form-control" id="raisedRoofType">
+                        <label for="raisedrooftype"><p>Tag </p></label>
+                        <select class="form-control" name="raisedrooftype"id="raisedrooftype">
 
                         <c:forEach var="raisedRoof" items="${applicationScope.raisedrooftypelist}">
                             <option value="${raisedRoof.raisedRoof_id}">${raisedRoof.raisedRoof_type} </option>
@@ -104,7 +104,7 @@
 
                     <div class="form-group col-md-7 mt-2">
                         <label for="roofdegree"><p>Taghældning </p></label>
-                        <select class="form-control" id="roofdegree">
+                        <select class="form-control" name="roofdegree" id="roofdegree">
 
                            <c:forEach var="roofdegree" items="${applicationScope.raisedroofdegreelist}">
 
@@ -126,33 +126,35 @@
 
                     </div>
 
+                            <div class="form-group col-md-7 mt-2">
+                                <label for="toolshedlength"><p>Redskabsrum længde </p></label>
+                                <select class="form-control" name="toolshedlength" id="toolshedlength">
+
+                                    <c:forEach var="toolshedlength" items="${applicationScope.toolshedlengthslist}">
+
+                                        <option value="${toolshedlength.toolShed_id}">${toolshedlength.toolShed_cm}</option>
+
+                                    </c:forEach>
+
+                                </select>
+                            </div>
+
                     <div class="form-group col-md-7 mt-2">
-                        <label for="redskabsrumlængde"><p>Redskabsrums længde </p></label>
-                        <select class="form-control" id="redskabsrumlængde">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="toolshedwidth"><p>Redskabsrums bredde </p></label>
+                        <select class="form-control" name="toolshedwidth" id="toolshedwidth">
+
+                            <c:forEach var="toolshedwidth" items="${applicationScope.toolshedwidthslist}">
+
+                                <option value="${toolshedwidth.toolShedWidth_id}">${toolshedwidth.toolShedWidth_cm}</option>
+
+                            </c:forEach>
+
                         </select>
                     </div>
 
-                    <div class="form-group col-md-7 mt-2">
-                        <label for="redskabsrumBredde"><p>Redskabsrums bredde </p></label>
-                        <select class="form-control" id="redskabsrumBredde">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-7 mt-2">
-                        <label for="bemærkninger"><p> Evt. bemærkninger </p></label>
-                        <input type="email" class="form-control" id="bemærkninger" aria-describedby="emailHelp"
-                               placeholder="Bemærkninger">
-
+                    <div class="form-group green-border-focus col-md-7">
+                        <label for="comments"><p>Evt. bemærkninger</p></label>
+                        <textarea class="form-control" name="comments" id="comments" rows="3"></textarea>
                     </div>
 
                     <div class="col-md-7 my-4">

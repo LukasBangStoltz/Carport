@@ -152,12 +152,65 @@ public class CarportMapper {
         return raisedRoofDegressList;
     }
 
+    public static List<ToolShedLength> GetAllToolShedLengths() throws LoginSampleException {
+        List<ToolShedLength> toolShedLengthList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM skurlængde";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (toolShedLengthList == null) {
+                    toolShedLengthList = new ArrayList<>();
+                }
+
+                int toolShedLength_id = rs.getInt("skurlængde_id");
+                int toolShedLength_cm = rs.getInt("skurlængde_cm");
+                ToolShedLength toolShed = new ToolShedLength(toolShedLength_id, toolShedLength_cm);
+                toolShedLengthList.add(toolShed);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return toolShedLengthList;
 
 
+    }
+
+    public static List<ToolShedWidth> GetAllToolShedWidths() throws LoginSampleException {
+        List<ToolShedWidth> toolShedWidthList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM skurbredde";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (toolShedWidthList == null) {
+                    toolShedWidthList = new ArrayList<>();
+                }
+
+                int toolShedWidth_id = rs.getInt("skurbredde_id");
+                int toolShedWidth_cm = rs.getInt("skurbredde_cm");
+                ToolShedWidth toolShedWidth = new ToolShedWidth(toolShedWidth_id, toolShedWidth_cm);
+                toolShedWidthList.add(toolShedWidth);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return toolShedWidthList;
 
 
-
-
+    }
 
 
 

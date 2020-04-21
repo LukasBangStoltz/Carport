@@ -41,6 +41,11 @@ public class LogicFacade {
     public static List<RoofTilt> GetAllRaisedRoofDegress() throws LoginSampleException {
         return CarportMapper.GetAllRaisedRoofDegress();
     }
-
+    public static List<ToolShedLength> GetAllToolShedLengths() throws LoginSampleException {
+        return CarportMapper.GetAllToolShedLengths();
+    }
+    public static List<ToolShedWidth> GetAllToolShedWidhts() throws LoginSampleException {
+        return CarportMapper.GetAllToolShedWidths();
+    }
 
 }

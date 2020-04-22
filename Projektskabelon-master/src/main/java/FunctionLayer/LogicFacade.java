@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 import DBAccess.CarportMapper;
+import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 
 import java.util.List;
@@ -47,5 +48,7 @@ public class LogicFacade {
     public static List<ToolShedWidth> GetAllToolShedWidhts() throws LoginSampleException {
         return CarportMapper.GetAllToolShedWidths();
     }
-
+    public static void insertFlatCarport(int length, int width, int roofMat) throws LoginSampleException {
+        OrderMapper.insertFlatCarport(length,width,roofMat);
+    }
 }

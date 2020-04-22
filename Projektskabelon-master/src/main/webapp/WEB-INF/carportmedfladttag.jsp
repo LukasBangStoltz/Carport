@@ -61,7 +61,8 @@
                 </div>
 
 
-                <form action="Frontcontroller" method="post">
+                <form action="FrontController" method="post">
+                    <input type="hidden" name="target" value="makeorder">
                     <div class="form-group col-md-7">
                         <label for="carportlength"><p>Carport længde </p></label>
                         <select class="form-control" name="carportlength" id="carportlength">
@@ -91,10 +92,10 @@
 
                     <div class="form-group col-md-7 mt-2">
                         <label for="flatrooftype"><p>Tag </p></label>
-                        <select class="form-control" id="flatrooftype">
+                        <select class="form-control" name="flatrooftype" id="flatrooftype">
                             <c:forEach var="flatrooftype" items="${applicationScope.flatrooftypelist}">
 
-                                <option value="${rooftype.flatRoof_id}">${flatrooftype.flatRoof_type}</option>
+                                <option value="${flatrooftype.flatRoof_id}">${flatrooftype.flatRoof_type}</option>
 
                             </c:forEach>
 

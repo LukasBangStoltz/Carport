@@ -84,7 +84,7 @@ public class CarportMapper {
                     flatRoofTypeList = new ArrayList<>();
                 }
 
-                int fladttag_id = rs.getInt("fladttag_id");
+                int fladttag_id = rs.getInt("fladttagtype_id");
                 String fladttag_type = rs.getString("fladttag_type");
                 FlatRoofType flatRoofType = new FlatRoofType(fladttag_id, fladttag_type);
                 flatRoofTypeList.add(flatRoofType);
@@ -112,7 +112,7 @@ public class CarportMapper {
                     raisedRoofTypeList = new ArrayList<>();
                 }
 
-                int raisedRoof_id = rs.getInt("hældningtag_id");
+                int raisedRoof_id = rs.getInt("hældningtagtype_id");
                 String raisedRoof_type = rs.getString("hældningtag_type");
                 RaisedRoofType raisedRoofType = new RaisedRoofType(raisedRoof_id, raisedRoof_type);
                 raisedRoofTypeList.add(raisedRoofType);

@@ -102,6 +102,9 @@
                         </select>
                     </div>
 
+
+
+
                     <div class="col-md-7">
 
                         <p> Redskabsrum: </p>
@@ -110,9 +113,13 @@
 
                     </div>
 
+
+
                     <div class="form-group col-md-7 mt-2">
                         <label for="toolshedlength"><p>Redskabsrum længde </p></label>
                         <select class="form-control" name="toolshedlength" id="toolshedlength">
+
+                            <option value="0">jeg ønsker ikke redskabsrum</option>
 
                             <c:forEach var="toolshedlength" items="${applicationScope.toolshedlengthslist}">
 
@@ -126,6 +133,8 @@
                     <div class="form-group col-md-7 mt-2">
                         <label for="toolshedwidth"><p>Redskabsrums bredde </p></label>
                         <select class="form-control" name="toolshedwidth" id="toolshedwidth">
+
+                            <option value="0">jeg ønsker ikke redskabsrum</option>
 
                             <c:forEach var="toolshedwidth" items="${applicationScope.toolshedwidthslist}">
 

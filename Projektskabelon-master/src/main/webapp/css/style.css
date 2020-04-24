@@ -50,10 +50,9 @@ p {
 h6{
     color: #004687;
 }
-
-
-
-
+.alert {
+    display:inline-block;
+}
 
 body {font-family: Arial, Helvetica, sans-serif;}
 

@@ -64,7 +64,8 @@
                 </div>
 
 
-                <form action="Frontcontroller" method="post">
+                <form action="FrontController" method="post">
+                    <input type="hidden" name="target" value="makeorder">
                     <div class="form-group col-md-7">
                         <label for="carportlength"><p>Carport længde </p></label>
                         <select class="form-control" name="carportlength" id="carportlength">
@@ -196,6 +197,8 @@ a
 
     </div>
 </div>
+
+
 
 
 <%@include file="/includes/footer.inc" %>

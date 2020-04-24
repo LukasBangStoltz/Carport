@@ -3,14 +3,16 @@
 <%@include file="../includes/header.inc" %>
 
 
-<c:if test="${requestScope.error!= null}">
+<div class="error">
+    <c:if test="${requestScope.error!= null}">
 
     <div class="alert alert-danger" role="alert">
-    <h2>Der er opstået en fejl </h2>
+        <h2 class="text-center">Der er opstået en fejl </h2>
 
-    ${requestScope.error}
+        <h6 class="text-center text-danger"> ${requestScope.error}</h6>
 
-</c:if>
+        </c:if>
+    </div>
 </div>
 
 <a href="FrontController?target=redirect&destination=index"> Til forsiden</a>

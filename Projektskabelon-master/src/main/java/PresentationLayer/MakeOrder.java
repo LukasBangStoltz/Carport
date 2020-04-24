@@ -18,14 +18,17 @@ public class MakeOrder extends Command {
 
         boolean isValid = HelperFunctions.checkSkurSize(skurLength, skurWidth, carportLength, carportWidth);
 
-        if(isValid){
+        if (isValid) {
             // lav om i dataMapper
-            LogicFacade.insertFlatCarport(carportLength,carportWidth,flatRoofType);
+          //  LogicFacade.insertFlatCarport(carportLength, carportWidth, flatRoofType);
             return "index";
+        } else{
+
+            request.setAttribute("error", "Dit skurs mål må ikke overskride dine carports mål");
         }
 
-        request.getSession().setAttribute("error", "Dit skurs mål må ikke overskride dine carports mål");
 
-        return "index";
+
+        return "carportvalgpage";
     }
 }

@@ -105,7 +105,7 @@
                     <div class="form-group col-md-7 mt-2">
                         <label for="roofdegree"><p>Taghældning </p></label>
                         <select class="form-control" name="roofdegree" id="roofdegree">
-
+a
                            <c:forEach var="roofdegree" items="${applicationScope.raisedroofdegreelist}">
 
                                <option value="${roofdegree.roofTilt_id}">${roofdegree.roofTilt_degree} grader</option>

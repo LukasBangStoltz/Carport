@@ -91,7 +91,7 @@
 
                     <div class="form-group col-md-7 mt-2">
                         <label for="flatrooftype"><p>Tag </p></label>
-                        <select class="form-control" id="flatrooftype">
+                        <select class="form-control" name="flatrooftype" id="flatrooftype">
                             <c:forEach var="flatrooftype" items="${applicationScope.flatrooftypelist}">
 
                                 <option value="${rooftype.flatRoof_id}">${flatrooftype.flatRoof_type}</option>

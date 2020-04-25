@@ -63,13 +63,12 @@
 
     <div class="row">
 
-        <div class="col"></div>
-        <div class="col">
+        <div class="col text-center">
 
             <c:if test="${requestScope.error!= null}">
 
             <div class="alert alert-danger" role="alert">
-                <h2 class="text-center">Der er opstået en fejl </h2>
+                <h2 class="text-center">Der er opstået en</h2>
 
                 <h6 class="text-center text-danger"> ${requestScope.error}</h6>
 
@@ -77,7 +76,7 @@
             </div>
         </div>
 
-        <div class="col"></div>
+
 
     </div>
 

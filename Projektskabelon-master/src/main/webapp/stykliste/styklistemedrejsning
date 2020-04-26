@@ -11,11 +11,22 @@ Træ:
 10. 19x100x480 mm. trykimp. Bræt Vand bræt på vindskeder: 1 stk pr antal vindskede med samme længde som vindskeden
 11. 19x100x2400 mm. trykimp. Bræt beklædning af	gavle 1	på 2: 11 stk gange caportens bredde
 12. 19x100x2100	mm.	trykimp. Bræt Beklædning af	skur 1 på 2: 18 stk af 2,10 m pr kvadratmeter
-14. 38x73 mm. taglægte: 1 Stk. til z på bagside af	dør
-15. 38x73 mm. taglægte 21 stk. til	montering på spær, 7 rækker	lægter	på	hver skiftevis	1 hel &	1 halv lægte
-16. 38x73	mm.	taglægte	T1 420 2 stk. toplægte	til	montering	af	rygsten	lægges	i toplægteholder
+14. 38x73x5400 mm. taglægte: 1 Stk. til z på bagside af	dør: default 1stk
+15. 38x73x5400 mm. taglægte 21 stk. til	montering på spær, 7 rækker	lægter	på	hver skiftevis	1 hel &	1 halv lægte: Default 21 stk
+16. 38x73x4200 mm. taglægte T1 420 2 stk. toplægte	til	montering	af	rygsten	lægges	i toplægteholder default 2 stk
 
 Tagpakken:
-
+B&C Dobbelt -s sort : default 300 stk
+B&C Dobbelt sort : default 300 stk
+B&C Dobbelt Toplægte holder : default 8 stk
+B&C Dobbelt rygstensbeslag : 21 stk.
+B&C Dobbelt tagstens bindere & nakkekroge : 2 pk.
 
 Beslag og skruer:
+universal 190 mm. højre: default 8 stk.
+universal 190 mm. højre: default 8 stk.
+Stalddørsgreb 50x75 : default 1 sæt
+T-hængsel 390 mm. : default 2 stk.
+vinkelbeslag : default dobblet antal af løsholtere
+4,5x60 mm.	Skruer: default 1 pakke = 200 stk.
+5,0x40 mm.	beslagskruer: default 1 pakke =	250	stk.

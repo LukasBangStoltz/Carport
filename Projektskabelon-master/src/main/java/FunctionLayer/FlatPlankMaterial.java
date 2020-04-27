@@ -1,17 +1,15 @@
 package FunctionLayer;
 
-public class MaterialFlat {
+public class FlatPlankMaterial {
 
     private String materialName;
-    private String materialDescribtion;
+    private String materialDescription;
     private int materialLength;
 
-
-    public MaterialFlat(String materialDescribtion, String materialName, int materialLength) {
-        this.materialDescribtion = materialDescribtion;
+    public FlatPlankMaterial(String materialName, String materialDescription, int materialLength) {
         this.materialName = materialName;
+        this.materialDescription = materialDescription;
         this.materialLength = materialLength;
-
     }
 
     public String getMaterialName() {
@@ -22,12 +20,12 @@ public class MaterialFlat {
         this.materialName = materialName;
     }
 
-    public String getMaterialDescribtion() {
-        return materialDescribtion;
+    public String getMaterialDescription() {
+        return materialDescription;
     }
 
-    public void setMaterialDescribtion(String materialDescribtion) {
-        this.materialDescribtion = materialDescribtion;
+    public void setMaterialDescription(String materialDescription) {
+        this.materialDescription = materialDescription;
     }
 
     public int getMaterialLength() {
@@ -37,7 +35,4 @@ public class MaterialFlat {
     public void setMaterialLength(int materialLength) {
         this.materialLength = materialLength;
     }
-
-
-
 }

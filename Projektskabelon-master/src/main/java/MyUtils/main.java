@@ -5,7 +5,7 @@ public class main {
     public static void main(String[] args) {
 
 
-        System.out.println(FlatRoofMatCalcFunctions.calcUnderSternSider(700));
+        System.out.println(FlatRoofMatCalcFunctions.calcOverSternFor(600));
 
 
     }

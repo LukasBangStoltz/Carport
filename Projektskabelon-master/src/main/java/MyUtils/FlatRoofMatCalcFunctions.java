@@ -9,7 +9,7 @@ import java.util.Map;
 public class FlatRoofMatCalcFunctions {
 
     private static Map<Integer, FlatPlankMaterial> flatPlankMaterialMap = InitializeMaps.getAllFlatPlankMaterial();
-    private static Map<Integer, FlatScrewMaterial> flatScrewMaterialMap = InitializeMaps.getAllFlatScrewMaterial();
+    private static Map<Integer, FlatScrewMaterial> flatScrewMaterialMap; //Fejl med at fylde hashmappet op (flatscrewmaterial)
 
     public static int calcUnderSternForBag(int carportWidth) {
 
@@ -27,6 +27,18 @@ public class FlatRoofMatCalcFunctions {
         int totalSiderSternNeeded = (int) Math.ceil((carportLength * 2)/defaultLengthPlank);
 
         return totalSiderSternNeeded;
+
+
+
+    }
+
+    public static int calcOverSternFor(int carportWidth){
+
+        double defaultLengthPlank = flatPlankMaterialMap.get(3).getMaterialLength();
+
+        int totalOverSternFor = (int) Math.ceil(carportWidth/defaultLengthPlank);
+
+        return totalOverSternFor;
 
 
 

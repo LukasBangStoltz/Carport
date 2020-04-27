@@ -1,17 +1,25 @@
 package MyUtils;
 
 
+import FunctionLayer.FlatPlankMaterial;
+
+import java.util.Map;
+
 public class FlatRoofMatCalcFunctions {
 
+    private static Map<Integer, FlatPlankMaterial> flatPlankMaterialMap = InitializeMaps.getAllFlatPlankMaterial();
 
-    public static int calcUndersternForBag(int carportWidth) {
+    public static int calcUnderSternForBag(int carportWidth) {
 
-        int antalUnderSternForBag = 0;
+         double defaultLengthPlank = flatPlankMaterialMap.get(1).getMaterialLength();
 
+        System.out.println(defaultLengthPlank);
 
+        int totalUnderSternNeeded = (int) Math.ceil( (carportWidth * 2) / defaultLengthPlank);
 
+        
 
-        return antalUnderSternForBag;
+        return totalUnderSternNeeded;
 
     }
 

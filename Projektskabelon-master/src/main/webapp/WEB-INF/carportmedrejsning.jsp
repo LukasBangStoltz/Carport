@@ -1,7 +1,6 @@
-<%@ page import="MyUtils.Initializer" %>
+<%@ page import="MyUtils.InitializeLists" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="MyUtils.Initializer" %>
 <%@include file="../includes/header.inc" %>
 
 

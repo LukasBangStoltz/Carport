@@ -1,10 +1,13 @@
 package FunctionLayer;
 
 import DBAccess.CarportMapper;
+import DBAccess.MaterialMapper;
 import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
+import javafx.scene.paint.Material;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * The purpose of LogicFacade is to...
@@ -42,13 +45,24 @@ public class LogicFacade {
     public static List<RoofTilt> GetAllRaisedRoofDegress() throws LoginSampleException {
         return CarportMapper.GetAllRaisedRoofDegress();
     }
+
     public static List<ToolShedLength> GetAllToolShedLengths() throws LoginSampleException {
         return CarportMapper.GetAllToolShedLengths();
     }
+
     public static List<ToolShedWidth> GetAllToolShedWidhts() throws LoginSampleException {
         return CarportMapper.GetAllToolShedWidths();
     }
+
     public static void insertFlatCarport(int length, int width, int roofMat) throws LoginSampleException {
-        OrderMapper.insertFlatCarport(length,width,roofMat);
+        OrderMapper.insertFlatCarport(length, width, roofMat);
     }
+
+    public static Map<Integer, FlatPlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
+        return MaterialMapper.GetAllFlatPlanksMat();
+    }
+
+
+
+
 }

@@ -5,7 +5,7 @@ import FunctionLayer.CarportWidth;
 
 import java.util.List;
 
-public class Initializer {
+public class InitializeLists {
 
     private static List<CarportWidth> widthList = null;
     private static List<CarportLength> lengthList = null;

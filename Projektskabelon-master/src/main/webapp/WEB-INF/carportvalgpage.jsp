@@ -1,4 +1,4 @@
-<%@ page import="MyUtils.Initializer" %><%--
+<%@ page import="MyUtils.InitializeLists" %><%--
   Created by IntelliJ IDEA.
   User: Bruger
   Date: 20-04-2020

@@ -4,11 +4,9 @@ import DBAccess.CarportMapper;
 import DBAccess.MaterialMapper;
 import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
-import javafx.scene.paint.Material;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * The purpose of LogicFacade is to...
@@ -59,7 +57,7 @@ public class LogicFacade {
         OrderMapper.insertFlatCarport(length, width, roofMat);
     }
 
-    public static ArrayList<FlatPlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
+    public static ArrayList<PlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
         return MaterialMapper.GetAllFlatPlanksMat();
     }
 

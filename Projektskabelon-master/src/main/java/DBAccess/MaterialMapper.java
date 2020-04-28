@@ -7,13 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MaterialMapper {
 
-    public static ArrayList<FlatPlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
-        ArrayList<FlatPlankMaterial> flatPlankMaterialList = null;
+    public static ArrayList<PlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
+        ArrayList<PlankMaterial> plankMaterialList = null;
 
         try {
             Connection con = Connector.connection();
@@ -24,8 +22,8 @@ public class MaterialMapper {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                if (flatPlankMaterialList == null) {
-                    flatPlankMaterialList = new ArrayList<>();
+                if (plankMaterialList == null) {
+                    plankMaterialList = new ArrayList<>();
                 }
 
                 int material_id = rs.getInt("f_materiale_id");
@@ -33,14 +31,14 @@ public class MaterialMapper {
                 String material_Name = rs.getString("f_materiale_navn");
                 String material_Describtion = rs.getString("f_materiale_beskrivelse");
 
-                FlatPlankMaterial materialFlatPlank = new FlatPlankMaterial(material_Name, material_Describtion, material_length, material_id);
-                flatPlankMaterialList.add(materialFlatPlank);
+                PlankMaterial materialFlatPlank = new PlankMaterial(material_Name, material_Describtion, material_length, material_id);
+                plankMaterialList.add(materialFlatPlank);
 
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
-        return flatPlankMaterialList;
+        return plankMaterialList;
     }
 
     public static ArrayList<FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
@@ -74,8 +72,8 @@ public class MaterialMapper {
         return flatScrewMaterialList;
     }
 
-    public static ArrayList<RaisedPlankMaterial> GetAllRaisedPlanksMat() throws LoginSampleException {
-        ArrayList<RaisedPlankMaterial> raisedPlankMaterialList = null;
+    public static ArrayList<PlankMaterial> GetAllRaisedPlanksMat() throws LoginSampleException {
+        ArrayList<PlankMaterial> raisedPlankMaterialList = null;
 
         try {
             Connection con = Connector.connection();
@@ -95,7 +93,7 @@ public class MaterialMapper {
                 String material_Name = rs.getString("h_materiale_navn");
                 String material_Describtion = rs.getString("h_materiale_beskrivelse");
 
-                RaisedPlankMaterial raisedPlankMaterial = new RaisedPlankMaterial(material_Name, material_Describtion, material_length, material_id);
+                PlankMaterial raisedPlankMaterial = new PlankMaterial(material_Name, material_Describtion, material_length, material_id);
                 raisedPlankMaterialList.add(raisedPlankMaterial);
 
             }

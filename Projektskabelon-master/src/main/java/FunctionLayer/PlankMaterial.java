@@ -1,13 +1,13 @@
 package FunctionLayer;
 
-public class FlatPlankMaterial {
+public class PlankMaterial {
 
     private String materialName;
     private String materialDescription;
     private int materialLength;
     private int materialId;
 
-    public FlatPlankMaterial(String materialName, String materialDescription, int materialLength, int materialId) {
+    public PlankMaterial(String materialName, String materialDescription, int materialLength, int materialId) {
         this.materialName = materialName;
         this.materialDescription = materialDescription;
         this.materialLength = materialLength;

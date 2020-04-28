@@ -2,11 +2,12 @@ package PresentationLayer;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
+import MyUtils.FlatRoofMatCalcFunctions;
 
 public class main {
 
     public static void main(String[] args) throws LoginSampleException {
-        LogicFacade.insertFlatCarport(2, 2, 1);
+        System.out.println(FlatRoofMatCalcFunctions.calcOverSternSider(1000));
     }
 
 }

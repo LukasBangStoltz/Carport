@@ -20,6 +20,7 @@ public class FlatRoofMatCalcFunctions {
         return totalUnderSternNeeded;
 
     }
+
     public static int calcUnderSternSider(int carportLength){
 
         double defaultLengthPlank = flatPlankMaterialMap.get(2).getMaterialLength();
@@ -28,21 +29,29 @@ public class FlatRoofMatCalcFunctions {
 
         return totalSiderSternNeeded;
 
-
-
     }
 
     public static int calcOverSternFor(int carportWidth){
 
         double defaultLengthPlank = flatPlankMaterialMap.get(3).getMaterialLength();
 
-        int totalOverSternFor = (int) Math.ceil(carportWidth/defaultLengthPlank);
+        int totalOverSternNeeded = (int) Math.ceil(carportWidth/defaultLengthPlank);
 
-        return totalOverSternFor;
-
-
+        return totalOverSternNeeded;
 
     }
+
+    public static int calcOverSternSider(int carportLength){
+
+        double defaultLengthPlank = flatPlankMaterialMap.get(4).getMaterialLength();
+
+        int totalOverSternSiderNeeded = (int) Math.ceil((carportLength*2)/defaultLengthPlank);
+
+        return totalOverSternSiderNeeded;
+
+    }
+
+
 
 
 }

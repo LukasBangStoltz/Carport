@@ -5,11 +5,13 @@ public class RaisedPlankMaterial {
     private String materialName;
     private String materialDescription;
     private int materialLength;
+    private int materialId;
 
-    public RaisedPlankMaterial(String materialName, String materialDescription, int materialLength) {
+    public RaisedPlankMaterial(String materialName, String materialDescription, int materialLength, int materialId) {
         this.materialName = materialName;
         this.materialDescription = materialDescription;
         this.materialLength = materialLength;
+        this.materialId = materialId;
     }
 
     public String getMaterialName() {
@@ -34,5 +36,13 @@ public class RaisedPlankMaterial {
 
     public void setMaterialLength(int materialLength) {
         this.materialLength = materialLength;
+    }
+
+    public int getMaterialId() {
+        return materialId;
+    }
+
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 }

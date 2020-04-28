@@ -5,11 +5,13 @@ public class RaisedRoofMaterial {
     private String materialName;
     private String materialDescription;
     private int pcs;
+    private int materialId;
 
-    public RaisedRoofMaterial(String materialName, String materialDescription, int pcs) {
+    public RaisedRoofMaterial(String materialName, String materialDescription, int pcs, int materialId) {
         this.materialName = materialName;
         this.materialDescription = materialDescription;
         this.pcs = pcs;
+        this.materialId = materialId;
     }
 
     public String getMaterialName() {
@@ -34,5 +36,13 @@ public class RaisedRoofMaterial {
 
     public void setPcs(int pcs) {
         this.pcs = pcs;
+    }
+
+    public int getMaterialId() {
+        return materialId;
+    }
+
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 }

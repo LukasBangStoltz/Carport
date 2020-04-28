@@ -6,6 +6,7 @@ import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 import javafx.scene.paint.Material;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -58,11 +59,11 @@ public class LogicFacade {
         OrderMapper.insertFlatCarport(length, width, roofMat);
     }
 
-    public static Map<Integer, FlatPlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
+    public static ArrayList<FlatPlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
         return MaterialMapper.GetAllFlatPlanksMat();
     }
 
-    public static Map<Integer, FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
+    public static ArrayList<FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
         return MaterialMapper.GetAllFlatScrewMaterial();
     }
 

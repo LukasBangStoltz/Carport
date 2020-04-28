@@ -3,7 +3,9 @@ package MyUtils;
 import FunctionLayer.*;
 import FunctionLayer.CarportWidth;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class InitializeLists {
 
@@ -14,6 +16,8 @@ public class InitializeLists {
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
+    private static ArrayList<FlatPlankMaterial> flatPlankMaterialList = null;
+    private static ArrayList<FlatScrewMaterial> flatScrewMaterialList = null;
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -120,6 +124,38 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
         }
 
         return toolShedWidthList;
+
+    }
+
+    public static ArrayList<FlatPlankMaterial> getAllFlatPlankMaterial() {
+
+        if (flatPlankMaterialList == null) {
+
+            try {
+                flatPlankMaterialList = LogicFacade.GetAllFlatPlanksMat();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return flatPlankMaterialList;
+
+    }
+
+    public static ArrayList<FlatScrewMaterial> getAllFlatScrewMaterial() {
+
+        if (flatScrewMaterialList == null) {
+
+            try {
+                flatScrewMaterialList = LogicFacade.GetAllFlatScrewMaterial();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return flatScrewMaterialList;
 
     }
 

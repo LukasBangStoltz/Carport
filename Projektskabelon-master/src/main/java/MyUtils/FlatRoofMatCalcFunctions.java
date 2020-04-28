@@ -61,11 +61,11 @@ public class FlatRoofMatCalcFunctions {
         flatPlankMaterialsNeeded.put(plankMaterialList.get(4), LÆGTE_PCS);
     }
 
-    public static void calcLøsholtGavl(int skurWidth) {
+    public static void calcLøsholtGavl(int shedWidth) {
 
         int løsHolterNeeded = 0;
 
-        int antalStolperGavle = (int) ((Math.floor(skurWidth / 2) / 100) * 2);
+        int antalStolperGavle = (int) ((Math.floor(shedWidth / 2) / 100) * 2);
 
         if (antalStolperGavle < 4) {
             antalStolperGavle = 4;
@@ -89,11 +89,11 @@ public class FlatRoofMatCalcFunctions {
     }
 
 
-    public static void calcLøsholtSide(int skurLength) {
+    public static void calcLøsholtSide(int shedLength) {
 
         int løsHolterNeeded = 0;
 
-        int antalStolperSide = (int) ((Math.floor(skurLength / 2) / 100) * 2);
+        int antalStolperSide = (int) ((Math.floor(shedLength / 2) / 100) * 2);
 
         if (antalStolperSide < 4) {
             antalStolperSide = 4;
@@ -117,15 +117,56 @@ public class FlatRoofMatCalcFunctions {
 
     }
 
-    
+    public static void calcRemmeSiderCarport(int carportLength){
 
+        int defaultPlankLength = plankMaterialList.get(7).getMaterialLength();
 
+        int antalRemmeSiderCarport = (int) Math.ceil((carportLength * 2) / defaultPlankLength);
 
+        flatPlankMaterialsNeeded.put(plankMaterialList.get(7), antalRemmeSiderCarport);
+    }
 
+    public static void calcRemmeSiderSkur(int shedLength){
 
+        int defaulPlankLength = plankMaterialList.get(8).getMaterialLength();
 
+        int antalRemmeSiderSkur = (int) Math.ceil((shedLength * 2) / defaulPlankLength);
 
+        flatPlankMaterialsNeeded.put(plankMaterialList.get(8), antalRemmeSiderSkur);
 
+    }
+
+    public static void calcSpær(int carportLength){
+
+        int antalSpær = (int) Math.ceil((carportLength * 2)) / 100;
+
+        flatPlankMaterialsNeeded.put(plankMaterialList.get(9), antalSpær);
+    }
+
+    public static void calcStolperWithoutShed(int carportLength){
+
+        int antalStolper = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
+
+        if(antalStolper == 2){
+            antalStolper = 4;
+        }
+
+        flatPlankMaterialsNeeded.put(plankMaterialList.get(8), antalStolper);
+
+    }
+
+    public static void calcStolperWithShed(int carportLength, int shedLength){
+
+        int antalStolperCarport = (int) Math.ceil((((((carportLength - 110) - shedLength) / 300) * 2)) + 2);
+        int antalStolperShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2
+
+        if(antalStolper == 2){
+            antalStolper = 4;
+        }
+
+        flatPlankMaterialsNeeded.put(plankMaterialList.get(8), antalStolper);
+
+    }
 
 }
 

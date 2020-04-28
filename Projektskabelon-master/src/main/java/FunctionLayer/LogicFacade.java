@@ -66,4 +66,7 @@ public class LogicFacade {
         return MaterialMapper.GetAllFlatScrewMaterial();
     }
 
+    public static Map<Integer, RaisedPlankMaterial> GetAllRaisedPlankMaterial() throws LoginSampleException {
+        return MaterialMapper.GetAllRaisedPlanksMat();
+    }
 }

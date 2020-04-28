@@ -1,10 +1,7 @@
 package MyUtils;
 
 
-import FunctionLayer.FlatPlankMaterial;
-import FunctionLayer.FlatScrewMaterial;
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
+import FunctionLayer.*;
 
 import java.util.Map;
 
@@ -12,6 +9,9 @@ public class InitializeMaps {
 
     private static Map<Integer, FlatPlankMaterial> flatPlankMaterialMap = null;
     private static Map<Integer, FlatScrewMaterial> flatScrewMaterialMap = null;
+    private static Map<Integer, RaisedPlankMaterial> raisedPlankMaterialMap = null;
+    private static Map<Integer, RaisedScrewMaterial> raisedScrewMaterialMap = null;
+    private static Map<Integer, RaisedRoofMaterial> raisedRoofMaterialMap = null;
 
     public static Map<Integer, FlatPlankMaterial> getAllFlatPlankMaterial() {
 
@@ -29,20 +29,36 @@ public class InitializeMaps {
 
     }
 
-        public static Map<Integer, FlatScrewMaterial> getAllFlatScrewMaterial() {
+    public static Map<Integer, FlatScrewMaterial> getAllFlatScrewMaterial() {
 
-            if (flatScrewMaterialMap == null) {
+        if (flatScrewMaterialMap == null) {
 
-                try {
-                    flatScrewMaterialMap = LogicFacade.GetAllFlatScrewMaterial();
-                } catch (LoginSampleException e) {
-                    e.printStackTrace();
-                }
-
+            try {
+                flatScrewMaterialMap = LogicFacade.GetAllFlatScrewMaterial();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
             }
 
-            return flatScrewMaterialMap;
+        }
+
+        return flatScrewMaterialMap;
+
+    }
+
+    public static Map<Integer, RaisedPlankMaterial> getAllRaisedPlankMaterial() {
+
+        if (raisedPlankMaterialMap == null) {
+
+            try {
+                raisedPlankMaterialMap = LogicFacade.GetAllRaisedPlankMaterial();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
 
         }
+
+        return raisedPlankMaterialMap;
+
+    }
 
 }

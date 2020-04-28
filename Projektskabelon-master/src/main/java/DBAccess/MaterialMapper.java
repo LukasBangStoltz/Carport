@@ -1,6 +1,7 @@
 package DBAccess;
 
 import FunctionLayer.*;
+import MyUtils.InitializeMaps;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -166,6 +167,4 @@ public class MaterialMapper {
         }
         return raisedScrewMaterialMap;
     }
-
-
 }

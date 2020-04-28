@@ -1,24 +1,24 @@
       <%
             if (request.getServletContext().getAttribute("widthList") == null) {
-                request.getServletContext().setAttribute("widthList", InitializerLists.getCarportWidthList());
+                request.getServletContext().setAttribute("widthList", InitializeLists.getCarportWidthList());
             }
             if (request.getServletContext().getAttribute("lengthList") == null) {
-                request.getServletContext().setAttribute("lengthList", InitializerLists.getCarportLengthList());
+                request.getServletContext().setAttribute("lengthList", InitializeLists.getCarportLengthList());
             }
             if (request.getServletContext().getAttribute("flatrooftypelist") == null) {
-                request.getServletContext().setAttribute("flatrooftypelist", InitializerLists.getFlatRoofTypeList());
+                request.getServletContext().setAttribute("flatrooftypelist", InitializeLists.getFlatRoofTypeList());
             }
             if (request.getServletContext().getAttribute("raisedrooftypelist") == null) {
-                request.getServletContext().setAttribute("raisedrooftypelist", InitializerLists.getRaisedRoofTypeList());
+                request.getServletContext().setAttribute("raisedrooftypelist", InitializeLists.getRaisedRoofTypeList());
             }
             if (request.getServletContext().getAttribute("raisedroofdegreelist") == null) {
-                request.getServletContext().setAttribute("raisedroofdegreelist", InitializerLists.getAllRaisedRoofDegrees());
+                request.getServletContext().setAttribute("raisedroofdegreelist", InitializeLists.getAllRaisedRoofDegrees());
             }
             if (request.getServletContext().getAttribute("toolshedlengthslist") == null) {
-                 request.getServletContext().setAttribute("toolshedlengthslist", InitializerLists.getAllToolShedLengths());
+                 request.getServletContext().setAttribute("toolshedlengthslist", InitializeLists.getAllToolShedLengths());
             }
             if (request.getServletContext().getAttribute("toolshedwidthslist") == null) {
-                 request.getServletContext().setAttribute("toolshedwidthslist", InitializerLists.getAllToolShedWidths());
+                 request.getServletContext().setAttribute("toolshedwidthslist", InitializeLists.getAllToolShedWidths());
             }
 
         %>

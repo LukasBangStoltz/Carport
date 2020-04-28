@@ -5,7 +5,6 @@ import FunctionLayer.CarportWidth;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class InitializeLists {
 
@@ -16,7 +15,7 @@ public class InitializeLists {
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
-    private static ArrayList<FlatPlankMaterial> flatPlankMaterialList = null;
+    private static ArrayList<PlankMaterial> plankMaterialList = null;
     private static ArrayList<FlatScrewMaterial> flatScrewMaterialList = null;
 
 
@@ -127,19 +126,19 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
 
     }
 
-    public static ArrayList<FlatPlankMaterial> getAllFlatPlankMaterial() {
+    public static ArrayList<PlankMaterial> getAllFlatPlankMaterial() {
 
-        if (flatPlankMaterialList == null) {
+        if (plankMaterialList == null) {
 
             try {
-                flatPlankMaterialList = LogicFacade.GetAllFlatPlanksMat();
+                plankMaterialList = LogicFacade.GetAllFlatPlanksMat();
             } catch (LoginSampleException e) {
                 e.printStackTrace();
             }
 
         }
 
-        return flatPlankMaterialList;
+        return plankMaterialList;
 
     }
 

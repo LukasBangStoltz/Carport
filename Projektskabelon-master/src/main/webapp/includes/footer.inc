@@ -34,8 +34,8 @@
             <div class="col">
                             <ul>
                                 <h4>Telefon: </h4>
-                                <a href="tel:45 87 10 01">
-                                <h6> 45 87 10 01 </h6>
+                                <a href="tel:+45 45 87 10 01">
+                                <h6>+45 45 87 10 01 </h6>
                                 </a>
 
                             </ul>

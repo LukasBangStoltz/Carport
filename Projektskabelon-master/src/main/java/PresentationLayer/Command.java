@@ -16,6 +16,7 @@ abstract class Command {
         commands.put("redirect", new Redirect());
         commands.put("kurvpage", new KurvPage());
         commands.put("makeorder", new MakeOrder());
+        commands.put("logout", new LogOut());
 
     }
 

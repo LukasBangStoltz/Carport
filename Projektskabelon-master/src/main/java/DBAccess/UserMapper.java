@@ -36,7 +36,7 @@ public class UserMapper {
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM Users "
+            String SQL = "SELECT bruger_id, role FROM bruger "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -44,7 +44,7 @@ public class UserMapper {
             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
-                int id = rs.getInt( "id" );
+                int id = rs.getInt( "bruger_id" );
                 User user = new User( email, password, role );
                 user.setId( id );
                 return user;

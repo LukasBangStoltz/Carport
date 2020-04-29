@@ -82,11 +82,32 @@
 
                                 <div class="container">
                                     <label for="email"><b>Email</b></label>
-                                    <input type="text" placeholder="Enter Username" id="email" name="email" required>
+                                    <input type="text" placeholder="Indtast email" id="email" name="email" required>
 
-                                    <label for="password"><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" id="password" name="password"
+                                    <label for="passwordregister1"><b>Password</b></label>
+                                    <input type="password" placeholder="Indtast password" id="passwordregister1" name="password1"
                                            required>
+
+                                    <label for="passwordregister2"><b>Gentag Password</b></label>
+                                    <input type="password" placeholder="Gentag Password" id="passwordregister2" name="password2"
+                                           required>
+
+                                    <label for="name"><b>Navn</b></label>
+                                    <input type="text" placeholder="Indtast navn" id="name" name="name"
+                                           required>
+
+                                    <label for="adress"><b>Adresse</b></label>
+                                    <input type="text" placeholder="Indtast adresse" id="adress" name="adress"
+                                           required>
+
+                                    <label for="city"><b>By</b></label>
+                                    <input type="text" placeholder="Indtast by" id="city" name="city"
+                                           required>
+
+                                    <label for="phoneNumber"><b>Telefonnummer</b></label>
+                                    <input type="text" placeholder="Indtast telefonnummer" id="phoneNumber" name="phoneNumber"
+                                           required>
+
 
                                     <button type="submit">Login</button>
                                     <label>
@@ -130,8 +151,8 @@
                                     <label for="email1"><b>Email</b></label>
                                     <input type="text" placeholder="Enter Username" id="email1" name="email" required>
 
-                                    <label for="password1"><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" id="password1" name="password"
+                                    <label for="passwordlogin"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" id="passwordlogin" name="password"
                                            required>
 
                                     <button type="submit">Login</button>

@@ -95,7 +95,7 @@
                         <select class="form-control" name="flatrooftype" id="flatrooftype">
                             <c:forEach var="flatrooftype" items="${applicationScope.flatrooftypelist}">
 
-                                <option value="${flatrooftype.flatRoof_id}">${flatrooftype.flatRoof_type}</option>
+                                <option value="${flatrooftype.roof_id}">${flatrooftype.name}</option>
 
                             </c:forEach>
 

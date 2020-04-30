@@ -1,6 +1,6 @@
 package FunctionLayer;
 
-public class PlankMaterial {
+public class  PlankMaterial {
 
     private String materialName;
     private String materialDescription;

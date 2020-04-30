@@ -155,10 +155,10 @@ public class FlatRoofMatCalcFunctions {
 
     }
 
-    public static void calcStolperWithShed(int carportLength, int shedLength){
+  /*  public static void calcStolperWithShed(int carportLength, int shedLength){
 
         int antalStolperCarport = (int) Math.ceil((((((carportLength - 110) - shedLength) / 300) * 2)) + 2);
-        int antalStolperShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2
+        int antalStolperShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
 
         if(antalStolper == 2){
             antalStolper = 4;
@@ -166,7 +166,7 @@ public class FlatRoofMatCalcFunctions {
 
         flatPlankMaterialsNeeded.put(plankMaterialList.get(8), antalStolper);
 
-    }
+    }*/
 
 }
 

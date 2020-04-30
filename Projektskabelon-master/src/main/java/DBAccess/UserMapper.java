@@ -19,7 +19,7 @@ public class UserMapper {
     public static void createUser(User user) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO bruger (navn, adresse, telefonNr, email, password, hjemby, role) VALUES (?, ?, ?,?,?,?,?)";
+            String SQL = "INSERT INTO user (name, adress, phonenumber, email, password, city, role) VALUES (?, ?, ?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getName());
             ps.setString(2, user.getAdress());
@@ -43,7 +43,7 @@ public class UserMapper {
     public static User login(String email, String password) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM bruger "
+            String SQL = "SELECT * FROM user "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, email);
@@ -52,11 +52,11 @@ public class UserMapper {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 String role = rs.getString("role");
-                int id = rs.getInt("bruger_id");
-                String name = rs.getString("navn");
-                String adress = rs.getString("adresse");
-                String phoneNumber = rs.getString("telefonNr");
-                String city = rs.getString("by");
+                int id = rs.getInt("user_id");
+                String name = rs.getString("name");
+                String adress = rs.getString("adress");
+                String phoneNumber = rs.getString("phonenumber");
+                String city = rs.getString("city");
                 User user = new User(name,adress,phoneNumber,email,password,city,role);
                 user.setId(id);
                 return user;

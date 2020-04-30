@@ -96,7 +96,7 @@
                         <select class="form-control" name="raisedrooftype"id="raisedrooftype">
 
                         <c:forEach var="raisedRoof" items="${applicationScope.raisedrooftypelist}">
-                            <option value="${raisedRoof.raisedRoof_id}">${raisedRoof.raisedRoof_type} </option>
+                            <option value="${raisedRoof.roof_id}">${raisedRoof.name} </option>
                         </c:forEach>
 
                         </select>

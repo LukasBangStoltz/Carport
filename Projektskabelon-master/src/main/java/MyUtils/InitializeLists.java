@@ -10,8 +10,8 @@ public class InitializeLists {
 
     private static List<CarportWidth> widthList = null;
     private static List<CarportLength> lengthList = null;
-    private static List<FlatRoofType> flatrooftypelist = null;
-    private static List<RaisedRoofType> raisedRoofTypeList = null;
+    private static List<RoofType> flatrooftypelist = null;
+    private static List<RoofType> raisedRoofTypeList = null;
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
@@ -49,7 +49,7 @@ public class InitializeLists {
         return lengthList;
 
     }
-    public static List<FlatRoofType> getFlatRoofTypeList() {
+    public static List<RoofType> getFlatRoofTypeList() {
 
         if (flatrooftypelist == null) {
 
@@ -65,7 +65,7 @@ public class InitializeLists {
 
     }
 
-    public static List<RaisedRoofType> getRaisedRoofTypeList(){
+    public static List<RoofType> getRaisedRoofTypeList(){
 
         if(raisedRoofTypeList == null){
 

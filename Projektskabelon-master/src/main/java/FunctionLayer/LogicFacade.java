@@ -33,11 +33,11 @@ public class LogicFacade {
         return CarportMapper.GetAllLengths();
     }
 
-    public static List<FlatRoofType> getAllFlatRootTypes() throws LoginSampleException {
+    public static List<RoofType> getAllFlatRootTypes() throws LoginSampleException {
         return CarportMapper.GetAllFlatRoofTypes();
     }
 
-    public static List<RaisedRoofType> GetAllRaisedRoofType() throws LoginSampleException {
+    public static List<RoofType> GetAllRaisedRoofType() throws LoginSampleException {
         return CarportMapper.GetAllRaisedRoofTypes();
     }
 

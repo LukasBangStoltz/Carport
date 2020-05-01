@@ -5,7 +5,7 @@ import FunctionLayer.LoginSampleException;
 public class main {
     public static void main(String[] args) throws LoginSampleException {
 
-        Calc.understernForOgBag(1000);
+        Calc.understernForOgBag(600);
     }
 }
 

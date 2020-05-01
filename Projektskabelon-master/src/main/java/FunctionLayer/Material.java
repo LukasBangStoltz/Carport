@@ -7,11 +7,13 @@ public class Material {
     private String dimension;
     private String unit;
 
-    public Material(int materialID, String name, String dimension, String unit) {
-        this.materialID = materialID;
+    public Material(int material_id, String name, String dimension, String unit) {
+        this.materialID = material_id;
         this.name = name;
         this.dimension = dimension;
         this.unit = unit;
+
+
     }
 
     public int getMaterialID() {
@@ -46,3 +48,4 @@ public class Material {
         this.unit = unit;
     }
 }
+

@@ -20,19 +20,16 @@ public class Calc {
         double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
-
-        int maxValue = Integer.MAX_VALUE;
-
         for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 1) {
-                double afvigelse = mv.getLength() / lengthNeeded;
-                if(afvigelse < maxValue){
-                    finalLengthNeeded = mv.getLength();
-                    break;
-                }
+            if(mv.getMaterial_id() == 1){
+               if(lengthNeeded <= mv.getLength()){
+                   finalLengthNeeded = mv.getLength();
+                   break;
+               }
             }
 
         }
+
         System.out.println(lengthNeeded);
         System.out.println(finalLengthNeeded);
 

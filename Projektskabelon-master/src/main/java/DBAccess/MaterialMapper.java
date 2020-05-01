@@ -19,7 +19,7 @@ public class MaterialMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM material";
+            String SQL = "SELECT * FROM materials";
 
             PreparedStatement ps = con.prepareStatement(SQL);
 

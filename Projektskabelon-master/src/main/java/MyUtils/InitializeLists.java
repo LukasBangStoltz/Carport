@@ -15,8 +15,7 @@ public class InitializeLists {
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
-    private static ArrayList<PlankMaterial> plankMaterialList = null;
-    private static ArrayList<FlatScrewMaterial> flatScrewMaterialList = null;
+
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -125,39 +124,6 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
         return toolShedWidthList;
 
     }
-
-    public static ArrayList<PlankMaterial> getAllFlatPlankMaterial() {
-
-        if (plankMaterialList == null) {
-
-            try {
-                plankMaterialList = LogicFacade.GetAllFlatPlanksMat();
-            } catch (LoginSampleException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-        return plankMaterialList;
-
-    }
-
-    public static ArrayList<FlatScrewMaterial> getAllFlatScrewMaterial() {
-
-        if (flatScrewMaterialList == null) {
-
-            try {
-                flatScrewMaterialList = LogicFacade.GetAllFlatScrewMaterial();
-            } catch (LoginSampleException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-        return flatScrewMaterialList;
-
-    }
-
 
 
 

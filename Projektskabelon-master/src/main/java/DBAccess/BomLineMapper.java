@@ -1,6 +1,5 @@
 package DBAccess;
 
-import FunctionLayer.PlankMaterial;
 import FunctionLayer.LoginSampleException;
 
 import java.sql.*;

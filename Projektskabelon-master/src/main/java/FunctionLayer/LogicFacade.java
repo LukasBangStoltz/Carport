@@ -57,12 +57,6 @@ public class LogicFacade {
         OrderMapper.insertFlatCarport(length, width, roofMat);
     }
 
-    public static ArrayList<PlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
-        return MaterialMapper.GetAllFlatPlanksMat();
-    }
 
-    public static ArrayList<FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
-        return MaterialMapper.GetAllFlatScrewMaterial();
-    }
 
 }

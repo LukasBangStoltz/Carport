@@ -15,7 +15,8 @@ public class InitializeLists {
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
-
+    private static List<Material> materialList = null;
+    private static List<MaterialVariants> matVariantsList = null;
 
 
     public static List<CarportWidth> getCarportWidthList() {
@@ -33,6 +34,7 @@ public class InitializeLists {
         return widthList;
 
     }
+
     public static List<CarportLength> getCarportLengthList() {
 
         if (lengthList == null) {
@@ -48,6 +50,7 @@ public class InitializeLists {
         return lengthList;
 
     }
+
     public static List<RoofType> getFlatRoofTypeList() {
 
         if (flatrooftypelist == null) {
@@ -64,9 +67,9 @@ public class InitializeLists {
 
     }
 
-    public static List<RoofType> getRaisedRoofTypeList(){
+    public static List<RoofType> getRaisedRoofTypeList() {
 
-        if(raisedRoofTypeList == null){
+        if (raisedRoofTypeList == null) {
 
             try {
                 raisedRoofTypeList = LogicFacade.GetAllRaisedRoofType();
@@ -79,9 +82,9 @@ public class InitializeLists {
         return raisedRoofTypeList;
     }
 
-public static List<RoofTilt> getAllRaisedRoofDegrees(){
+    public static List<RoofTilt> getAllRaisedRoofDegrees() {
 
-        if(raisedRoofDegreeList == null){
+        if (raisedRoofDegreeList == null) {
 
             try {
                 raisedRoofDegreeList = LogicFacade.GetAllRaisedRoofDegress();
@@ -93,10 +96,11 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
 
         return raisedRoofDegreeList;
 
-}
-    public static List<ToolShedLength> getAllToolShedLengths(){
+    }
 
-        if(toolShedLengthList == null){
+    public static List<ToolShedLength> getAllToolShedLengths() {
+
+        if (toolShedLengthList == null) {
 
             try {
                 toolShedLengthList = LogicFacade.GetAllToolShedLengths();
@@ -109,9 +113,10 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
         return toolShedLengthList;
 
     }
-    public static List<ToolShedWidth> getAllToolShedWidths(){
 
-        if(toolShedWidthList == null){
+    public static List<ToolShedWidth> getAllToolShedWidths() {
+
+        if (toolShedWidthList == null) {
 
             try {
                 toolShedWidthList = LogicFacade.GetAllToolShedWidhts();
@@ -125,6 +130,35 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
 
     }
 
+    public static List<Material> getMaterialList() {
 
+        if (materialList == null) {
 
+            try {
+                materialList = LogicFacade.GetMaterials();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return materialList;
+
+    }
+
+    public static List<MaterialVariants> getMatVariantsList() {
+
+        if (matVariantsList == null) {
+
+            try {
+                matVariantsList = LogicFacade.GetMaterialVariants();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return matVariantsList;
+
+    }
 }

@@ -5,7 +5,6 @@ import DBAccess.MaterialMapper;
 import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,6 +56,13 @@ public class LogicFacade {
         OrderMapper.insertFlatCarport(length, width, roofMat);
     }
 
+    public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
+        return MaterialMapper.GetMaterialVariants();
+    }
 
+    public static List<Material> GetMaterials() throws LoginSampleException {
+
+        return MaterialMapper.GetMaterials();
+    }
 
 }

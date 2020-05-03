@@ -109,7 +109,7 @@
                                            required>
 
 
-                                    <button type="submit">Login</button>
+                                    <button type="submit">Opret</button>
                                     <label>
                                         <input type="checkbox" checked="checked" name="remember"> Remember me
                                     </label>

@@ -1,9 +1,6 @@
 package FunctionLayer;
 
-import DBAccess.CarportMapper;
-import DBAccess.MaterialMapper;
-import DBAccess.OrderMapper;
-import DBAccess.UserMapper;
+import DBAccess.*;
 
 import java.util.List;
 
@@ -52,9 +49,14 @@ public class LogicFacade {
         return CarportMapper.GetAllToolShedWidths();
     }
 
-    public static void insertFlatCarport(int length, int width, int roofMat) throws LoginSampleException {
-        OrderMapper.insertFlatCarport(length, width, roofMat);
+    public static void insertCarportPart(int orderID, List<BomPart> listOfBomParts, int carportID) throws LoginSampleException {
+        CarportPartMapper.insertCarportPart(orderID,listOfBomParts,carportID);
     }
+
+    public static int insertCarportNoToolShed(String carport_type, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id) throws LoginSampleException {
+        return OrderMapper.insertCarportNoToolShed(carport_type,user_id,carport_length_id,carport_width_id,carport_tilt_id,carport_rooftype_id);
+    }
+
 
     public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
         return MaterialMapper.GetMaterialVariants();
@@ -63,6 +65,10 @@ public class LogicFacade {
     public static List<Material> GetMaterials() throws LoginSampleException {
 
         return MaterialMapper.GetMaterials();
+    }
+
+    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
+        return BomMapper.getBomLineFromCarport(carport_id);
     }
 
 }

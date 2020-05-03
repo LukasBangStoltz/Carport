@@ -2,65 +2,21 @@ package FunctionLayer;
 
 public class BomPart {
 
-    private int order_id;
-    private int carportPart_id;
-    private String name;
-    private String dimension;
-    private int materialLength;
     private int quantity;
-    private String unit;
+    private String description;
+    private int material_id;
+    private int mv_id;
+    private int length;
     private int price;
 
-    public BomPart(int order_id, int carportPart_id, String name, String dimension, int materialLength, int quantity, String unit, int price) {
-        this.order_id = order_id;
-        this.carportPart_id = carportPart_id;
-        this.name = name;
-        this.dimension = dimension;
-        this.materialLength = materialLength;
+    public BomPart(int quantity, String description, int material_id, int mv_id, int length, int price) {
         this.quantity = quantity;
-        this.unit = unit;
+        this.description = description;
+        this.material_id = material_id;
+        this.mv_id = mv_id;
+        this.length = length;
         this.price = price;
 
-    }
-
-    public int getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
-    }
-
-    public int getCarportPart_id() {
-        return carportPart_id;
-    }
-
-    public void setCarportPart_id(int carportPart_id) {
-        this.carportPart_id = carportPart_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDimension() {
-        return dimension;
-    }
-
-    public void setDimension(String dimension) {
-        this.dimension = dimension;
-    }
-
-    public int getMaterialLength() {
-        return materialLength;
-    }
-
-    public void setMaterialLength(int materialLength) {
-        this.materialLength = materialLength;
     }
 
     public int getQuantity() {
@@ -71,12 +27,36 @@ public class BomPart {
         this.quantity = quantity;
     }
 
-    public String getUnit() {
-        return unit;
+    public String getDescription() {
+        return description;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getMaterial_id() {
+        return material_id;
+    }
+
+    public void setMaterial_id(int material_id) {
+        this.material_id = material_id;
+    }
+
+    public int getMv_id() {
+        return mv_id;
+    }
+
+    public void setMv_id(int mv_id) {
+        this.mv_id = mv_id;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public int getPrice() {

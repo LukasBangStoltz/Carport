@@ -67,4 +67,8 @@ public class LogicFacade {
         return MaterialMapper.GetMaterials();
     }
 
+    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
+        return BomMapper.getBomLineFromCarport(carport_id);
+    }
+
 }

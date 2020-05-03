@@ -6,7 +6,6 @@ import java.sql.*;
 
 public class OrderMapper{
 
-
    public static void insertFlatCarport(int length, int width, int roofMat) throws LoginSampleException {
        try {
            Connection con = Connector.connection();
@@ -19,8 +18,6 @@ public class OrderMapper{
            ResultSet ids = ps.getGeneratedKeys();
 
            if (ids.next()){
-
-
 
            int id = ids.getInt( 1 );
            int customer_id = 1;

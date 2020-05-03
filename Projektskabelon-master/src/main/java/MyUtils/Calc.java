@@ -11,6 +11,7 @@ public class Calc {
 
     public static List<MaterialVariants> materialVariantsList = InitializeLists.getMatVariantsList();
     private static List<Material> materialList = InitializeLists.getMaterialList();
+    private static List<BomPart> boomPartList = new ArrayList<>();
 
 
     //int order_id, int carportPart_id, String name, String dimension, int materialLength, int quantity, String unit, int price
@@ -22,50 +23,55 @@ public class Calc {
         double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
+//int quantity, String description, int material_id, int mv_id, int length, int price
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 1){
-               if(lengthNeeded <= mv.getLength()){
-                   finalLengthNeeded = mv.getLength();
-                   break;
-               }
+            if (mv.getMaterial_id() == 1) {
+                if (lengthNeeded <= mv.getLength()) {
+                    finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "understernbrædder til for & bagende", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+
+                    break;
+                }
             }
 
         }
-
-        System.out.println(lengthNeeded);
-        System.out.println(finalLengthNeeded);
     }
 
     // material id = 1
-    public static void understernSider(int carportLength){
+    public static void understernSider(int carportLength) {
         int quantity = 4;
         double lengthNeeded = carportLength * 0.70;
         double finalLengthNeeded = 0;
 
+
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 1){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 1) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "understernbrædder til siderne", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
         }
-        System.out.println(lengthNeeded);
-        System.out.println(finalLengthNeeded);
+
 
     }
 
     // material id = 2
-    public static void oversternFor(int carportWidth){
+    public static void oversternFor(int carportWidth) {
 
         int quantity = 2;
         double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 2){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 2) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "oversternbrædder til forenden", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
@@ -74,16 +80,18 @@ public class Calc {
     }
 
     // material id = 2
-    public static void oversternSider(int carportLength){
+    public static void oversternSider(int carportLength) {
 
         int quantity = 4;
         double lengthNeeded = carportLength * 0.70;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 2){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 2) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "oversternbrædder til siderne", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
@@ -92,12 +100,14 @@ public class Calc {
     }
 
     // material id = 3
-    public static void lægteTilZDørSkur(){
+    public static void lægteTilZDørSkur() {
         int quantity = 1;
         int materialNeeded;
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 3){
+            if (mv.getMaterial_id() == 3) {
                 materialNeeded = mv.getMaterial_id();
+                boomPartList.add(new BomPart(quantity, "til z på bagside af dør", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                 break;
             }
 
@@ -106,15 +116,17 @@ public class Calc {
     }
 
     // material id = 4
-    public static void remmeSider(int carportLength){
+    public static void remmeSider(int carportLength) {
         int quantity = 2;
         double lengthNeeded = carportLength * 0.76;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 4){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 4) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "Remme i sider, sadles ned i stolper", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
@@ -123,7 +135,7 @@ public class Calc {
     }
 
     // material id = 4
-    public static void spærTilRem(int carportWidth, int carportLength){
+    public static void spærTilRem(int carportWidth, int carportLength) {
 
         int spærNeeded = 0;
         int spaceBetweenSpær = 55;
@@ -132,9 +144,11 @@ public class Calc {
         spærNeeded = carportLength / spaceBetweenSpær;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 4){
-                if(carportWidth <= mv.getLength()){
+            if (mv.getMaterial_id() == 4) {
+                if (carportWidth <= mv.getLength()) {
                     spærLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
@@ -142,20 +156,22 @@ public class Calc {
     }
 
     // material id = 5
-    public static void stolper(int carportWidth){
+    public static void stolper(int carportWidth) {
 
     }
 
     // material id = 6
-    public static void vandbrædtSider(int carportLength){
+    public static void vandbrædtSider(int carportLength) {
         int quantity = 4;
         double lengthNeeded = carportLength * 0.70;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 6){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 6) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "vandbrædt på stern i sider", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
@@ -164,22 +180,23 @@ public class Calc {
     }
 
     // material id = 6
-    public static void vandbrædtFor(int carportLength){
+    public static void vandbrædtFor(int carportLength) {
         int quantity = 2;
         double lengthNeeded = carportLength * 0.60;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
-            if(mv.getMaterial_id() == 6){
-                if(lengthNeeded <= mv.getLength()){
+            if (mv.getMaterial_id() == 6) {
+                if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
+                    boomPartList.add(new BomPart(quantity, "vandbrædt på stern i forende", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
             }
         }
 
     }
-
 
 
 }

@@ -14,8 +14,6 @@ public class Calc {
     private static List<BomPart> boomPartList = new ArrayList<>();
 
 
-    //int order_id, int carportPart_id, String name, String dimension, int materialLength, int quantity, String unit, int price
-
     // material id = 1
     public static void understernForOgBag(int carportWidth) {
 
@@ -23,7 +21,7 @@ public class Calc {
         double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
-//int quantity, String description, int material_id, int mv_id, int length, int price
+    //int quantity, String description, int material_id, int mv_id, int length, int price
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 1) {
                 if (lengthNeeded <= mv.getLength()) {

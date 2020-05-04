@@ -1,6 +1,6 @@
 package MyUtils;
 
-import FunctionLayer.BomPart;
+import FunctionLayer.Part;
 import FunctionLayer.Material;
 import FunctionLayer.MaterialVariants;
 
@@ -10,9 +10,7 @@ import java.util.List;
 public class Calc {
 
     public static List<MaterialVariants> materialVariantsList = InitializeLists.getMatVariantsList();
-    private static List<Material> materialList = InitializeLists.getMaterialList();
-    private static List<BomPart> carportPartList = new ArrayList<>();
-
+    public static List<Part> carportPartList = new ArrayList<>();
 
     // material id = 1
     public static void understernForOgBag(int carportWidth) {
@@ -21,12 +19,12 @@ public class Calc {
         double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
-    //int quantity, String description, int material_id, int mv_id, int length, int price
+        //int quantity, String description, int material_id, int mv_id, int length, int price
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 1) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "understernbrædder til for & bagende", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "understernbrædder til for & bagende", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
 
                     break;
@@ -47,7 +45,7 @@ public class Calc {
             if (mv.getMaterial_id() == 1) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "understernbrædder til siderne", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "understernbrædder til siderne", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -68,7 +66,7 @@ public class Calc {
             if (mv.getMaterial_id() == 2) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "oversternbrædder til forenden", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "oversternbrædder til forenden", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -88,7 +86,7 @@ public class Calc {
             if (mv.getMaterial_id() == 2) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "oversternbrædder til siderne", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "oversternbrædder til siderne", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -104,7 +102,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 3) {
                 materialNeeded = mv.getMaterial_id();
-                carportPartList.add(new BomPart(quantity, "til z på bagside af dør", mv.getMaterial_id(),
+                carportPartList.add(new Part(quantity, "til z på bagside af dør", mv.getMaterial_id(),
                         mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                 break;
             }
@@ -123,7 +121,7 @@ public class Calc {
             if (mv.getMaterial_id() == 4) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "Remme i sider, sadles ned i stolper", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "Remme i sider, sadles ned i stolper", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -145,7 +143,7 @@ public class Calc {
             if (mv.getMaterial_id() == 4) {
                 if (carportWidth <= mv.getLength()) {
                     spærLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
+                    carportPartList.add(new Part(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -168,7 +166,7 @@ public class Calc {
             if (mv.getMaterial_id() == 6) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "vandbrædt på stern i sider", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "vandbrædt på stern i sider", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
@@ -178,16 +176,16 @@ public class Calc {
     }
 
     // material id = 6
-    public static void vandbrædtFor(int carportLength) {
+    public static void vandbrædtFor(int carportWidth) {
         int quantity = 2;
-        double lengthNeeded = carportLength * 0.60;
+        double lengthNeeded = carportWidth * 0.60;
         double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 6) {
                 if (lengthNeeded <= mv.getLength()) {
                     finalLengthNeeded = mv.getLength();
-                    carportPartList.add(new BomPart(quantity, "vandbrædt på stern i forende", mv.getMaterial_id(),
+                    carportPartList.add(new Part(quantity, "vandbrædt på stern i forende", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }

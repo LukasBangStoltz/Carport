@@ -67,5 +67,27 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+    public static int getUserId(String email) {
+
+        int user_id = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select user_id from user where email = ?");
+            statement.setString(1, email);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                user_id = resultSet.getInt("user_id");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user_id;
+    }
 
 }

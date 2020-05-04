@@ -14,10 +14,10 @@ public class Redirect extends Command {
 
         switch (destination){
             case "index": break;
-            case "carportvalgpage": break;
-            case "carportmedrejsning": break;
-            case "carportmedfladttag": break;
-            case "kurvpage": break;
+            case "carportchoice": break;
+            case "carporttilt": break;
+            case "carportflat": break;
+            case "basket": break;
             case "loginpage" : break;
         }
 

@@ -1,6 +1,6 @@
 package FunctionLayer;
 
-public class BomPart {
+public class Part {
 
     private int quantity;
     private String description;
@@ -9,7 +9,7 @@ public class BomPart {
     private int length;
     private int price;
 
-    public BomPart(int quantity, String description, int material_id, int mv_id, int length, int price) {
+    public Part(int quantity, String description, int material_id, int mv_id, int length, int price) {
         this.quantity = quantity;
         this.description = description;
         this.material_id = material_id;

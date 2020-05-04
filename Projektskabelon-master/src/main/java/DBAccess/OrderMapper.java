@@ -7,16 +7,11 @@ import java.sql.*;
 public class OrderMapper {
 
 
-<<<<<<< HEAD
-    public static int insertCarportNoToolShed(String carport_type, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id) throws LoginSampleException {
-        int orderID;
-=======
     public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 
         int orderID;
         int carport_id;
         int[] IDs = new int[2];
->>>>>>> 5b28657ef781715a29f20662e0a840f36ad79d79
 
         try {
 
@@ -56,8 +51,7 @@ public class OrderMapper {
                 ps.setInt(7, toolshed_width_id);
                 System.out.println(carport_length_id);
 
-                ps.addBatch();
-                ps.executeBatch();
+                ps.executeUpdate();
 
 
             }

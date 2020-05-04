@@ -208,9 +208,106 @@ public class CarportMapper {
             throw new LoginSampleException(ex.getMessage());
         }
         return toolShedWidthList;
-
-
     }
+
+    public static int getCarportLengthFromId(int carport_length_id) {
+
+        int carport_length = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from carport_length where length_id = ? ");
+            statement.setInt(1, carport_length_id );
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                carport_length = resultSet.getInt("length_cm");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return carport_length;
+    }
+
+    public static int getCarportWidthFromId(int carport_width_id) {
+
+        int carport_width = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from carport_width where width_id = ? ");
+            statement.setInt(1, carport_width_id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                carport_width = resultSet.getInt("width_cm");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return carport_width;
+    }
+
+    public static int getToolShedLengthsFromId(int toolshed_length_id) {
+
+        int toolshed_length = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from toolshed_length where toolshed_length_id = ? ");
+            statement.setInt(1, toolshed_length_id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                toolshed_length = resultSet.getInt("toolshed_length_id");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return toolshed_length;
+    }
+
+    public static int getToolShedWidthsFromId(int toolshed_width_id) {
+
+        int toolshed_width = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from toolshed_width where toolshed_width_id = ? ");
+            statement.setInt(1, toolshed_width_id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+               toolshed_width = resultSet.getInt("toolshed_width_id");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return toolshed_width;
+    }
+
+
+
+
+
+
+
 
 
 

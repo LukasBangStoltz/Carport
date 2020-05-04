@@ -3,6 +3,12 @@
 <%@include file="../includes/header.inc" %>
 
 
+
+<div class="row">
+
+    <div class="col"></div>
+
+    <div class="col text-center">
 <div class="error">
     <c:if test="${requestScope.error!= null}">
 
@@ -14,7 +20,9 @@
         </c:if>
     </div>
 </div>
-
+</div>
+    <div class="col"></div>
+</div>
 <a href="FrontController?target=redirect&destination=index"> Til forsiden</a>
 
 

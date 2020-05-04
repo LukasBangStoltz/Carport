@@ -19,10 +19,7 @@ public class BomMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT M.material_id, name, dimension, unit, length, price, conp.carport_part_id, conp.description, cp.carport_id FROM materials as M\n" +
-                    "INNER JOIN material_variants as MV ON M.material_id=MV.material_id\n" +
-                    "JOIN concrete_part as conp ON MV.material_id=conp.material_id\n" +
-                    "JOIN carport_part as cp ON conp.carport_part_id=cp.carport_part_id WHERE carport_id = ?";
+            String SQL = "SELECT * FROM carport.carport_recipe WHERE carport_id = ?";
 
             PreparedStatement ps = con.prepareStatement(SQL);
 
@@ -43,10 +40,11 @@ public class BomMapper {
                 int price = rs.getInt("price");
                 int carport_part_id = rs.getInt("carport_part_id");
                 String description = rs.getString("description");
-                int carport_id = rs.getInt("carport_id");
 
+                BomLine bL = new BomLine(material_id, name, dimension, unit, length,
+                        price, carport_part_id, description, carport_id);
 
-
+                listOfBomLine.add(bL);
 
             }
         } catch (ClassNotFoundException | SQLException ex) {

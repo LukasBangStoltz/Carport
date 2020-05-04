@@ -5,13 +5,13 @@ import java.util.List;
 
 public class GenerateBom {
 
-    private List<BomPart> listOfBomParts = new ArrayList<>();
+    private List<Part> listOfParts = new ArrayList<>();
 
-    public List<BomPart> getListOfBomParts() {
-        return listOfBomParts;
+    public List<Part> getListOfParts() {
+        return listOfParts;
     }
 
-    public void setListOfBomParts(List<BomPart> listOfBomParts) {
-        this.listOfBomParts = listOfBomParts;
+    public void setListOfParts(List<Part> listOfParts) {
+        this.listOfParts = listOfParts;
     }
 }

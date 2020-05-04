@@ -18,7 +18,7 @@
 
         <div class="col-6">
 
-            <a href="FrontController?target=redirect&destination=carportvalgpage"> <img
+            <a href="FrontController?target=redirect&destination=carportchoice"> <img
                     src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto"
                     alt="Fog image"/></a>
 

@@ -1,6 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.BomPart;
+import FunctionLayer.Part;
 import FunctionLayer.LoginSampleException;
 
 import java.sql.*;
@@ -10,13 +10,13 @@ public class CarportPartMapper {
 
 
 
-    public static void insertCarportPart(int orderID, List<BomPart> listOfBomParts, int carportID, String description) throws LoginSampleException {
+    public static void insertCarportPart(int orderID, List<Part> listOfParts, int carportID ) throws LoginSampleException {
 
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO carport_part (carport_id, description, material_id) VALUES (?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL);
-            for (BomPart bp: listOfBomParts) {
+            for (Part bp: listOfParts) {
                 ps.setInt(1, carportID);
                 ps.setString(2, bp.getDescription());
                 ps.setInt(2, bp.getMaterial_id());
@@ -28,7 +28,7 @@ public class CarportPartMapper {
 
             ps = con.prepareStatement(SQL);
 
-            for (BomPart part : listOfBomParts) {
+            for (Part part : listOfParts) {
                 ps.setInt(1, orderID);
                 ps.setInt(2, part.getMv_id());
                 ps.setInt(3, part.getQuantity());

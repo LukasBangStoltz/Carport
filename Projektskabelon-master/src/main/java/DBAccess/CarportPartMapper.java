@@ -10,41 +10,31 @@ public class CarportPartMapper {
 
 
 
-    public static void insertCarportPart(int orderID, List<BomPart> listOfBomParts, int carportID) throws LoginSampleException {
+    public static void insertCarportPart(int orderID, List<BomPart> listOfBomParts, int carportID, String description) throws LoginSampleException {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO carport_part (carport_id) VALUES (?)";
-            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, carportID);
-            ps.executeUpdate();
-
-            ResultSet ids = ps.getGeneratedKeys();
-
-            int carport_part_id = ids.getInt(1);
-
-            SQL = "INSERT INTO concrete_part (carport_part_id, material_id, description, mv_id, quantity) VALUES (?,?,?,?,?)";
-
-            ps = con.prepareStatement(SQL);
-
-            for (BomPart part : listOfBomParts) {
-                ps.setInt(1,carport_part_id);
-                ps.setInt(2, part.getMaterial_id());
-                ps.setString(3, part.getDescription());
-                ps.setInt(4, part.getMv_id());
-                ps.setInt(5, part.getQuantity());
+            String SQL = "INSERT INTO carport_part (carport_id, description, material_id) VALUES (?,?,?)";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            for (BomPart bp: listOfBomParts) {
+                ps.setInt(1, carportID);
+                ps.setString(2, bp.getDescription());
+                ps.setInt(2, bp.getMaterial_id());
 
                 ps.executeUpdate();
             }
 
-            SQL = "INSERT INTO bom (order_id, carport_part_id) VALUES (?,?)";
+            SQL = "INSERT INTO bom (order_id, mv_id, quantity) VALUES (?,?,?)";
+
             ps = con.prepareStatement(SQL);
 
-            ps.setInt(1, orderID);
-            ps.setInt(1, carport_part_id);
+            for (BomPart part : listOfBomParts) {
+                ps.setInt(1, orderID);
+                ps.setInt(2, part.getMv_id());
+                ps.setInt(3, part.getQuantity());
 
-            ps.executeUpdate();
-
+                ps.executeUpdate();
+            }
 
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());

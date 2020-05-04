@@ -7,16 +7,17 @@ import java.sql.*;
 public class OrderMapper {
 
 
-    public static int insertCarportNoToolShed(String carport_type, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id) throws LoginSampleException {
+    public static int insertCarportNoToolShed(String carport_type, int toolshed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 
         int orderID;
 
 
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO carport (carport_type) VALUES (?)";
+            String SQL = "INSERT INTO carport (carport_type, toolshed) VALUES (?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, carport_type);
+            ps.setInt(2, toolshed);
             ps.executeUpdate();
 
             ResultSet ids = ps.getGeneratedKeys();
@@ -24,7 +25,7 @@ public class OrderMapper {
             int carport_id = ids.getInt(1);
 
 
-            SQL = "INSERT INTO ordrer (user_id, carport_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id) VALUES (?,?,?,?,?,?)";
+            SQL = "INSERT INTO ordrer (user_id, carport_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id) VALUES (?,?,?,?,?,?,?,?)";
 
             ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
@@ -35,6 +36,8 @@ public class OrderMapper {
             ps.setInt(4, carport_width_id);
             ps.setInt(5,carport_tilt_id);
             ps.setInt(6, carport_rooftype_id);
+            ps.setInt(7, toolshed_length_id);
+            ps.setInt(8, toolshed_width_id);
 
             ps.executeUpdate();
 

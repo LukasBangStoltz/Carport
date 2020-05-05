@@ -19,7 +19,7 @@ public class CarportPartMapper {
             for (Part bp: listOfParts) {
                 ps.setInt(1, carportID);
                 ps.setString(2, bp.getDescription());
-                ps.setInt(2, bp.getMaterial_id());
+                ps.setInt(3, bp.getMaterial_id());
 
                 ps.executeUpdate();
             }
@@ -33,6 +33,7 @@ public class CarportPartMapper {
                 ps.setInt(2, part.getMv_id());
                 ps.setInt(3, part.getQuantity());
 
+                System.out.println(1);
                 ps.executeUpdate();
             }
 

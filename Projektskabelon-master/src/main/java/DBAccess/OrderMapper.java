@@ -22,12 +22,7 @@ public class OrderMapper {
             ps.setBoolean(2, hasToolShed);
             ps.executeUpdate();
 
-            System.out.println("Indsat carport");
-
-            //PreparedStatement ps2 =
             ResultSet ids = ps.getGeneratedKeys();
-
-            System.out.println("carport id generet");
 
             if (ids.next()) {
                 carport_id = ids.getInt(1);
@@ -36,10 +31,10 @@ public class OrderMapper {
 
 
                 SQL = "INSERT INTO orders (user_id, carport_id, carport_length_id, carport_width_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id) VALUES (?,?,?,?,?,?,?)";
-                System.out.println("carport id generet");
+
 
                 ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-                System.out.println("carport id generet");
+
 
 
                 ps.setInt(1, user_id);

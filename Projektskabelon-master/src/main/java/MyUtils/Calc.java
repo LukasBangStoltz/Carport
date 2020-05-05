@@ -213,7 +213,81 @@ public class Calc {
 
     }
 
-    
+    //material id = 7
+    public static void løsholterSkurGavle(int shedWidth) {
+
+        int quantity = 0;
+
+        int antalStolperGavle = (int) ((Math.floor(shedWidth / 2) / 100) * 2);
+
+        if (antalStolperGavle < 4) {
+            antalStolperGavle = 4;
+        }
+
+        switch (antalStolperGavle) {
+            case 4:
+                quantity = 6;
+                break;
+            case 6:
+                quantity = 12;
+                break;
+            case 8:
+                quantity = 24;
+                break;
+        }
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 7) {
+                if (shedWidth <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Løsholte til skur gavle", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                    break;
+                }
+            }
+        }
 
 
+
+
+
+
+
+    }
+
+    //material id = 7
+    public static void løsholterSkurSider(int shedLength) {
+        int quantity = 0;
+
+        int antalStolperSide = (int) ((Math.floor(shedLength / 2) / 100) * 2);
+
+        if (antalStolperSide < 4) {
+            antalStolperSide = 4;
+        }
+
+        switch (antalStolperSide) {
+            case 4:
+                quantity = 6;
+                break;
+            case 6:
+                quantity = 12;
+                break;
+            case 8:
+                quantity = 24;
+                break;
+        }
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 7) {
+                if (shedLength <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Løsholte til skur gavle", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                    break;
+                }
+            }
+        }
+    }
+        
 }
+
+
+

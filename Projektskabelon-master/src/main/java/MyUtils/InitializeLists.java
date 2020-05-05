@@ -17,7 +17,7 @@ public class InitializeLists {
     private static List<ToolShedWidth> toolShedWidthList = null;
     private static List<Material> materialList = null;
     private static List<MaterialVariants> matVariantsList = null;
-
+    private static List<BomLine> bomLineList = null;
 
     public static List<CarportWidth> getCarportWidthList() {
 
@@ -161,4 +161,18 @@ public class InitializeLists {
         return matVariantsList;
 
     }
+
+    public static List<BomLine> getBomList(int carport_id) {
+
+        try {
+            bomLineList = LogicFacade.getBomLineFromCarport(carport_id);
+        } catch (LoginSampleException e) {
+            e.printStackTrace();
+        }
+
+        return bomLineList;
+
+    }
+
+
 }

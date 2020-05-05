@@ -40,9 +40,10 @@ public class BomMapper {
                 int price = rs.getInt("price");
                 int carport_part_id = rs.getInt("carport_part_id");
                 String description = rs.getString("description");
+                int quantity = rs.getInt("quantity");
 
                 BomLine bL = new BomLine(material_id, name, dimension, unit, length,
-                        price, carport_part_id, description, carport_id);
+                        price, carport_part_id, description, carport_id,quantity);
 
                 listOfBomLine.add(bL);
 

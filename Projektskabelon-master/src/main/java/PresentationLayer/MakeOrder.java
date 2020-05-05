@@ -2,9 +2,7 @@ package PresentationLayer;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
-import MyUtils.Calc;
-import MyUtils.HelperFunctions;
-
+import MyUtils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,10 +18,16 @@ public class MakeOrder extends Command {
         String carportType = request.getParameter("carporttype");
         String email = String.valueOf(request.getSession().getAttribute("email"));
 
+        int carport_length = LogicFacade.getCarportLengthFromId(carport_length_id);
+        int carport_width = LogicFacade.getCarportWidthFromId(carport_width_id);
+        int toolshed_length = LogicFacade.getToolShedLengthsFromId(toolshed_length_id);
+        int toolshed_width = LogicFacade.getToolShedWidthsFromId(toolshed_width_id);
 
-        boolean isValid = HelperFunctions.checkSkurSize(toolshed_length_id, toolshed_width_id, carport_length_id, carport_width_id);
+        boolean isValid = HelperFunctions.checkSkurSize(toolshed_length, toolshed_width, carport_length, carport_width);
 
         if (isValid) {
+
+
 
             boolean hasToolShed = HelperFunctions.hasToolShed(toolshed_length_id, toolshed_width_id);
             int user_id = LogicFacade.getUserId(email);
@@ -32,18 +36,23 @@ public class MakeOrder extends Command {
             int order_id = IDs[1];
 
 
-            Calc.understernForOgBag(carport_width_id);
-            Calc.understernSider(carport_width_id);
-            Calc.oversternFor(carport_length_id);
-            Calc.oversternSider(carport_length_id);
+            Calc.understernForOgBag(carport_width);
+            Calc.understernSider(carport_width);
+            Calc.oversternFor(carport_length);
+            Calc.oversternSider(carport_length);
             //Calc.lægteTilZDørSkur();
-            Calc.remmeSider(carport_length_id);
-            Calc.spærTilRem(carport_width_id, carport_length_id);
-            Calc.vandbrædtSider(carport_width_id);
+            Calc.remmeSider(carport_length);
+            Calc.spærTilRem(carport_width, carport_length);
+            Calc.vandbrædtSider(carport_width);
 
             LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
 
-            return "index";
+
+            request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
+
+
+
+            return "bomLine";
         } else {
 
             request.setAttribute("error", "Dit skurs mål må ikke overskride dine carports mål");

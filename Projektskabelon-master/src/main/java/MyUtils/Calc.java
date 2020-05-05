@@ -133,16 +133,13 @@ public class Calc {
     // material id = 4
     public static void spærTilRem(int carportWidth, int carportLength) {
 
-        int spærNeeded = 0;
-        int spaceBetweenSpær = 55;
-        int spærLengthNeeded = 0;
-
-        spærNeeded = carportLength / spaceBetweenSpær;
-
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 4) {
                 if (carportWidth <= mv.getLength()) {
-                    spærLengthNeeded = mv.getLength();
+
+                    double spaceBetweenSpær = 55;
+                    double spærNeeded = carportLength / spaceBetweenSpær;
+
                     carportPartList.add(new Part(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
@@ -160,12 +157,12 @@ public class Calc {
     public static void vandbrædtSider(int carportLength) {
         int quantity = 4;
         double lengthNeeded = carportLength * 0.70;
-        double finalLengthNeeded = 0;
+
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 6) {
                 if (lengthNeeded <= mv.getLength()) {
-                    finalLengthNeeded = mv.getLength();
+
                     carportPartList.add(new Part(quantity, "vandbrædt på stern i sider", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
@@ -179,12 +176,10 @@ public class Calc {
     public static void vandbrædtFor(int carportWidth) {
         int quantity = 2;
         double lengthNeeded = carportWidth * 0.60;
-        double finalLengthNeeded = 0;
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 6) {
                 if (lengthNeeded <= mv.getLength()) {
-                    finalLengthNeeded = mv.getLength();
                     carportPartList.add(new Part(quantity, "vandbrædt på stern i forende", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;

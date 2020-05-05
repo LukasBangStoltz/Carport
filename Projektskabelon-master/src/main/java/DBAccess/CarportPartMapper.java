@@ -31,7 +31,7 @@ public class CarportPartMapper {
             for (Part part : listOfParts) {
                 ps.setInt(1, orderID);
                 ps.setInt(2, part.getMv_id());
-                ps.setInt(3, part.getQuantity());
+                ps.setDouble(3, part.getQuantity());
 
                 System.out.println(1);
                 ps.executeUpdate();

@@ -11,8 +11,9 @@ public class BomLine {
     private int carport_part_id;
     private String description;
     private int carport_id;
+    private int quantity;
 
-    public BomLine(int material_id, String name, String dimension, String unit, int length, int price, int carport_part_id, String description, int carport_id) {
+    public BomLine(int material_id, String name, String dimension, String unit, int length, int price, int carport_part_id, String description, int carport_id, int quantity) {
         this.material_id = material_id;
         this.name = name;
         this.dimension = dimension;
@@ -22,7 +23,9 @@ public class BomLine {
         this.carport_part_id = carport_part_id;
         this.description = description;
         this.carport_id = carport_id;
+        this.quantity = quantity;
     }
+
 
     public int getMaterial_id() {
         return material_id;
@@ -94,5 +97,13 @@ public class BomLine {
 
     public void setCarport_id(int carport_id) {
         this.carport_id = carport_id;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

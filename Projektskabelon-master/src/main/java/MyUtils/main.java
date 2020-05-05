@@ -1,11 +1,14 @@
 package MyUtils;
 
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 
 public class main {
     public static void main(String[] args) throws LoginSampleException {
 
-        Calc.understernSider(240);
+        //System.out.println(LogicFacade.getCarportLengthFromId(1));
+        //System.out.println(LogicFacade.getCarportWidthFromId(1));
+        System.out.println(LogicFacade.getToolShedLengthsFromId(0));
 
     }
 }

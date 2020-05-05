@@ -210,13 +210,14 @@ public class CarportMapper {
         return toolShedWidthList;
     }
 
+
     public static int getCarportLengthFromId(int carport_length_id) {
 
         int carport_length = 0;
         try {
             Connection connection = Connector.connection();
             PreparedStatement statement = connection.prepareStatement("Select * from carport_length where length_id = ? ");
-            statement.setInt(1, carport_length_id );
+            statement.setInt(1, carport_length_id);
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -267,7 +268,7 @@ public class CarportMapper {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                toolshed_length = resultSet.getInt("toolshed_length_id");
+                toolshed_length = resultSet.getInt("toolshed_length_cm");
             }
 
         } catch (ClassNotFoundException e) {
@@ -290,7 +291,7 @@ public class CarportMapper {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-               toolshed_width = resultSet.getInt("toolshed_width_id");
+                toolshed_width = resultSet.getInt("toolshed_width_cm");
             }
 
         } catch (ClassNotFoundException e) {
@@ -301,16 +302,6 @@ public class CarportMapper {
 
         return toolshed_width;
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

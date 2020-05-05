@@ -36,7 +36,6 @@ public class OrderMapper {
                 ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
 
-
                 ps.setInt(1, user_id);
                 ps.setInt(2, carport_id);
                 ps.setInt(3, carport_length_id);
@@ -44,7 +43,7 @@ public class OrderMapper {
                 ps.setInt(5, carport_rooftype_id);
                 ps.setInt(6, toolshed_length_id);
                 ps.setInt(7, toolshed_width_id);
-                System.out.println(carport_length_id);
+
 
                 ps.executeUpdate();
 

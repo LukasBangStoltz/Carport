@@ -3,6 +3,7 @@ package PresentationLayer;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import MyUtils.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +12,7 @@ public class MakeOrder extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         int carport_length_id = Integer.parseInt(request.getParameter("carportlength"));
         int carport_width_id = Integer.parseInt(request.getParameter("carportwidth"));
-       //int carport_tilt_id = Integer.parseInt(request.getParameter("roofdegree"));
+        //int carport_tilt_id = Integer.parseInt(request.getParameter("roofdegree"));
         int carport_rooftype_id = Integer.parseInt(request.getParameter("rooftype"));
         int toolshed_length_id = Integer.parseInt(request.getParameter("toolshedlength"));
         int toolshed_width_id = Integer.parseInt(request.getParameter("toolshedwidth"));
@@ -26,7 +27,6 @@ public class MakeOrder extends Command {
         boolean isValid = HelperFunctions.checkSkurSize(toolshed_length, toolshed_width, carport_length, carport_width);
 
         if (isValid) {
-
 
 
             boolean hasToolShed = HelperFunctions.hasToolShed(toolshed_length_id, toolshed_width_id);
@@ -46,11 +46,8 @@ public class MakeOrder extends Command {
             Calc.vandbrædtSider(carport_width);
 
             LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
-
-
+            
             request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
-
-
 
             return "bomLine";
         } else {

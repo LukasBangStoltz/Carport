@@ -149,8 +149,32 @@ public class Calc {
     }
 
     // material id = 5
-    public static void stolper(int carportWidth) {
+    public static void calcStolper(int carportLength, int toolShedLength, boolean hasToolShed) {
 
+        int quantity = 0;
+        if (!hasToolShed) {
+            quantity = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
+
+            if (quantity == 2) {
+                quantity = 4;
+            }
+
+        }
+
+        if (hasToolShed) {
+
+            int quantityCarport = (int) Math.ceil((((((carportLength - 110) - toolShedLength) / 300) * 2)) + 2);
+            int quantityToolShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
+            quantity = quantityCarport + quantityToolShed;
+        }
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 5) {
+                carportPartList.add(new Part(quantity, "Stolper nedgraves 90 cm i jorden", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                break;
+            }
+        }
     }
 
     // material id = 6
@@ -188,6 +212,8 @@ public class Calc {
         }
 
     }
+
+    
 
 
 }

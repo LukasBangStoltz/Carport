@@ -75,4 +75,22 @@ public class LogicFacade {
         return UserMapper.getUserId(email);
 
     }
+
+    public static int getCarportLengthFromId(int carport_length_id) {
+        return CarportMapper.getCarportLengthFromId(carport_length_id);
+    }
+
+    public static int getCarportWidthFromId(int carport_width_id) {
+        return CarportMapper.getCarportWidthFromId(carport_width_id);
+    }
+
+    public static int getToolShedLengthsFromId(int toolshed_length_id) {
+        return CarportMapper.getToolShedLengthsFromId(toolshed_length_id);
+    }
+
+    public static int getToolShedWidthsFromId(int toolshed_width_id) {
+        return CarportMapper.getToolShedWidthsFromId(toolshed_width_id);
+    }
+
+
 }

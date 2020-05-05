@@ -46,8 +46,7 @@ public class OrderMapper {
                 ps.setInt(7, toolshed_width_id);
                 System.out.println(carport_length_id);
 
-                ps.addBatch();
-                ps.executeBatch();
+                ps.executeUpdate();
 
 
             }

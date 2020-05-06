@@ -247,11 +247,6 @@ public class Calc {
         }
 
 
-
-
-
-
-
     }
 
     //material id = 7

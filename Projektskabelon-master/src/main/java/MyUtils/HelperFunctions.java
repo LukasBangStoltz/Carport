@@ -36,4 +36,45 @@ public class HelperFunctions {
 
 
     }
+
+    public static String checkAction(String flatCarPort, String raisedCarPort, boolean hasToolShed){
+        String action = "";
+
+        if(flatCarPort != null && !hasToolShed){
+            action = "flatcarport";
+
+        }
+        if(flatCarPort != null && hasToolShed){
+            action = "flatcarporttoolshed";
+        }
+        if(raisedCarPort !=null && !hasToolShed){
+            action = "raisedcarport";
+        }
+        if(raisedCarPort !=null && hasToolShed){
+            action = "raisedrooftoolshed";
+        }
+
+        return action;
+
+    }
+
+    public static void makeFlatCarport(int carport_length, int carport_width){
+
+
+    }
+
+    public static void makeFlatCarportToolShed(int carport_length, int carport_width){
+
+    }
+    public static void makeRaisedCarport(int carport_length, int carport_width){
+
+
+    }
+    public static void makeRaisedCarportToolShed(int carport_length, int carport_width){
+
+
+
+
+    }
+
 }

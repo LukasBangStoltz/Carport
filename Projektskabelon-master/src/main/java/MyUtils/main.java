@@ -1,5 +1,6 @@
 package MyUtils;
 
+
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 
@@ -8,7 +9,7 @@ public class main {
 
         //System.out.println(LogicFacade.getCarportLengthFromId(1));
         //System.out.println(LogicFacade.getCarportWidthFromId(1));
-        System.out.println(LogicFacade.getToolShedLengthsFromId(0));
+        System.out.println(LogicFacade.getBomLineFromCarport(67).get(0).getName());
 
     }
 }

@@ -2,24 +2,29 @@ package FunctionLayer;
 
 public class Part {
 
-    private double quantity;
+    private int quantity;
     private String description;
     private int material_id;
     private int mv_id;
     private int length;
     private int price;
 
-    public Part(double quantity, String description, int material_id, int mv_id, int length, int price) {
+    public Part(int quantity, String description, int material_id, int mv_id, int length, int price) {
         this.quantity = quantity;
         this.description = description;
         this.material_id = material_id;
         this.mv_id = mv_id;
         this.length = length;
         this.price = price;
-
     }
 
-    public double getQuantity() {
+    public Part(int quantity, String description, int material_id) {
+        this.quantity = quantity;
+        this.description = description;
+        this.material_id = material_id;
+    }
+
+    public int getQuantity() {
         return quantity;
     }
 

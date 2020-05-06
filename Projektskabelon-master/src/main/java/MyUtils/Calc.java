@@ -10,6 +10,7 @@ import java.util.List;
 public class Calc {
 
     public static List<MaterialVariants> materialVariantsList = InitializeLists.getMatVariantsList();
+    public static List<Material> materialsList = InitializeLists.getMaterialList();
     public static List<Part> carportPartList = new ArrayList<>();
 
     // material id = 1
@@ -137,8 +138,8 @@ public class Calc {
             if (mv.getMaterial_id() == 4) {
                 if (carportWidth <= mv.getLength()) {
 
-                    double spaceBetweenSpær = 55;
-                    double spærNeeded = carportLength / spaceBetweenSpær;
+                    int spaceBetweenSpær = 55;
+                    int spærNeeded = carportLength / spaceBetweenSpær;
 
                     carportPartList.add(new Part(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
@@ -247,11 +248,6 @@ public class Calc {
         }
 
 
-
-
-
-
-
     }
 
     //material id = 7
@@ -286,6 +282,7 @@ public class Calc {
             }
         }
     }
+
     //material id = 8
     public static void tagpladerLang(int carportLength) {
         int quantity = 6;
@@ -304,9 +301,10 @@ public class Calc {
         }
 
     }
+
     public static void tagpladerKort(int carportLength) {
         int quantity = 6;
-        double lengthNeeded = carportLength *0.60;
+        double lengthNeeded = carportLength * 0.60;
 
 
         for (MaterialVariants mv : materialVariantsList) {
@@ -322,189 +320,239 @@ public class Calc {
 
     }
 
-    public static void plastmoBundskruer (){
+    public static void plastmoBundskruer() {
         int quantity = 3;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 9) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 9) {
 
-
-                    carportPartList.add(new Part(quantity, "Skruer til tagplader", mv.getMaterial_id(),
-                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
-                    break;
-
+                carportPartList.add(new Part(quantity, "Skruer til tagplader", m.getMaterialID()));
+                break;
             }
         }
-
     }
 
-    public static void hulbånd (){
+
+    public static void hulbånd() {
         int quantity = 2;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 10) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 10) {
 
-
-                carportPartList.add(new Part(quantity, "Til vindkryds på spær", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til vindkryds på spær", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
 
-    public static void universalHøjre (){
+    public static void universalHøjre() {
         int quantity = 15;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 11) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 11) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af spær på rem", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af af spær på rem", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void universalVenstre (){
+
+    public static void universalVenstre() {
         int quantity = 15;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 11) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 12) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af spær på rem", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af spær på rem", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void skruer200stk (){
+
+    public static void skruer200stk() {
         int quantity = 1;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 12){
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 13) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af stern og vandbræt", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af stern og vandbrædt", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void beslagskruer (){
+
+    public static void beslagskruer() {
         int quantity = 3;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 13) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 14) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af universalbeslag + hulbånd", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af universalbeslag + hulbånd", m.getMaterialID()));
                 break;
-
             }
         }
-
     }
-    public static void bræddebolt (){
+
+    public static void bræddebolt() {
         int quantity = 18;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 14) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 14) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void firkantskriver (){
+
+    public static void firkantskriver() {
         int quantity = 12;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 15) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 15) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void skruer400stk (){
+
+    public static void skruer400stk() {
         int quantity = 2;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 16) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 16) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af yderste beklædning", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af yderste beklædning", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void skruere00stk (){
+
+    public static void skruer300stk() {
         int quantity = 2;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 17) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 17) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af inderste beklædning", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af inderste beklædning", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void stalddørsgreb (){
+
+    public static void stalddørsgreb() {
         int quantity = 1;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 18) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 18) {
 
-
-                carportPartList.add(new Part(quantity, "Til lås på dør i skur", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til lås på dør i skur", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void tHængsel (){
+
+    public static void tHængsel() {
         int quantity = 2;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 19) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 19) {
 
-
-                carportPartList.add(new Part(quantity, "Til skurdør", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til skurdør", m.getMaterialID()));
                 break;
-
             }
         }
 
     }
-    public static void vinkelbeslag (){
+
+    public static void vinkelbeslag() {
         int quantity = 32;
-        for (MaterialVariants mv : materialVariantsList) {
-            if (mv.getMaterial_id() == 20) {
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 20) {
 
-
-                carportPartList.add(new Part(quantity, "Til montering af løsholter i skur", mv.getMaterial_id(),
-                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                carportPartList.add(new Part(quantity, "Til montering af løsholter i skur", m.getMaterialID()));
                 break;
-
             }
         }
 
+    }
+
+    public static void vindskeder(int carportWidth) {
+        int quantity = 2;
+        double lengthNeeded = carportWidth * 1.33;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 21) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Vindskeder på rejsning", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+    public static void sternbrædderTilSiderCarp(int carportLength) {
+        int quantity = 2;
+        double lengthNeeded = carportLength * 1.66;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 21) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Sternbrædder til siderne carport", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+    public static void sternbrædderTilSiderSkur(int shedLength) {
+        int quantity = 1;
+        double lengthNeeded = shedLength * 2.45;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 21) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Sternbrædder til siderne skur", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+    public static void taglægterTilSpær(int carportWidth) {
+        int quantity = 21;
+        double lengthNeeded = carportWidth * 1.5;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 22) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Til montering på spær", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+    public static void toplægterTilRygsten(int carportWidth) {
+        int quantity = 2;
+        double lengthNeeded = carportWidth * 1.16;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 22) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Til montering af rygsten", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+    public static void skruer100(int carportWidth) {
+        int quantity = 2;
+
+        for (Material m : materialsList) {
+            if (m.getMaterialID() == 23) {
+                carportPartList.add(new Part(quantity, "Til taglægter", m.getMaterialID()));
+            }
+        }
     }
 }
 

@@ -58,15 +58,67 @@ public class HelperFunctions {
 
     }
 
-    public static void makeFlatCarport(int carport_length, int carport_width){
+    public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed){
+
+        Calc.understernForOgBag(carport_width);
+        Calc.understernSider(carport_length);
+        Calc.oversternFor(carport_width);
+        Calc.oversternSider(carport_length);
+        Calc.remmeSider(carport_length);
+        Calc.spærTilRem(carport_width, carport_length);
+        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
+        Calc.vandbrædtSider(carport_length);
+        Calc.vandbrædtFor(carport_width);
+        Calc.tagpladerLang(carport_length);
+        Calc.tagpladerKort(carport_length);
+        Calc.plastmoBundskruer();
+        Calc.hulbånd();
+        Calc.universalHøjre();
+        Calc.universalVenstre();
+        Calc.skruer200stk();
+        Calc.beslagskruer();
+        Calc.bræddebolt();
+        Calc.firkantskriver();
+        Calc.skruer400stk();
+        Calc.skruer300stk();
 
 
     }
 
-    public static void makeFlatCarportToolShed(int carport_length, int carport_width){
+    public static void makeFlatCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed){
+
+        Calc.understernForOgBag(carport_width);
+        Calc.understernSider(carport_length);
+        Calc.oversternFor(carport_width);
+        Calc.oversternSider(carport_length);
+        Calc.lægteTilZDørSkur();
+        Calc.løsholterSkurGavle(toolShedWidth);
+        Calc.løsholterSkurSider(toolShedLength);
+        Calc.remmeSider(carport_length);
+        Calc.spærTilRem(carport_width, carport_length);
+        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
+        Calc.vandbrædtSider(carport_length);
+        Calc.vandbrædtFor(carport_width);
+        Calc.tagpladerLang(carport_length);
+        Calc.tagpladerKort(carport_length);
+        Calc.plastmoBundskruer();
+        Calc.hulbånd();
+        Calc.universalHøjre();
+        Calc.universalVenstre();
+        Calc.skruer200stk();
+        Calc.beslagskruer();
+        Calc.bræddebolt();
+        Calc.firkantskriver();
+        Calc.skruer400stk();
+        Calc.skruer300stk();
+        Calc.stalddørsgreb();
+        Calc.tHængsel();
+        Calc.vinkelbeslag();
 
     }
     public static void makeRaisedCarport(int carport_length, int carport_width){
+
+
 
 
     }

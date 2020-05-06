@@ -30,29 +30,49 @@ public class MakeOrder extends Command {
 
         boolean hasToolShed = HelperFunctions.hasToolShed(toolshed_length_id, toolshed_width_id);
 
-        String action = HelperFunctions.checkAction(flatroof, raisedroof, hasToolShed);
 
 
         boolean isValid = HelperFunctions.checkSkurSize(toolshed_length, toolshed_width, carport_length, carport_width);
 
-
+        String action = HelperFunctions.checkAction(flatroof, raisedroof, hasToolShed);
         if (isValid) {
 
             int user_id = LogicFacade.getUserId(email);
-            int[] IDs = LogicFacade.insertCarport(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
-            int carport_id = IDs[0];
-            int order_id = IDs[1];
+
+            int carport_id = 0;
+            int order_id;
+            int[] IDs;
 
             switch (action) {
 
                 case "flatcarport":
 
+                    IDs = LogicFacade.insertCarport(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
+                    carport_id = IDs[0];
+                    order_id = IDs[1];
+
+                    HelperFunctions.makeFlatCarport(carport_length, carport_width, toolshed_length, hasToolShed);
+                    LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
+
                     break;
+
                 case "flatcarporttoolshed":
+
+                    IDs = LogicFacade.insertCarportWithToolShed(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id);
+                    carport_id = IDs[0];
+                    order_id = IDs[1];
+
+                    HelperFunctions.makeFlatCarportToolShed(carport_length, carport_width, toolshed_length, toolshed_width, hasToolShed);
+                    LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
                     break;
+
                 case "raisedroof":
+
+
                     break;
                 case "raisedrooftoolshed":
+
+
                     break;
 
             }

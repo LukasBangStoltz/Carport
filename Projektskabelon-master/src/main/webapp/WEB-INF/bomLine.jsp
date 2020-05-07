@@ -26,7 +26,6 @@
         <c:forEach var="bomitems" items="${sessionScope.bomlist}">
 
             <tr>
-
                 <td>${bomitems.name}</td>
                 <td>${bomitems.dimension}</td>
                 <td>${bomitems.length}</td>

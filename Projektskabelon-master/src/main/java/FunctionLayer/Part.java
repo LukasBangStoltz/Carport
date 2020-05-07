@@ -18,11 +18,11 @@ public class Part {
         this.price = price;
     }
 
-    public Part(int quantity, String description, int material_id) {
+   /* public Part(int quantity, String description, int material_id) {
         this.quantity = quantity;
         this.description = description;
         this.material_id = material_id;
-    }
+    }*/
 
     public int getQuantity() {
         return quantity;

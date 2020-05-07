@@ -438,6 +438,24 @@ public class Calc {
         }
     }
 
+    public static void vandBrædtPåVindskeder(int carportWidth) {
+        int quantity = 2;
+        double lengthNeeded = carportWidth * 1.33;
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 6) {
+                if (lengthNeeded <= mv.getLength()) {
+                    carportPartList.add(new Part(quantity, "Vandbræt på vindskeder", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                }
+            }
+        }
+    }
+
+
+
+
+
     public static void sternbrædderTilSiderCarp(int carportLength) {
         int quantity = 2;
         double lengthNeeded = carportLength * 1.66;

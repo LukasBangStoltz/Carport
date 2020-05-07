@@ -65,7 +65,8 @@
 
                 <form action="FrontController" method="post">
                     <input type="hidden" name="target" value="makeorder">
-                    <input type="hidden" name="carporttype" value="carportwithtilt">
+                    <input type="hidden" name="raisedroof" value="carportwithtilt">
+                    <input type="hidden" name="carporttype" value="raisedroof">
 
                     <div class="form-group col-md-7">
                         <label for="carportlength"><p>Carport længde </p></label>

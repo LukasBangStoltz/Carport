@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 import DBAccess.*;
+import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.util.List;
 
@@ -53,10 +54,14 @@ public class LogicFacade {
         CarportPartMapper.insertCarportPart(orderID, listOfParts, carportID);
     }
 
-    public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
-        return OrderMapper.insertCarport(carport_type, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id);
+    public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
+        return OrderMapper.insertCarport(carport_type, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
     }
 
+    public static int[] insertCarportWithToolShed(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
+        return OrderMapper.insertCarportWithToolShed(carport_type, hasToolShed, user_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id);
+
+    }
 
     public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
         return MaterialMapper.GetMaterialVariants();

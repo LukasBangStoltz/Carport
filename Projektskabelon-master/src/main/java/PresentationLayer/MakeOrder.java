@@ -38,6 +38,7 @@ public class MakeOrder extends Command {
 
             int user_id = LogicFacade.getUserId(email);
 
+
             int carport_id = 0;
             int order_id;
             int[] IDs;
@@ -79,6 +80,7 @@ public class MakeOrder extends Command {
             request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
 
             return "bomLine";
+
         } else {
 
             request.setAttribute("error", "Dit skurs mål må ikke overskride dine carports mål");

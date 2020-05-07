@@ -50,6 +50,7 @@ public class OrderMapper {
                     SQL = "INSERT INTO orders (user_id, carport_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id) VALUES (?,?,?,?,?,?)";
 
 
+
                     ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
 
@@ -65,6 +66,7 @@ public class OrderMapper {
 
                 }
             }
+
 
             ids = ps.getGeneratedKeys();
             if (ids.next()) {

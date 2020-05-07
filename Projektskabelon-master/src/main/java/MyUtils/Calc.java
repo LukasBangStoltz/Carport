@@ -440,7 +440,7 @@ public class Calc {
 
     public static void sternbrædderTilSiderCarp(int carportLength) {
         int quantity = 2;
-        double lengthNeeded = carportLength * 1.66;
+        double lengthNeeded = carportLength * 0.82;
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 21) {
@@ -468,7 +468,7 @@ public class Calc {
 
     public static void taglægterTilSpær(int carportWidth) {
         int quantity = 21;
-        double lengthNeeded = carportWidth * 1.5;
+        double lengthNeeded = carportWidth * 0.74;
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 22) {
@@ -482,7 +482,7 @@ public class Calc {
 
     public static void toplægterTilRygsten(int carportWidth) {
         int quantity = 2;
-        double lengthNeeded = carportWidth * 1.16;
+        double lengthNeeded = carportWidth * 0.575;
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 22) {
@@ -507,7 +507,7 @@ public class Calc {
     // tagpakke
     public static void tagpladerLang(int carportLength) {
         int quantity = 6;
-        double lengthNeeded = carportLength;
+        double lengthNeeded = carportLength = 0;
 
 
         for (MaterialVariants mv : materialVariantsList) {
@@ -536,6 +536,94 @@ public class Calc {
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
                     break;
                 }
+            }
+        }
+
+    }
+
+    public static void OvenPåTagfodslægte(int carportLength) {
+        int quantity = 3;
+        double lengthNeeded = carportLength * 0.74;
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 25) {
+                if (lengthNeeded <= mv.getLength()) {
+
+                    carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                    break;
+                }
+            }
+        }
+
+    }
+
+    public static void DobbeltSSort(int carportWidth, int carportLength) {
+        int quantity = (int) Math.ceil((carportLength * carportWidth) * 11.4 / 10000);
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 26) {
+                    carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                            mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                    break;
+            }
+        }
+
+    }
+
+    public static void DobbeltRygstenSort(int carportLength, int carportWidth) {
+        int quantity = (int) Math.ceil(((carportLength * carportWidth) / 100) * 0.8);
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 27) {
+                carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                break;
+            }
+        }
+
+    }
+
+    public static void toplægteHolder(int carportSpærAntal) {
+        int quantity = carportSpærAntal;
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 28) {
+                carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                break;
+            }
+        }
+
+    }
+
+    public static void RygstenBeslag(int rygstenAntal) {
+        int quantity = rygstenAntal;
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 29) {
+                carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                break;
+            }
+        }
+
+    }
+
+    public static void tagstenBindereOgNakkekrog() {
+        int quantity = 2;
+
+
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 30) {
+                carportPartList.add(new Part(quantity, "Til montering oven på tagfodslægte", mv.getMaterial_id(),
+                        mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
+                break;
             }
         }
 

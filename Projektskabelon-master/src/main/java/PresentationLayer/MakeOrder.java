@@ -36,20 +36,46 @@ public class MakeOrder extends Command {
             int order_id = IDs[1];
 
 
-            Calc.understernForOgBag(carport_width);
-            Calc.understernSider(carport_width);
-            Calc.oversternFor(carport_length);
-            Calc.oversternSider(carport_length);
-            //Calc.lægteTilZDørSkur();
-            Calc.remmeSider(carport_length);
-            Calc.spærTilRem(carport_width, carport_length);
-            Calc.vandbrædtSider(carport_width);
 
-            LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
-            
-            request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
+                // træ og tagplader
+                Calc.understernForOgBag(carport_width);
+                Calc.understernSider(carport_width);
+                Calc.oversternFor(carport_length);
+                Calc.oversternSider(carport_length);
+                Calc.remmeSider(carport_length);
+                Calc.spærTilRem(carport_width, carport_length);
+                Calc.vandbrædtSider(carport_width);
+                Calc.vandbrædtFor(carport_length);
+                Calc.calcStolper(carport_length,toolshed_length,hasToolShed);
 
-            return "bomLine";
+                if(hasToolShed == true) {
+                    Calc.lægteTilZDørSkur();
+                    Calc.løsholterSkurGavle(carport_width);
+                    Calc.løsholterSkurSider(carport_length);
+                }
+
+                // Beslag og skruer
+                Calc.plastmoBundskruer();
+                Calc.hulbånd();
+                Calc.universalHøjre();
+                Calc.universalVenstre();
+                Calc.skruer200stk();
+                Calc.beslagskruer();
+                Calc.bræddebolt();
+                Calc.firkantskriver();
+                Calc.skruer300stk();
+                Calc.skruer400stk();
+                Calc.stalddørsgreb();
+                Calc.tHængsel();
+                Calc.vinkelbeslag();
+
+
+                LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
+
+                request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
+
+                return "bomLine";
+
         } else {
 
             request.setAttribute("error", "Dit skurs mål må ikke overskride dine carports mål");

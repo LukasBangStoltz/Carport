@@ -1,6 +1,6 @@
 package MyUtils;
 
-import FunctionLayer.LogicFacade;
+import java.util.ArrayList;
 
 public class HelperFunctions {
 
@@ -48,7 +48,7 @@ public class HelperFunctions {
             action = "flatcarporttoolshed";
         }
         if (raisedCarPort != null && !hasToolShed) {
-            action = "raisedcarport";
+            action = "raisedroof";
         }
         if (raisedCarPort != null && hasToolShed) {
             action = "raisedrooftoolshed";
@@ -122,21 +122,31 @@ public class HelperFunctions {
         Calc.vindskeder(carport_width);
         Calc.sternbrædderTilSiderCarp(carport_length);
         Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.spærTilRem(carport_width,carport_length);
+        Calc.spærTilRem(carport_width, carport_length);
         Calc.remmeSider(carport_length);
         Calc.vandBrædtPåVindskeder(carport_width);
         Calc.taglægterTilSpær(carport_width);
         Calc.toplægterTilRygsten(carport_width);
+
+
         Calc.universalVenstre();
         Calc.universalHøjre();
         Calc.vinkelbeslag();
         Calc.skruer200stk();
         Calc.beslagskruer();
-        // mangler 100 stk skruer til taglægter
+        Calc.skruer100Raised();
         Calc.bræddebolt();
         Calc.firkantskriver();
         Calc.skruer200stk();
-        // mangler skruer 300 stk til montering af inderste bræt ved beklædning
+        Calc.skruer300stk();
+
+        Calc.dobbeltSSort(carport_width, carport_length);
+        Calc.rygstenSort(carport_length, carport_width);
+        // todo: Calc.toplægteHolder();
+        //todo: Calc.rygstenBeslag();
+        Calc.tagstenBindereOgNakkekrog();
+
+
     }
 
     public static void makeRaisedCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
@@ -144,17 +154,17 @@ public class HelperFunctions {
         Calc.sternbrædderTilSiderCarp(carport_length);
         Calc.sternbrædderTilSiderSkur(toolShedLength);
         Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.spærTilRem(carport_width,carport_length);
+        Calc.spærTilRem(carport_width, carport_length);
         Calc.remmeSider(carport_length);
         Calc.løsholterSkurSider(toolShedLength);
         Calc.løsholterSkurGavle(toolShedWidth);
         Calc.vandBrædtPåVindskeder(carport_width);
-        // mangler beklædning af gavle og skur
-        // mangler tagfodslægte..
-        // mangler taglægte til z på bagside af dør
+        Calc.ovenPåTagfodslægte(carport_length);
+        Calc.lægteTilZDørSkur();
         Calc.taglægterTilSpær(carport_width);
         Calc.toplægterTilRygsten(carport_width);
         // mangler tagpakken
+
 
         Calc.universalHøjre();
         Calc.universalVenstre();
@@ -163,12 +173,24 @@ public class HelperFunctions {
         Calc.vinkelbeslag();
         Calc.skruer200stk();
         Calc.beslagskruer();
-        // mangler 100 stk skruer til taglægter
-
+        Calc.skruer100Raised();
         Calc.bræddebolt();
         Calc.firkantskriver();
         Calc.skruer200stk();
-        // mangler skruer 300 stk til montering af inderste bræt ved beklædning
+        Calc.skruer300stk();
+
+
+        Calc.dobbeltSSort(carport_width, carport_length);
+        Calc.rygstenSort(carport_length, carport_width);
+        // todo: Calc.toplægteHolder();
+        //todo: Calc.rygstenBeslag();
+        Calc.tagstenBindereOgNakkekrog();
     }
 
+    public static void resetBom() {
+        if (Calc.carportPartList != null) {
+            Calc.carportPartList = new ArrayList<>();
+        }
+
+    }
 }

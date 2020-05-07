@@ -18,13 +18,11 @@ public class Calc {
 
         int quantity = 4;
         double lengthNeeded = carportWidth * 0.60;
-        double finalLengthNeeded = 0;
 
         //int quantity, String description, int material_id, int mv_id, int length, int price
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 1) {
                 if (lengthNeeded <= mv.getLength()) {
-                    finalLengthNeeded = mv.getLength();
                     carportPartList.add(new Part(quantity, "understernbrædder til for & bagende", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
 
@@ -164,7 +162,6 @@ public class Calc {
 
     public static void lægteTilZDørSkur() {
         int quantity = 1;
-
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 3) {
                 carportPartList.add(new Part(quantity, "til z på bagside af dør", mv.getMaterial_id(),
@@ -250,7 +247,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 9) {
 
-                carportPartList.add(new Part(quantity, "Skruer til tagplader", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Skruer til tagplader", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -261,7 +258,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 10) {
 
-                carportPartList.add(new Part(quantity, "Til vindkryds på spær", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til vindkryds på spær", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -273,7 +270,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 11) {
 
-                carportPartList.add(new Part(quantity, "Til montering af af spær på rem", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af af spær på rem", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -285,7 +282,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 12) {
 
-                carportPartList.add(new Part(quantity, "Til montering af spær på rem", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af spær på rem", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -297,7 +294,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 13) {
 
-                carportPartList.add(new Part(quantity, "Til montering af stern og vandbrædt", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af stern og vandbrædt", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -309,7 +306,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 14) {
 
-                carportPartList.add(new Part(quantity, "Til montering af universalbeslag + hulbånd", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af universalbeslag + hulbånd", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -319,7 +316,7 @@ public class Calc {
         int quantity = 18;
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 14) {
-                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -331,7 +328,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 15) {
 
-                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af rem på stolper", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -343,7 +340,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 16) {
 
-                carportPartList.add(new Part(quantity, "Til montering af yderste beklædning", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af yderste beklædning", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -355,7 +352,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 17) {
 
-                carportPartList.add(new Part(quantity, "Til montering af inderste beklædning", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af inderste beklædning", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -367,7 +364,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 18) {
 
-                carportPartList.add(new Part(quantity, "Til lås på dør i skur", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til lås på dør i skur", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -379,7 +376,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 19) {
 
-                carportPartList.add(new Part(quantity, "Til skurdør", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til skurdør", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -391,7 +388,7 @@ public class Calc {
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 20) {
 
-                carportPartList.add(new Part(quantity, "Til montering af løsholter i skur", mv.getMaterial_id()));
+                carportPartList.add(new Part(quantity, "Til montering af løsholter i skur", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
                 break;
             }
         }
@@ -500,9 +497,9 @@ public class Calc {
     public static void skruer100Raised(int carportWidth) {
         int quantity = 2;
 
-        for (Material m : materialsList) {
-            if (m.getMaterialID() == 23) {
-                carportPartList.add(new Part(quantity, "Til taglægter", m.getMaterialID()));
+        for (MaterialVariants mv : materialVariantsList) {
+            if (mv.getMaterial_id() == 23) {
+                carportPartList.add(new Part(quantity, "Til taglægter", mv.getMaterial_id(),mv.getMaterialVariants_id(),mv.getLength(),mv.getPrice()));
             }
         }
     }

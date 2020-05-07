@@ -69,6 +69,7 @@ public class MaterialMapper {
                 MaterialVariants materialVariants = new MaterialVariants(materialVariants_id, material_id, length, price);
                 matVariantsList.add(materialVariants);
 
+
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());

@@ -74,7 +74,11 @@ public class MakeOrder extends Command {
 
                 request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
 
+
                 return "bomLine";
+
+
+
 
         } else {
 

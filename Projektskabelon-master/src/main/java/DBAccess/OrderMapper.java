@@ -50,7 +50,7 @@ public class OrderMapper {
 
             }
 
-            System.out.println("carport id generet");
+
 
             ids = ps.getGeneratedKeys();
             if (ids.next()) {

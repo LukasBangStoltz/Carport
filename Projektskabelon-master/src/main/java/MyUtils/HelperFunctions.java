@@ -37,20 +37,20 @@ public class HelperFunctions {
 
     }
 
-    public static String checkAction(String flatCarPort, String raisedCarPort, boolean hasToolShed){
+    public static String checkAction(String flatCarPort, String raisedCarPort, boolean hasToolShed) {
         String action = "";
 
-        if(flatCarPort != null && !hasToolShed){
+        if (flatCarPort != null && !hasToolShed) {
             action = "flatcarport";
 
         }
-        if(flatCarPort != null && hasToolShed){
+        if (flatCarPort != null && hasToolShed) {
             action = "flatcarporttoolshed";
         }
-        if(raisedCarPort !=null && !hasToolShed){
+        if (raisedCarPort != null && !hasToolShed) {
             action = "raisedcarport";
         }
-        if(raisedCarPort !=null && hasToolShed){
+        if (raisedCarPort != null && hasToolShed) {
             action = "raisedrooftoolshed";
         }
 
@@ -58,7 +58,7 @@ public class HelperFunctions {
 
     }
 
-    public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed){
+    public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);
         Calc.understernSider(carport_length);
@@ -85,7 +85,7 @@ public class HelperFunctions {
 
     }
 
-    public static void makeFlatCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed){
+    public static void makeFlatCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);
         Calc.understernSider(carport_length);
@@ -116,15 +116,21 @@ public class HelperFunctions {
         Calc.vinkelbeslag();
 
     }
-    public static void makeRaisedCarport(int carport_length, int carport_width){
 
+    public static void makeRaisedCarport(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
-
-
+        Calc.vindskeder(carport_width);
+        Calc.sternbrædderTilSiderCarp(carport_length);
+        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
+        Calc.spærTilRem(carport_width,carport_length);
+        Calc.remmeSider(carport_length);
+        Calc.vandBrædtPåVindskeder(carport_width);
+        Calc.taglægterTilSpær(carport_width);
+        Calc.toplægterTilRygsten(carport_width);
+        
     }
-    public static void makeRaisedCarportToolShed(int carport_length, int carport_width){
 
-
+    public static void makeRaisedCarportToolShed(int carport_length, int carport_width) {
 
 
     }

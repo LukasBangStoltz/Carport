@@ -18,7 +18,6 @@ public class MakeOrder extends Command {
         int toolshed_width_id = Integer.parseInt(request.getParameter("toolshedwidth"));
         String carportType = request.getParameter("carporttype");
         String email = String.valueOf(request.getSession().getAttribute("email"));
-        System.out.println("roodtypeid" +  carport_rooftype_id);
         int carport_length = LogicFacade.getCarportLengthFromId(carport_length_id);
         int carport_width = LogicFacade.getCarportWidthFromId(carport_width_id);
         int toolshed_length = LogicFacade.getToolShedLengthsFromId(toolshed_length_id);
@@ -68,6 +67,14 @@ public class MakeOrder extends Command {
                     break;
 
                 case "raisedroof":
+
+                    IDs = LogicFacade.insertCarport(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
+                    carport_id = IDs[0];
+                    order_id = IDs[1];
+
+
+
+
 
 
                     break;

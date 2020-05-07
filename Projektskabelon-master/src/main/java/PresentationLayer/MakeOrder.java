@@ -18,7 +18,6 @@ public class MakeOrder extends Command {
         int toolshed_width_id = Integer.parseInt(request.getParameter("toolshedwidth"));
         String carportType = request.getParameter("carporttype");
         String email = String.valueOf(request.getSession().getAttribute("email"));
-        System.out.println("roodtypeid" +  carport_rooftype_id);
         int carport_length = LogicFacade.getCarportLengthFromId(carport_length_id);
         int carport_width = LogicFacade.getCarportWidthFromId(carport_width_id);
         int toolshed_length = LogicFacade.getToolShedLengthsFromId(toolshed_length_id);

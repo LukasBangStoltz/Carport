@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Tegning</h1>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="610" width="760" x="0" y="0" viewBox="0,0,760,610" preserveAspectRatio="xMinYMin"> <defs>
+            <marker id="beginArrow" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto">
+                <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;"/>
+            </marker>
+            <marker id="endArrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto">
+                <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;"/>
+            </marker>
+        </defs> <line x1="50" y1="10" x2="50" y2="510" style="stroke:#000000;"/><line x1="50" y1="10" x2="50" y2="510" style="stroke:#000000;
+marker-start: url(#beginArrow);
+marker-end: url(#endArrow);"/>
+            <line x1="75" y1="665" x2="585" y2="665" style="stroke:#000000;"/><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="510" width="660" x="75" y="10" viewBox="0,0,660,510" preserveAspectRatio="xMinYMin"><rect x="0" y="0" height="510" width="660" style="stroke:#000000; fill: #ffffff" /><rect x="0" y="35" height="4" width="660" style="stroke:#000000; fill: #ffffff" /><rect x="0" y="475" height="4" width="660" style="stroke:#000000; fill: #ffffff" /><rect x="0" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="55" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="110" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="165" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="220" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="275" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="330" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="385" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="440" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="495" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="550" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="605" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="660" y="0" height="510" width="4" style="stroke:#000000; fill: #ffffff" /><rect x="108" y="33" height="8" width="8" style="stroke:#000000; fill: #ffffff" /><rect x="108" y="473" height="8" width="8" style="stroke:#000000; fill: #ffffff" /><rect x="408" y="33" height="8" width="8" style="stroke:#000000; fill: #ffffff" /><rect x="408" y="473" height="8" width="8" style="stroke:#000000; fill: #ffffff" /> <line x1="55" y1="35" x2="605" y2="475" style="stroke:#000000; stroke-dasharray: 5 5;"/> <line x1="55" y1="475" x2="605" y2="35" style="stroke:#000000; stroke-dasharray: 5 5;"/></svg></svg>
+
+    </body>
+</html>

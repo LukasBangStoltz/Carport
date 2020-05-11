@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 public class Drawing extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+
         int carportWidth = (int) request.getSession().getAttribute("carportWidth");
         int carportLength = (int) request.getSession().getAttribute("carportLength");
 
         String innerViewbox = String.format("0,0,%d,%d",carportLength, carportWidth);
-
         String outerViewbox = String.format("0,0,%d,%d",carportLength + 100, carportWidth + 100);
 
-
-
         Svg svgOuterDrawing = new Svg(carportLength + 100, carportWidth + 100, outerViewbox, 0, 0);
+        svgOuterDrawing.addArrowsDefs();
         Svg svgInnerDrawing = new Svg(carportLength, carportWidth, innerViewbox, 75, 10);
 
 
@@ -26,8 +25,17 @@ public class Drawing extends Command {
         svgInnerDrawing.addRect(0, 0, carportWidth, carportLength);
         svgInnerDrawing.addRect(0, 35, 4, carportLength);
         svgInnerDrawing.addRect(0, carportWidth - 35, 4, carportLength);
+
+
         //outer
-        svgOuterDrawing.addLine(50 , 50, 50, 100);
+        //carport width
+        svgOuterDrawing.addArrows(40,10,40, carportWidth+7);
+        svgOuterDrawing.addWidthText(20, carportWidth/2, carportWidth);
+
+        //carportlength
+        svgOuterDrawing.addArrows(75,carportWidth + 50,carportLength + 75,carportWidth + 50);
+        svgOuterDrawing.addLengthText( (carportLength + 150)/2, carportWidth + 70 , carportLength);
+
 
 
         //spær
@@ -57,9 +65,6 @@ public class Drawing extends Command {
     //kryds
         svgInnerDrawing.addDashLine(55,35,carportLength -55,carportWidth -35);
         svgInnerDrawing.addDashLine(55,carportWidth -35,carportLength -55,35);
-
-
-
 
         svgOuterDrawing.addSvgDrawing(svgInnerDrawing);
 

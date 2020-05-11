@@ -1,18 +1,22 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lukas
-  Date: 11-05-2020
-  Time: 10:26
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<h1>Tegning</h1>
-${requestScope.svgdrawing}
 
-</body>
-</html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../includes/header.inc" %>
+
+<div class="row">
+
+    <div class="col"></div>
+
+    <div class="col">
+        <h1 class="text-center my-5">Tegning over din carport</h1> <br><br><br>
+        <div class="my-3">
+        ${requestScope.svgdrawing}
+        </div>
+    </div>
+
+    <div class="col"></div>
+
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<%@include file="../includes/footer.inc"%>

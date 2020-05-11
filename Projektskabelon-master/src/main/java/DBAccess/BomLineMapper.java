@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.Map;
 
 public class BomLineMapper {
+
     public static void insertPlanksToBomLine(Map<PlankMaterial, Integer> flatPlankMatNeeded, int carportId) throws LoginSampleException {
         try {
             Connection con = Connector.connection();

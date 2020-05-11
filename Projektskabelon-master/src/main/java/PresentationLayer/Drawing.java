@@ -11,49 +11,62 @@ public class Drawing extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         int carportWidth = (int) request.getSession().getAttribute("carportWidth");
         int carportLength = (int) request.getSession().getAttribute("carportLength");
-        String viewbox = "0,0,%d,%d";
-        String viewbox2 = "0, 0, %d, %d";
-        String.format(viewbox2, carportLength + 200, carportWidth + 200);
-        String.format(viewbox, carportLength, carportWidth);
 
-        Svg svgOuterDrawing = new Svg(carportWidth + 100,carportLength + 100,viewbox2,0,0);
-        svgOuterDrawing.addLine(0, 0, 0, 800);
-        Svg svg = new Svg(carportLength, carportWidth, viewbox,0,0);
-        svg.addRect(0,0,carportWidth,carportLength);
-        svg.addRect(0,35,4,carportLength);
-        svg.addRect(0,carportWidth-35,4,carportLength);
+        String innerViewbox = String.format("0,0,%d,%d",carportLength, carportWidth);
+
+        String outerViewbox = String.format("0,0,%d,%d",carportLength + 100, carportWidth + 100);
+
+
+
+        Svg svgOuterDrawing = new Svg(carportLength + 100, carportWidth + 100, outerViewbox, 0, 0);
+        Svg svgInnerDrawing = new Svg(carportLength, carportWidth, innerViewbox, 75, 10);
+
+
+        //inner
+        svgInnerDrawing.addRect(0, 0, carportWidth, carportLength);
+        svgInnerDrawing.addRect(0, 35, 4, carportLength);
+        svgInnerDrawing.addRect(0, carportWidth - 35, 4, carportLength);
+        //outer
+        svgOuterDrawing.addLine(50 , 50, 50, 100);
 
 
         //spær
         int spær = 0;
-        while (spær <= carportLength  ) {
-            svg.addRect(spær, 0, carportWidth, 4);
+        while (spær <= carportLength) {
+            svgInnerDrawing.addRect(spær, 0, carportWidth, 4);
             spær = spær + 55;
 
         }
 
         //stolper
         int stolpe = 108;
-        while(stolpe <= carportLength){
-            svg.addRect(stolpe,33,8,8);
-            svg.addRect(stolpe,carportWidth-37,8,8);
-            stolpe += 300;
-        }
-
-
-
-        //kryds
-        svg.addLine(55,35, carportLength - 55,carportWidth - 35);
-        svg.addLine(55,carportWidth - 35, carportLength - 55,35);
-
-
-
-
-
-
-        request.setAttribute("svgdrawing", svg.toString());
-        return "drawing";
-
-
+        if (carportLength < 410) {
+            svgInnerDrawing.addRect(stolpe, 33, 8, 8);
+            svgInnerDrawing.addRect(stolpe, carportWidth - 37, 8, 8);
+            svgInnerDrawing.addRect(carportLength-8, carportWidth - 37, 8, 8);
+            svgInnerDrawing.addRect(carportLength-8, 33, 8, 8);
+        } else{
+            while (stolpe <= carportLength) {
+                svgInnerDrawing.addRect(stolpe, 33, 8, 8);
+                svgInnerDrawing.addRect(stolpe, carportWidth - 37, 8, 8);
+                stolpe += 300;
+            }
     }
+
+
+    //kryds
+        svgInnerDrawing.addDashLine(55,35,carportLength -55,carportWidth -35);
+        svgInnerDrawing.addDashLine(55,carportWidth -35,carportLength -55,35);
+
+
+
+
+        svgOuterDrawing.addSvgDrawing(svgInnerDrawing);
+
+        request.setAttribute("svgdrawing",svgOuterDrawing.toString());
+
+        return"drawing";
+
+
+}
 }

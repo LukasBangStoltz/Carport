@@ -11,15 +11,22 @@ public class MakeOrder extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         int carport_tilt_id = Integer.parseInt(request.getParameter("roofdegree"));
+
         int carport_length_id = Integer.parseInt(request.getParameter("carportlength"));
+
         int carport_width_id = Integer.parseInt(request.getParameter("carportwidth"));
         int carport_rooftype_id = Integer.parseInt(request.getParameter("rooftype"));
         int toolshed_length_id = Integer.parseInt(request.getParameter("toolshedlength"));
         int toolshed_width_id = Integer.parseInt(request.getParameter("toolshedwidth"));
         String carportType = request.getParameter("carporttype");
         String email = String.valueOf(request.getSession().getAttribute("email"));
+
         int carport_length = LogicFacade.getCarportLengthFromId(carport_length_id);
+        request.getSession().setAttribute("carportLength", carport_length);
+
         int carport_width = LogicFacade.getCarportWidthFromId(carport_width_id);
+        request.getSession().setAttribute("carportWidth", carport_width);
+
         int toolshed_length = LogicFacade.getToolShedLengthsFromId(toolshed_length_id);
         int toolshed_width = LogicFacade.getToolShedWidthsFromId(toolshed_width_id);
 

@@ -24,8 +24,10 @@
 
         </div>
 
-        <div class="col-3"></div>
 
+
+        <div class="col-3"></div>
+        <a href="FrontController?target=drawing"> tegning </a>
 
     </div>
 </div>

@@ -17,6 +17,7 @@ abstract class Command {
         commands.put("kurvpage", new KurvPage());
         commands.put("makeorder", new MakeOrder());
         commands.put("logout", new LogOut());
+        commands.put("drawing", new Drawing());
 
     }
 

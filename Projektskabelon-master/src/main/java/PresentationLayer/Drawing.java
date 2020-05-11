@@ -12,14 +12,17 @@ public class Drawing extends Command {
         int carportWidth = (int) request.getSession().getAttribute("carportWidth");
         int carportLength = (int) request.getSession().getAttribute("carportLength");
         String viewbox = "0,0,%d,%d";
+        String viewbox2 = "0, 0, %d, %d";
+        String.format(viewbox2, carportLength + 200, carportWidth + 200);
         String.format(viewbox, carportLength, carportWidth);
 
-
+        Svg svgOuterDrawing = new Svg(carportWidth + 100,carportLength + 100,viewbox2,0,0);
+        svgOuterDrawing.addLine(0, 0, 0, 800);
         Svg svg = new Svg(carportLength, carportWidth, viewbox,0,0);
         svg.addRect(0,0,carportWidth,carportLength);
         svg.addRect(0,35,4,carportLength);
         svg.addRect(0,carportWidth-35,4,carportLength);
-        //  Svg svgInnerDrawing = new Svg(900,800,"0,0,900,800",0,0);
+
 
         //spær
         int spær = 0;
@@ -40,7 +43,8 @@ public class Drawing extends Command {
 
 
         //kryds
-        svg.addLine(55,35,400,carportWidth - 35);
+        svg.addLine(55,35, carportLength - 55,carportWidth - 35);
+        svg.addLine(55,carportWidth - 35, carportLength - 55,35);
 
 
 

@@ -1,0 +1,10 @@
+Frontend stykliste fladttag, altså alle materialerne på jsp siden printes. Samme med hældning.(chris)
+
+backend calc for materialer til raisedroof. (seb og luke)
+
+lave en switch case på makeorder, der tjekker hvad brugeren indtaster, og derudfra bliver der lavet action. (Sumit Og Phillip)
+
+Rydde op i koden.(fælles)
+
+Fylde databasen med alle materialer, tagpakken etc. (chris)
+

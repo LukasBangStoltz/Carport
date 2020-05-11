@@ -27,14 +27,14 @@
         <div class="col mb-5">
             <h3 class="mb-3" style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport med
                 rejsning</h3>
-            <a href="FrontController?target=redirect&destination=carportmedrejsning">
+            <a href="FrontController?target=redirect&destination=carporttilt">
                 <img src="images/fog_carport_med_rejsning.jpg">
             </a>
         </div>
         <div class="col mb-5">
             <h3 class="mb-3" style="color: dimgray; font-family: sans-serif; font-weight: bold">Carport med fladt
                 tag</h3>
-            <a href="FrontController?target=redirect&destination=carportmedfladttag">
+            <a href="FrontController?target=redirect&destination=carportflat">
                 <img src="images/fog_carport_fladt_tag.jpg">
             </a>
         </div>

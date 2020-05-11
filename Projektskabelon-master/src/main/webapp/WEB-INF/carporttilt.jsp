@@ -65,6 +65,9 @@
 
                 <form action="FrontController" method="post">
                     <input type="hidden" name="target" value="makeorder">
+                    <input type="hidden" name="raisedroof" value="carportwithtilt">
+                    <input type="hidden" name="carporttype" value="raisedroof">
+
                     <div class="form-group col-md-7">
                         <label for="carportlength"><p>Carport længde </p></label>
                         <select class="form-control" name="carportlength" id="carportlength">
@@ -92,11 +95,11 @@
                     </div>
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="raisedrooftype"><p>Tag </p></label>
-                        <select class="form-control" name="raisedrooftype"id="raisedrooftype">
+                        <label for="rooftype"><p>Tag </p></label>
+                        <select class="form-control" name="rooftype"id="rooftype">
 
                         <c:forEach var="raisedRoof" items="${applicationScope.raisedrooftypelist}">
-                            <option value="${raisedRoof.raisedRoof_id}">${raisedRoof.raisedRoof_type} </option>
+                            <option value="${raisedRoof.roof_id}">${raisedRoof.name} </option>
                         </c:forEach>
 
                         </select>

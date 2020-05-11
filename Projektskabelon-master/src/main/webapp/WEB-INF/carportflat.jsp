@@ -63,6 +63,9 @@
 
                 <form action="FrontController" method="post">
                     <input type="hidden" name="target" value="makeorder">
+                    <input type="hidden" name="flatroof" value="carportflatroof">
+                    <input type="hidden" name="roofdegree" value="0">
+                    <input type="hidden" name="carporttype" value="flatroof">
                     <div class="form-group col-md-7">
                         <label for="carportlength"><p>Carport længde </p></label>
                         <select class="form-control" name="carportlength" id="carportlength">
@@ -91,11 +94,11 @@
                     </div>
 
                     <div class="form-group col-md-7 mt-2">
-                        <label for="flatrooftype"><p>Tag </p></label>
-                        <select class="form-control" name="flatrooftype" id="flatrooftype">
+                        <label for="rooftype"><p>Tag </p></label>
+                        <select class="form-control" name="rooftype" id="rooftype">
                             <c:forEach var="flatrooftype" items="${applicationScope.flatrooftypelist}">
 
-                                <option value="${flatrooftype.flatRoof_id}">${flatrooftype.flatRoof_type}</option>
+                                <option value="${flatrooftype.roof_id}">${flatrooftype.name}</option>
 
                             </c:forEach>
 
@@ -119,7 +122,7 @@
                         <label for="toolshedlength"><p>Redskabsrum længde </p></label>
                         <select class="form-control" name="toolshedlength" id="toolshedlength">
 
-                            <option value="0">jeg ønsker ikke redskabsrum</option>
+                            <option value="0">Jeg ønsker ikke redskabsrum</option>
 
                             <c:forEach var="toolshedlength" items="${applicationScope.toolshedlengthslist}">
 

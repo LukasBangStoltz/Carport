@@ -10,14 +10,14 @@ public class InitializeLists {
 
     private static List<CarportWidth> widthList = null;
     private static List<CarportLength> lengthList = null;
-    private static List<FlatRoofType> flatrooftypelist = null;
-    private static List<RaisedRoofType> raisedRoofTypeList = null;
+    private static List<RoofType> flatrooftypelist = null;
+    private static List<RoofType> raisedRoofTypeList = null;
     private static List<RoofTilt> raisedRoofDegreeList = null;
     private static List<ToolShedLength> toolShedLengthList = null;
     private static List<ToolShedWidth> toolShedWidthList = null;
-    private static ArrayList<PlankMaterial> plankMaterialList = null;
-    private static ArrayList<FlatScrewMaterial> flatScrewMaterialList = null;
-
+    private static List<Material> materialList = null;
+    private static List<MaterialVariants> matVariantsList = null;
+    private static List<BomLine> bomLineList = null;
 
     public static List<CarportWidth> getCarportWidthList() {
 
@@ -34,6 +34,7 @@ public class InitializeLists {
         return widthList;
 
     }
+
     public static List<CarportLength> getCarportLengthList() {
 
         if (lengthList == null) {
@@ -49,7 +50,8 @@ public class InitializeLists {
         return lengthList;
 
     }
-    public static List<FlatRoofType> getFlatRoofTypeList() {
+
+    public static List<RoofType> getFlatRoofTypeList() {
 
         if (flatrooftypelist == null) {
 
@@ -65,9 +67,9 @@ public class InitializeLists {
 
     }
 
-    public static List<RaisedRoofType> getRaisedRoofTypeList(){
+    public static List<RoofType> getRaisedRoofTypeList() {
 
-        if(raisedRoofTypeList == null){
+        if (raisedRoofTypeList == null) {
 
             try {
                 raisedRoofTypeList = LogicFacade.GetAllRaisedRoofType();
@@ -80,9 +82,9 @@ public class InitializeLists {
         return raisedRoofTypeList;
     }
 
-public static List<RoofTilt> getAllRaisedRoofDegrees(){
+    public static List<RoofTilt> getAllRaisedRoofDegrees() {
 
-        if(raisedRoofDegreeList == null){
+        if (raisedRoofDegreeList == null) {
 
             try {
                 raisedRoofDegreeList = LogicFacade.GetAllRaisedRoofDegress();
@@ -94,10 +96,11 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
 
         return raisedRoofDegreeList;
 
-}
-    public static List<ToolShedLength> getAllToolShedLengths(){
+    }
 
-        if(toolShedLengthList == null){
+    public static List<ToolShedLength> getAllToolShedLengths() {
+
+        if (toolShedLengthList == null) {
 
             try {
                 toolShedLengthList = LogicFacade.GetAllToolShedLengths();
@@ -110,9 +113,10 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
         return toolShedLengthList;
 
     }
-    public static List<ToolShedWidth> getAllToolShedWidths(){
 
-        if(toolShedWidthList == null){
+    public static List<ToolShedWidth> getAllToolShedWidths() {
+
+        if (toolShedWidthList == null) {
 
             try {
                 toolShedWidthList = LogicFacade.GetAllToolShedWidhts();
@@ -126,39 +130,49 @@ public static List<RoofTilt> getAllRaisedRoofDegrees(){
 
     }
 
-    public static ArrayList<PlankMaterial> getAllFlatPlankMaterial() {
+    public static List<Material> getMaterialList() {
 
-        if (plankMaterialList == null) {
+        if (materialList == null) {
 
             try {
-                plankMaterialList = LogicFacade.GetAllFlatPlanksMat();
+                materialList = LogicFacade.GetMaterials();
             } catch (LoginSampleException e) {
                 e.printStackTrace();
             }
 
         }
 
-        return plankMaterialList;
+        return materialList;
 
     }
 
-    public static ArrayList<FlatScrewMaterial> getAllFlatScrewMaterial() {
+    public static List<MaterialVariants> getMatVariantsList() {
 
-        if (flatScrewMaterialList == null) {
+        if (matVariantsList == null) {
 
             try {
-                flatScrewMaterialList = LogicFacade.GetAllFlatScrewMaterial();
+                matVariantsList = LogicFacade.GetMaterialVariants();
             } catch (LoginSampleException e) {
                 e.printStackTrace();
             }
 
         }
 
-        return flatScrewMaterialList;
+        return matVariantsList;
 
     }
 
+    public static List<BomLine> getBomList(int carport_id) {
 
+        try {
+            bomLineList = LogicFacade.getBomLineFromCarport(carport_id);
+        } catch (LoginSampleException e) {
+            e.printStackTrace();
+        }
+
+        return bomLineList;
+
+    }
 
 
 }

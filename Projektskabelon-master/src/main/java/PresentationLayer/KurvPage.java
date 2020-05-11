@@ -28,6 +28,6 @@ public class KurvPage extends Command {
         request.setAttribute("toolshedwidth", toolshedwidth);
         request.setAttribute("comments", comments);
 
-        return "kurvpage";
+        return "basket";
     }
 }

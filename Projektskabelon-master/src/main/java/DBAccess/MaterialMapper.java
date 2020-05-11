@@ -1,169 +1,80 @@
 package DBAccess;
 
-import FunctionLayer.*;
+import FunctionLayer.CarportWidth;
+import FunctionLayer.LoginSampleException;
+import FunctionLayer.Material;
+import FunctionLayer.MaterialVariants;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MaterialMapper {
 
-    public static ArrayList<PlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
-        ArrayList<PlankMaterial> plankMaterialList = null;
+    public static List<Material> GetMaterials() throws LoginSampleException {
+        List<Material> materialList = null;
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM f_materialer_brædt_stolper";
+            String SQL = "SELECT * FROM materials";
 
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                if (plankMaterialList == null) {
-                    plankMaterialList = new ArrayList<>();
+                if (materialList == null) {
+                    materialList = new ArrayList<>();
                 }
 
-                int material_id = rs.getInt("f_materiale_id");
-                int material_length = rs.getInt("f_std_længde_cm");
-                String material_Name = rs.getString("f_materiale_navn");
-                String material_Describtion = rs.getString("f_materiale_beskrivelse");
+                int material_id = rs.getInt("material_id");
+                String name = rs.getString("name");
+                String dimension = rs.getString("dimension");
+                String unit = rs.getString("unit");
 
-                PlankMaterial materialFlatPlank = new PlankMaterial(material_Name, material_Describtion, material_length, material_id);
-                plankMaterialList.add(materialFlatPlank);
+                Material material = new Material(material_id, name, dimension, unit);
+                materialList.add(material);
 
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
-        return plankMaterialList;
+        return materialList;
     }
 
-    public static ArrayList<FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
-        ArrayList<FlatScrewMaterial> flatScrewMaterialList = null;
+    public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
+        List<MaterialVariants> matVariantsList = null;
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM f_materialer_skruer_beslag";
+            String SQL = "SELECT * FROM material_variants";
 
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                if (flatScrewMaterialList == null) {
-                    flatScrewMaterialList = new ArrayList<>();
+                if (matVariantsList == null) {
+                    matVariantsList = new ArrayList<>();
                 }
 
-                int material_id = rs.getInt("f_materiale_id");
-                int material_pcs = rs.getInt("f_stk");
-                String material_Name = rs.getString("f_materiale_navn");
-                String material_Describtion = rs.getString("f_materiale_beskrivelse");
+                int materialVariants_id = rs.getInt("mv_id");
+                int material_id = rs.getInt("material_id");
+                int length = rs.getInt("length");
+                int price = rs.getInt("price");
 
-                FlatScrewMaterial flatScrewMaterial = new FlatScrewMaterial(material_Name, material_Describtion, material_pcs, material_id);
-                flatScrewMaterialList.add(flatScrewMaterial);
+                MaterialVariants materialVariants = new MaterialVariants(materialVariants_id, material_id, length, price);
+                matVariantsList.add(materialVariants);
+
 
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
-        return flatScrewMaterialList;
-    }
-
-    public static ArrayList<PlankMaterial> GetAllRaisedPlanksMat() throws LoginSampleException {
-        ArrayList<PlankMaterial> raisedPlankMaterialList = null;
-
-        try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT * FROM h_materialer_brædt_stolper";
-
-            PreparedStatement ps = con.prepareStatement(SQL);
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-
-                if (raisedPlankMaterialList == null) {
-                    raisedPlankMaterialList = new ArrayList<>();
-                }
-
-                int material_id = rs.getInt("h_materiale_id");
-                int material_length = rs.getInt("h_std_længde_cm");
-                String material_Name = rs.getString("h_materiale_navn");
-                String material_Describtion = rs.getString("h_materiale_beskrivelse");
-
-                PlankMaterial raisedPlankMaterial = new PlankMaterial(material_Name, material_Describtion, material_length, material_id);
-                raisedPlankMaterialList.add(raisedPlankMaterial);
-
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            throw new LoginSampleException(ex.getMessage());
-        }
-        return raisedPlankMaterialList;
-    }
-
-
-    public static ArrayList<RaisedScrewMaterial> GetAllRaisedScrewMaterial() throws LoginSampleException {
-        ArrayList<RaisedScrewMaterial> raisedScrewMaterialList = null;
-
-        try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT * FROM h_materialer_skruer_beslag";
-
-            PreparedStatement ps = con.prepareStatement(SQL);
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-
-                if (raisedScrewMaterialList == null) {
-                    raisedScrewMaterialList = new ArrayList<>();
-                }
-
-                int material_id = rs.getInt("h_materiale_id");
-                int material_pcs = rs.getInt("h_stk");
-                String material_Name = rs.getString("h_materiale_navn");
-                String material_Describtion = rs.getString("h_materiale_beskrivelse");
-
-                RaisedScrewMaterial raisedScrewMaterial = new RaisedScrewMaterial(material_Name, material_Describtion, material_pcs, material_id);
-                raisedScrewMaterialList.add(raisedScrewMaterial);
-
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            throw new LoginSampleException(ex.getMessage());
-        }
-        return raisedScrewMaterialList;
-    }
-
-    public static ArrayList<RaisedRoofMaterial> GetAllRaisedRoofMaterial() throws LoginSampleException {
-        ArrayList<RaisedRoofMaterial> raisedScrewMaterialList = null;
-
-        try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT * FROM h_materialer_tagpakken";
-
-            PreparedStatement ps = con.prepareStatement(SQL);
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-
-                if (raisedScrewMaterialList == null) {
-                    raisedScrewMaterialList = new ArrayList<>();
-                }
-
-                int material_id = rs.getInt("h_materiale_id");
-                int material_pcs = rs.getInt("h_stk");
-                String material_Name = rs.getString("h_materiale_navn");
-                String material_Describtion = rs.getString("h_materiale_beskrivelse");
-
-                RaisedRoofMaterial raisedRoofMaterial = new RaisedRoofMaterial(material_Name, material_Describtion, material_pcs, material_id);
-                raisedScrewMaterialList.add(raisedRoofMaterial);
-
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            throw new LoginSampleException(ex.getMessage());
-        }
-        return raisedScrewMaterialList;
+        return matVariantsList;
     }
 
 

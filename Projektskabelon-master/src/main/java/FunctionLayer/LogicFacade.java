@@ -1,11 +1,8 @@
 package FunctionLayer;
 
-import DBAccess.CarportMapper;
-import DBAccess.MaterialMapper;
-import DBAccess.OrderMapper;
-import DBAccess.UserMapper;
+import DBAccess.*;
+import com.sun.org.apache.xpath.internal.operations.Or;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,11 +30,11 @@ public class LogicFacade {
         return CarportMapper.GetAllLengths();
     }
 
-    public static List<FlatRoofType> getAllFlatRootTypes() throws LoginSampleException {
+    public static List<RoofType> getAllFlatRootTypes() throws LoginSampleException {
         return CarportMapper.GetAllFlatRoofTypes();
     }
 
-    public static List<RaisedRoofType> GetAllRaisedRoofType() throws LoginSampleException {
+    public static List<RoofType> GetAllRaisedRoofType() throws LoginSampleException {
         return CarportMapper.GetAllRaisedRoofTypes();
     }
 
@@ -53,16 +50,52 @@ public class LogicFacade {
         return CarportMapper.GetAllToolShedWidths();
     }
 
-    public static void insertFlatCarport(int length, int width, int roofMat) throws LoginSampleException {
-        OrderMapper.insertFlatCarport(length, width, roofMat);
+    public static void insertCarportPart(int orderID, List<Part> listOfParts, int carportID) throws LoginSampleException {
+        CarportPartMapper.insertCarportPart(orderID, listOfParts, carportID);
     }
 
-    public static ArrayList<PlankMaterial> GetAllFlatPlanksMat() throws LoginSampleException {
-        return MaterialMapper.GetAllFlatPlanksMat();
+    public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
+        return OrderMapper.insertCarport(carport_type, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
     }
 
-    public static ArrayList<FlatScrewMaterial> GetAllFlatScrewMaterial() throws LoginSampleException {
-        return MaterialMapper.GetAllFlatScrewMaterial();
+    public static int[] insertCarportWithToolShed(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
+        return OrderMapper.insertCarportWithToolShed(carport_type, hasToolShed, user_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id, toolshed_length_id, toolshed_width_id);
+
     }
+
+    public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
+        return MaterialMapper.GetMaterialVariants();
+    }
+
+    public static List<Material> GetMaterials() throws LoginSampleException {
+
+        return MaterialMapper.GetMaterials();
+    }
+
+    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
+        return BomMapper.getBomLineFromCarport(carport_id);
+    }
+
+    public static int getUserId(String email) {
+        return UserMapper.getUserId(email);
+
+    }
+
+    public static int getCarportLengthFromId(int carport_length_id) {
+        return CarportMapper.getCarportLengthFromId(carport_length_id);
+    }
+
+    public static int getCarportWidthFromId(int carport_width_id) {
+        return CarportMapper.getCarportWidthFromId(carport_width_id);
+    }
+
+    public static int getToolShedLengthsFromId(int toolshed_length_id) {
+        return CarportMapper.getToolShedLengthsFromId(toolshed_length_id);
+    }
+
+    public static int getToolShedWidthsFromId(int toolshed_width_id) {
+        return CarportMapper.getToolShedWidthsFromId(toolshed_width_id);
+    }
+
 
 }

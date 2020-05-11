@@ -13,6 +13,10 @@ public class Svg {
     private final String rectTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
     private final String dashLineTemplate = " <line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000; stroke-dasharray: 5 5;\"/>";
     private final String lineTemplate = " <line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000;\"/>";
+    private final String arrowTemplate = "<line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000;\n" + "marker-start: url(#beginArrow);\n" + "marker-end: url(#endArrow);\"/>\n";
+    private final String textWidthTemplate = " <text style=\"text-anchor: middle\" transform=\"translate(%d,%d) rotate(-90)\">%d cm</text>\n";
+    private final String textLengthTemplate = "<text style=\"text-anchor: middle\" x=\"%d\" y=\"%d\"> %d cm</text>\n";
+
 
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
@@ -33,8 +37,39 @@ public class Svg {
     public void addLine(int x1, int y1, int x2, int y2){
         svg.append(String.format(lineTemplate,x1,y1,x2,y2));
     }
+
     public void addSvgDrawing (Svg drawing){
         svg.append(drawing.toString());
+    }
+    public void addArrowsDefs(){
+        String defs = " <defs>\n" +
+                "        <marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\">\n" +
+                "            <path d=\"M0,6 L12,0 L12,12 L0,6\" style=\"fill: #000000;\"/>\n" +
+                "        </marker>\n" +
+
+                "        <marker id=\"endArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"12\" refY=\"6\" orient=\"auto\">\n" +
+                "            <path d=\"M0,0 L12,6 L0,12 L0,0 \" style=\"fill: #000000;\"/>\n" +
+                "        </marker>\n" +
+                "    </defs>";
+
+        svg.append(String.format(defs));
+    }
+
+    public void addArrows(int x1, int y1, int x2, int y2){
+
+        svg.append(String.format(arrowTemplate, x1, y1, x2, y2));
+
+    }
+
+    public void addWidthText(int x1, int y1, int width){
+
+        svg.append(String.format(textWidthTemplate, x1, y1, width));
+
+    }
+
+    public void addLengthText(int x1, int y1, int height){
+
+        svg.append(String.format(textLengthTemplate, x1, y1, height));
     }
 
     public int getWidth() {

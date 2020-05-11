@@ -13,5 +13,6 @@
 <body>
 <h1>Tegning</h1>
 ${requestScope.svgdrawing}
+
 </body>
 </html>

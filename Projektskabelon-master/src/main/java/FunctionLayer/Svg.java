@@ -1,7 +1,5 @@
 package FunctionLayer;
 
-import com.sun.javafx.binding.StringFormatter;
-
 public class Svg {
 
     private int width;
@@ -11,9 +9,10 @@ public class Svg {
     private int y;
     private StringBuilder svg = new StringBuilder();
 
-    private final String headerTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" height=\"%s\" width=\"%s\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin\">";
+    private final String headerTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" height=\"%d\" width=\"%d\" x=\"%d\" y=\"%d\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin\">";
     private final String rectTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
-    private final String lineTemplate = " <line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000; stroke-dasharray: 5 5;\"/>";
+    private final String dashLineTemplate = " <line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000; stroke-dasharray: 5 5;\"/>";
+    private final String lineTemplate = " <line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000;\"/>";
 
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
@@ -21,15 +20,21 @@ public class Svg {
         this.viewbox = viewbox;
         this.x = x;
         this.y = y;
-        svg.append(String.format(headerTemplate, height, width, viewbox));
+        svg.append(String.format(headerTemplate, height, width, x ,y ,viewbox));
     }
 
     public void addRect(int x, int y, int height, int width){
         svg.append(String.format(rectTemplate, x, y, height, width));
     }
 
+    public void addDashLine(int x1, int y1, int x2, int y2){
+        svg.append(String.format(dashLineTemplate,x1,y1,x2,y2));
+    }
     public void addLine(int x1, int y1, int x2, int y2){
         svg.append(String.format(lineTemplate,x1,y1,x2,y2));
+    }
+    public void addSvgDrawing (Svg drawing){
+        svg.append(drawing.toString());
     }
 
     public int getWidth() {

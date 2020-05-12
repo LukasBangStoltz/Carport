@@ -38,12 +38,12 @@ public class HelperFunctionsDrawing {
         svgInnerDrawing.addRect(0,15,10,carportLength);
 
         //skur
-        if(hasToolShed){
+        /*if(hasToolShed){
             int længde = carportLength - toolShedLenght;
             while(længde <= carportLength)
             svgInnerDrawing.addRect(længde, 0, 195, 10);
             længde += 10;
-        }
+        }*/
 
         //outer
         //Arrow

@@ -16,10 +16,10 @@
 
         <div class="col-3"></div>
 
-        <div class="col-6">
+        <div class="col-6 my-5">
 
             <a href="FrontController?target=redirect&destination=carportchoice"> <img
-                    src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: auto"
+                    src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: 150%"
                     alt="Fog image"/></a>
 
         </div>

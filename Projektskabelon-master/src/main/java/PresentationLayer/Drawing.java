@@ -1,9 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.Svg;
-import MyUtils.Calc;
 import MyUtils.HelperFunctions;
 import MyUtils.HelperFunctionsDrawing;
 
@@ -25,17 +22,19 @@ public class Drawing extends Command {
 
         String action = HelperFunctions.checkActionDrawing(flatRoof, raisedroof);
 
-        String generatedSvg = "";
+        String generatedSvgTop = "";
+
+        String generatedSvgSide = "";
 
         switch (action) {
 
             case "flatcarport":
 
-                generatedSvg = HelperFunctionsDrawing.drawFlatCarport(carportLength, carportWidth, hasToolShed, toolshed_length, toolshed_width);
+                generatedSvgTop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolShed, toolshed_length, toolshed_width);
 
+                generatedSvgSide = HelperFunctionsDrawing.drawFlatCarportSide(carportLength, hasToolShed, toolshed_length);
 
                 break;
-
 
 
             case "raisedroof":
@@ -48,7 +47,8 @@ public class Drawing extends Command {
         }
 
 
-        request.setAttribute("svgdrawing", generatedSvg);
+        request.setAttribute("svgdrawingtop", generatedSvgTop);
+        request.setAttribute("svgdrawingside", generatedSvgSide);
 
         return "drawing";
 

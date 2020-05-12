@@ -17,7 +17,6 @@ public class Svg {
     private final String textWidthTemplate = " <text style=\"text-anchor: middle\" transform=\"translate(%d,%d) rotate(-90)\">%d cm</text>\n";
     private final String textLengthTemplate = "<text style=\"text-anchor: middle\" x=\"%d\" y=\"%d\"> %d cm</text>\n";
 
-
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
         this.height = height;
@@ -26,6 +25,10 @@ public class Svg {
         this.y = y;
         svg.append(String.format(headerTemplate, height, width, x ,y ,viewbox));
     }
+
+    //public void addRectAngle(int x, int y, int height, int width, int translate1, int translate2){
+      //  svg.append(String.format(rectAngleTemplate, translate1, translate2, x, y, height, width));
+    //}
 
     public void addRect(int x, int y, int height, int width){
         svg.append(String.format(rectTemplate, x, y, height, width));

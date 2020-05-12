@@ -4,7 +4,7 @@ import FunctionLayer.Svg;
 
 public class HelperFunctionsDrawing {
 
-    public static String drawFlatCarportSide(int carportLength, boolean hasToolShed, int toolShedLenght){
+    public static String drawFlatCarportSide(int carportLength, boolean hasToolShed, int toolShedLength){
         String generatedSvg = "";
 
         String innerViewbox = String.format("0,0,%d,%d", carportLength, 220);
@@ -39,16 +39,28 @@ public class HelperFunctionsDrawing {
 
         //skur
         if(hasToolShed){
-            int længde = carportLength - toolShedLenght;
-            while(længde <= carportLength)
-            svgInnerDrawing.addRect(længde, 0, 195, 10);
-            længde += 10;
+            int længde = carportLength - toolShedLength;
+            while(længde <= carportLength) {
+                svgInnerDrawing.addRect(længde, 25, 195, 10);
+                længde += 10;
+            }
         }
 
         //outer
-        //Arrow
+        //ArrowWidth
+        svgOuterDrawing.addArrows(30, 10, 30, 220 + 7);
+        svgOuterDrawing.addWidthText(20, 220 / 2, 220);
 
-        generatedSvg = svgInnerDrawing.toString();
+        //ArrowLength
+        svgOuterDrawing.addArrows(75, 220 + 70, carportLength + 75, 220 + 70);
+        svgOuterDrawing.addLengthText((carportLength + 150) / 2, 220 + 90, carportLength);
+
+        //ArrowToolShed
+        svgOuterDrawing.addArrows(((carportLength - toolShedLength) - 75), 220 + 30, carportLength + 75, 220 + 30);
+        svgOuterDrawing.addLengthText(((carportLength - (toolShedLength / 2)) - 75), 220 + 50, toolShedLength);
+
+        svgOuterDrawing.addSvgDrawing(svgInnerDrawing);
+        generatedSvg = svgOuterDrawing.toString();
 
         return generatedSvg;
     }

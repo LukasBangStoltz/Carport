@@ -4,7 +4,56 @@ import FunctionLayer.Svg;
 
 public class HelperFunctionsDrawing {
 
-    public static String drawFlatCarport(int carportLength, int carportWidth, boolean hasToolShed, int toolShedLength, int toolShedWidth) {
+    public static String drawFlatCarportSide(int carportLength, boolean hasToolShed, int toolShedLenght){
+        String generatedSvg = "";
+
+        String innerViewbox = String.format("0,0,%d,%d", carportLength, 220);
+        String outerViewbox = String.format("0,0,%d,%d", carportLength + 100, 220 + 100);
+
+        Svg svgOuterDrawing = new Svg(carportLength + 100, 220 + 100, outerViewbox, 0,0);
+        Svg svgInnerDrawing = new Svg(carportLength, 220, innerViewbox, 75, 10);
+
+        //inner
+        //linje på bund
+        svgInnerDrawing.addLine(0,220,carportLength,220);
+
+        //stolper
+        int stolpe = 108;
+        if (carportLength < 410) {
+            svgInnerDrawing.addRect(carportLength - 8, 33, 200, 15);
+
+        } else {
+            while (stolpe <= carportLength) {
+                svgInnerDrawing.addRect(stolpe, 33, 200, 15);
+                stolpe += 300;
+
+            }
+            if(carportLength-stolpe >=-150){
+                svgInnerDrawing.addRect(carportLength-15, 33, 200, 15);
+            }
+        }
+
+        //tag
+        svgInnerDrawing.addRect(0,25,10,carportLength);
+        svgInnerDrawing.addRect(0,15,10,carportLength);
+
+        //skur
+        if(hasToolShed){
+            int længde = carportLength - toolShedLenght;
+            while(længde <= carportLength)
+            svgInnerDrawing.addRect(længde, 0, 195, 10);
+            længde += 10;
+        }
+
+        //outer
+        //Arrow
+
+        generatedSvg = svgInnerDrawing.toString();
+
+        return generatedSvg;
+    }
+
+    public static String drawFlatCarportTop(int carportLength, int carportWidth, boolean hasToolShed, int toolShedLength, int toolShedWidth) {
 
         String generatedSvg = "";
 

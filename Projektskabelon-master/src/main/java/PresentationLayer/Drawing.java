@@ -23,7 +23,7 @@ public class Drawing extends Command {
         boolean hasToolShed = (boolean) request.getSession().getAttribute("hasToolShed");
 
 
-        String action = HelperFunctions.checkAction(flatRoof, raisedroof, hasToolShed);
+        String action = HelperFunctions.checkActionDrawing(flatRoof, raisedroof);
 
         String generatedSvg = "";
 
@@ -31,25 +31,19 @@ public class Drawing extends Command {
 
             case "flatcarport":
 
-                generatedSvg = HelperFunctionsDrawing.drawFlatCarport(carportLength, carportWidth);
+                generatedSvg = HelperFunctionsDrawing.drawFlatCarport(carportLength, carportWidth, hasToolShed, toolshed_length, toolshed_width);
 
 
                 break;
 
-            case "flatcarporttoolshed":
 
-
-                break;
 
             case "raisedroof":
 
 
                 break;
 
-            case "raisedrooftoolshed":
 
-
-                break;
 
         }
 

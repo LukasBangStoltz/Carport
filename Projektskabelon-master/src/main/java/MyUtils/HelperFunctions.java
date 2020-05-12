@@ -57,7 +57,22 @@ public class HelperFunctions {
         return action;
 
     }
+    public static String checkActionDrawing(String flatCarPort, String raisedCarPort) {
+        String action = "";
 
+        if (flatCarPort != null){
+            action = "flatcarport";
+
+        }
+
+        if (raisedCarPort != null) {
+            action = "raisedroof";
+        }
+
+
+        return action;
+
+    }
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);

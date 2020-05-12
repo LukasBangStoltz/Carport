@@ -38,7 +38,7 @@ public class HelperFunctionsDrawing {
         svgInnerDrawing.addRect(0,15,10,carportLength);
 
         //skur
-        sebsvgside2
+
         if(hasToolShed){
             int længde = carportLength - toolShedLength;
             while(længde <= carportLength) {
@@ -56,8 +56,8 @@ public class HelperFunctionsDrawing {
         svgOuterDrawing.addLengthText((carportLength + 150) / 2, 220 + 90, carportLength);
 
         //ArrowToolShed
-        svgOuterDrawing.addArrows(((carportLength - toolShedLength) - 75), 220 + 30, carportLength + 75, 220 + 30);
-        svgOuterDrawing.addLengthText(((carportLength - (toolShedLength / 2)) - 75), 220 + 50, toolShedLength);
+        svgOuterDrawing.addArrows(((carportLength - toolShedLength) + 75), 220 + 30, carportLength + 75, 220 + 30);
+        svgOuterDrawing.addLengthText(((carportLength - (toolShedLength / 2)) + 75), 220 + 50, toolShedLength);
 
         svgOuterDrawing.addSvgDrawing(svgInnerDrawing);
         generatedSvg = svgOuterDrawing.toString();

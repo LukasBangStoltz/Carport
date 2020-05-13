@@ -19,6 +19,7 @@ public class Redirect extends Command {
             case "carportflat": break;
             case "basket": break;
             case "loginpage" : break;
+            case "requestpage" : break;
         }
 
         return destination;

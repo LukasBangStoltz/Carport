@@ -3,6 +3,7 @@ package FunctionLayer;
 import DBAccess.*;
 import com.sun.org.apache.xpath.internal.operations.Or;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -95,6 +96,10 @@ public class LogicFacade {
 
     public static int getToolShedWidthsFromId(int toolshed_width_id) {
         return CarportMapper.getToolShedWidthsFromId(toolshed_width_id);
+    }
+
+    public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
+        return RequestMapper.getAllRequests();
     }
 
 

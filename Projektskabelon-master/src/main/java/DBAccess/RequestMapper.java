@@ -16,8 +16,7 @@ public class RequestMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM orders"
-                    + "WHERE is_authorized = false";
+            String SQL = "SELECT * FROM orders WHERE is_authorized = false";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();

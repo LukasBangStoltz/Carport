@@ -164,10 +164,10 @@ public class InitializeLists {
 
     }
 
-    public static List<BomLine> getBomList(int carport_id) {
+    public static List<BomLine> getBomList(int orderId) {
 
         try {
-            bomLineList = LogicFacade.getBomLineFromCarport(carport_id);
+            bomLineList = LogicFacade.getBomLineFromCarport(orderId);
         } catch (LoginSampleException e) {
             e.printStackTrace();
         }

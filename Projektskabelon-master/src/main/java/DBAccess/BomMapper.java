@@ -14,7 +14,7 @@ import java.util.List;
 public class BomMapper {
 
 
-    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
+    public static List<BomLine> getBomLineForCarport(int orderId) throws LoginSampleException {
         List<BomLine> listOfBomLine = null;
 
         try {
@@ -23,11 +23,11 @@ public class BomMapper {
                     "INNER JOIN bom b on o.order_id = b.order_id\n" +
                     "INNER JOIN carport c on c.carport_id = o.carport_id\n" +
                     "INNER JOIN material_variants mv on b.mv_id = mv.mv_id\n" +
-                    "INNER JOIN materials m on mv.material_id = m.material_id where c.carport_id = ?;";
+                    "INNER JOIN materials m on mv.material_id = m.material_id where o.order_id = ?;";
 
             PreparedStatement ps = con.prepareStatement(SQL);
 
-            ps.setInt(1, carport_id);
+            ps.setInt(1, orderId);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -44,6 +44,7 @@ public class BomMapper {
                 int price = rs.getInt("price");
                 String description = rs.getString("description");
                 int quantity = rs.getInt("quantity");
+                int carport_id = rs.getInt("carport_id");
 
                 BomLine bL = new BomLine(material_id, name, dimension, unit, length,
                         price, description, carport_id,quantity);

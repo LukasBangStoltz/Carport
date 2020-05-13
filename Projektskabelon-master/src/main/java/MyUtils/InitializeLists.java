@@ -3,6 +3,7 @@ package MyUtils;
 import FunctionLayer.*;
 import FunctionLayer.CarportWidth;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class InitializeLists {
     private static List<Material> materialList = null;
     private static List<MaterialVariants> matVariantsList = null;
     private static List<BomLine> bomLineList = null;
+    private static List<Request> requestLists = null;
 
     public static List<CarportWidth> getCarportWidthList() {
 
@@ -171,6 +173,24 @@ public class InitializeLists {
         }
 
         return bomLineList;
+
+    }
+
+    public static List<Request> getRequestList() {
+
+        if(requestLists == null) {
+            try {
+                requestLists = LogicFacade.getAllRequests();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return requestLists;
 
     }
 

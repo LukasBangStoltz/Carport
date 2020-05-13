@@ -7,7 +7,7 @@ import FunctionLayer.LoginSampleException;
 public class main {
     public static void main(String[] args) throws LoginSampleException {
 
-        System.out.println((Math.ceil((360 * 730) * 11.4 / 10000)));
+        System.out.println(InitializeLists.getRequestList().get(0).getOrderId());
 
     }
 }

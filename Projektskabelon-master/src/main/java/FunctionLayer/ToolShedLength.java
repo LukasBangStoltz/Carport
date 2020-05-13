@@ -2,27 +2,27 @@ package FunctionLayer;
 
 public class ToolShedLength {
 
-    private int toolShedLength_id;
-    private int toolShedLength_cm;
+    private int toolShedLengthId;
+    private int toolShedLengthCm;
 
-    public ToolShedLength(int toolShedLength_id, int toolShedLength_cm) {
-        this.toolShedLength_id = toolShedLength_id;
-        this.toolShedLength_cm = toolShedLength_cm;
+    public ToolShedLength(int toolShedLengthId, int toolShedLengthCm) {
+        this.toolShedLengthId = toolShedLengthId;
+        this.toolShedLengthCm = toolShedLengthCm;
     }
 
     public int getToolShed_id() {
-        return toolShedLength_id;
+        return toolShedLengthId;
     }
 
     public void setToolShed_id(int toolShedLength_id) {
-        this.toolShedLength_id = toolShedLength_id;
+        this.toolShedLengthId = toolShedLength_id;
     }
 
     public int getToolShed_cm() {
-        return toolShedLength_cm;
+        return toolShedLengthCm;
     }
 
     public void setToolShed_cm(int toolShedLength_cm) {
-        this.toolShedLength_cm = toolShedLength_cm;
+        this.toolShedLengthCm = toolShedLength_cm;
     }
 }

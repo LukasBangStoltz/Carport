@@ -2,27 +2,27 @@ package FunctionLayer;
 
 public class ConcretePart {
 
-    private int carportPart_id;
-    private int material_id;
+    private int carportPartId;
+    private int materialId;
 
-    public ConcretePart(int carportPart_id, int material_id) {
-        this.carportPart_id = carportPart_id;
-        this.material_id = material_id;
+    public ConcretePart(int carportPartId, int materialId) {
+        this.carportPartId = carportPartId;
+        this.materialId = materialId;
     }
 
-    public int getCarportPart_id() {
-        return carportPart_id;
+    public int getCarportPartId() {
+        return carportPartId;
     }
 
-    public void setCarportPart_id(int carportPart_id) {
-        this.carportPart_id = carportPart_id;
+    public void setCarportPartId(int carportPartId) {
+        this.carportPartId = carportPartId;
     }
 
-    public int getMaterial_id() {
-        return material_id;
+    public int getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterial_id(int material_id) {
-        this.material_id = material_id;
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 }

@@ -28,9 +28,9 @@ public class CarportMapper {
                     carportWidthList = new ArrayList<>();
                 }
 
-                int width_id = rs.getInt("width_id");
-                int width_cm = rs.getInt("width_cm");
-                CarportWidth carportWidth = new CarportWidth(width_id, width_cm);
+                int widthId = rs.getInt("width_id");
+                int widthCm = rs.getInt("width_cm");
+                CarportWidth carportWidth = new CarportWidth(widthId, widthCm);
                 carportWidthList.add(carportWidth);
 
             }
@@ -56,9 +56,9 @@ public class CarportMapper {
                     carportLengthList = new ArrayList<>();
                 }
 
-                int length_id = rs.getInt("length_id");
-                int length_cm = rs.getInt("length_cm");
-                CarportLength carportLength = new CarportLength(length_id, length_cm);
+                int lengthId = rs.getInt("length_id");
+                int lengthCm = rs.getInt("length_cm");
+                CarportLength carportLength = new CarportLength(lengthId, lengthCm);
                 carportLengthList.add(carportLength);
 
             }
@@ -84,9 +84,9 @@ public class CarportMapper {
                     flatRoofTypeList = new ArrayList<>();
                 }
 
-                int flatRoof_id = rs.getInt("rooftype_id");
+                int rooftypeId = rs.getInt("rooftype_id");
                 String flatRoofName = rs.getString("rooftype_name");
-                RoofType flatRoofType = new RoofType(flatRoof_id, flatRoofName);
+                RoofType flatRoofType = new RoofType(rooftypeId, flatRoofName);
                 flatRoofTypeList.add(flatRoofType);
 
             }
@@ -112,9 +112,9 @@ public class CarportMapper {
                     raisedRoofTypeList = new ArrayList<>();
                 }
 
-                int raisedRoof_id = rs.getInt("rooftype_id");
-                String raisedRoof_type = rs.getString("rooftype_name");
-                RoofType raisedRoofType = new RoofType(raisedRoof_id, raisedRoof_type);
+                int raisedRoofId = rs.getInt("rooftype_id");
+                String raisedRooftype = rs.getString("rooftype_name");
+                RoofType raisedRoofType = new RoofType(raisedRoofId, raisedRooftype);
                 raisedRoofTypeList.add(raisedRoofType);
 
             }
@@ -140,9 +140,9 @@ public class CarportMapper {
                     raisedRoofDegressList = new ArrayList<>();
                 }
 
-                int degreeRoof_id = rs.getInt("tilt_id");
-                int raisedRoof_degree = rs.getInt("tilt_degree");
-                RoofTilt roofTilt = new RoofTilt(degreeRoof_id, raisedRoof_degree);
+                int degreeRoofId = rs.getInt("tilt_id");
+                int raisedRoofDegree = rs.getInt("tilt_degree");
+                RoofTilt roofTilt = new RoofTilt(degreeRoofId, raisedRoofDegree);
                 raisedRoofDegressList.add(roofTilt);
 
             }
@@ -168,9 +168,9 @@ public class CarportMapper {
                     toolShedLengthList = new ArrayList<>();
                 }
 
-                int toolShedLength_id = rs.getInt("toolshed_length_id");
-                int toolShedLength_cm = rs.getInt("toolshed_length_cm");
-                ToolShedLength toolShed = new ToolShedLength(toolShedLength_id, toolShedLength_cm);
+                int toolShedLengthId = rs.getInt("toolshed_length_id");
+                int toolShedLengthCm = rs.getInt("toolshed_length_cm");
+                ToolShedLength toolShed = new ToolShedLength(toolShedLengthId, toolShedLengthCm);
                 toolShedLengthList.add(toolShed);
 
             }
@@ -198,9 +198,9 @@ public class CarportMapper {
                     toolShedWidthList = new ArrayList<>();
                 }
 
-                int toolShedWidth_id = rs.getInt("toolshed_width_id");
-                int toolShedWidth_cm = rs.getInt("toolshed_width_cm");
-                ToolShedWidth toolShedWidth = new ToolShedWidth(toolShedWidth_id, toolShedWidth_cm);
+                int toolShedWidthId = rs.getInt("toolshed_width_id");
+                int toolShedWidthCm = rs.getInt("toolshed_width_cm");
+                ToolShedWidth toolShedWidth = new ToolShedWidth(toolShedWidthId, toolShedWidthCm);
                 toolShedWidthList.add(toolShedWidth);
 
             }
@@ -257,18 +257,18 @@ public class CarportMapper {
         return carport_width;
     }
 
-    public static int getToolShedLengthsFromId(int toolshed_length_id) {
+    public static int getToolShedLengthsFromId(int toolshedLengthId) {
 
-        int toolshed_length = 0;
+        int toolshedLength = 0;
         try {
             Connection connection = Connector.connection();
             PreparedStatement statement = connection.prepareStatement("Select * from toolshed_length where toolshed_length_id = ? ");
-            statement.setInt(1, toolshed_length_id);
+            statement.setInt(1, toolshedLengthId);
 
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                toolshed_length = resultSet.getInt("toolshed_length_cm");
+                toolshedLength = resultSet.getInt("toolshed_length_cm");
             }
 
         } catch (ClassNotFoundException e) {
@@ -277,16 +277,16 @@ public class CarportMapper {
             e.printStackTrace();
         }
 
-        return toolshed_length;
+        return toolshedLength;
     }
 
-    public static int getToolShedWidthsFromId(int toolshed_width_id) {
+    public static int getToolShedWidthsFromId(int toolshedWidthId) {
 
         int toolshed_width = 0;
         try {
             Connection connection = Connector.connection();
             PreparedStatement statement = connection.prepareStatement("Select * from toolshed_width where toolshed_width_id = ? ");
-            statement.setInt(1, toolshed_width_id);
+            statement.setInt(1, toolshedWidthId);
 
             ResultSet resultSet = statement.executeQuery();
 

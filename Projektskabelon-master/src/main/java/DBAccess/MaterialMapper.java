@@ -30,12 +30,12 @@ public class MaterialMapper {
                     materialList = new ArrayList<>();
                 }
 
-                int material_id = rs.getInt("material_id");
+                int materialId = rs.getInt("material_id");
                 String name = rs.getString("name");
                 String dimension = rs.getString("dimension");
                 String unit = rs.getString("unit");
 
-                Material material = new Material(material_id, name, dimension, unit);
+                Material material = new Material(materialId, name, dimension, unit);
                 materialList.add(material);
 
             }
@@ -61,12 +61,12 @@ public class MaterialMapper {
                     matVariantsList = new ArrayList<>();
                 }
 
-                int materialVariants_id = rs.getInt("mv_id");
-                int material_id = rs.getInt("material_id");
+                int materialVariantsId = rs.getInt("mv_id");
+                int materialId = rs.getInt("material_id");
                 int length = rs.getInt("length");
                 int price = rs.getInt("price");
 
-                MaterialVariants materialVariants = new MaterialVariants(materialVariants_id, material_id, length, price);
+                MaterialVariants materialVariants = new MaterialVariants(materialVariantsId, materialId, length, price);
                 matVariantsList.add(materialVariants);
 
 

@@ -11,39 +11,22 @@
 
 <div class="container-fluid">
 
-    <div class="row mb-5 mt-2">
+    <div class="row my-3">
 
-        <div class="text-left">
-
-            <h4 style="font-weight: bold; font-family: sans-serif">INDKØBSKURV</h4>
-
-        </div>
-
-        <div class="text-left">
-
-            <h4 style="font-family: sans-serif">>LEVERING</h4>
-
-        </div>
-
-        <div class="text-left">
-
-            <h4 style="font-family: sans-serif">>KVITTERING</h4>
-
-        </div>
 
         <div class="col-9"></div>
 
     </div>
 
     <div class="jumbotron" style="font-weight: bold">
-        <h1 class="text-center">Indkøbskurv</h1>
+        <h1 class="text-center">Ordre information</h1>
     </div>
 
     <div class="row">
 
         <div class="col-4"></div>
 
-        <div class="col-4">
+        <div class="col-4 my-3">
             <table class="table">
                 <tbody>
                 <tr>
@@ -93,14 +76,14 @@
         <div class="col-2 text-left">
             <form action="FrontController" method="post">
                 <input type="hidden" name="target" value="gembestilling"/>
-                <button type="button" class="btn btn-primary">Gem bestilling</button>
+                <button type="button" class="btn btn-primary">Se stykliste</button>
             </form>
         </div>
 
         <div class="col-1 text-right">
             <form action="FrontController" method="post">
                 <input type="hidden" name="target" value="køb"/>
-                <button type="button" class="btn btn-primary">Køb</button>
+                <button type="button" class="btn btn-primary">Godkend</button>
             </form>
         </div>
 

@@ -19,7 +19,7 @@
         <div class="col-6 my-5">
 
             <a href="FrontController?target=redirect&destination=carportchoice"> <img
-                    src="images/fog_index_billede.jpg" class="img-fluid" style="width: 100%; height: 150%"
+                    src="images/fog_index_billede.jpg" class="img-fluid" style="width: 125%; height: 125%"
                     alt="Fog image"/></a>
 
         </div>
@@ -30,7 +30,8 @@
 
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<br>
 
 <!--Test af branch-->
 <%@include file="/includes/footer.inc" %>

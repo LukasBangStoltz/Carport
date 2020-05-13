@@ -101,6 +101,9 @@ public class LogicFacade {
     public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
         return RequestMapper.getAllRequests();
     }
+    public static Order getOrder(int orderId) throws LoginSampleException {
+        return OrderMapper.getOrder(orderId);
+    }
 
 
-}
+    }

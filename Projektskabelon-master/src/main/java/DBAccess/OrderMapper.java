@@ -1,8 +1,11 @@
 package DBAccess;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Material;
+import FunctionLayer.Order;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class OrderMapper {
 
@@ -48,7 +51,6 @@ public class OrderMapper {
                 } else {
 
                     SQL = "INSERT INTO orders (user_id, carport_id, carport_length_id, carport_width_id, carport_tilt_id, carport_rooftype_id) VALUES (?,?,?,?,?,?)";
-
 
 
                     ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -163,4 +165,49 @@ public class OrderMapper {
 
         return IDs;
     }
+
+    public static Order getOrder(int orderId) throws LoginSampleException {
+
+        Order order = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM orders WHERE order_id=?";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ps.setInt(1, orderId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                int carportLengthId = rs.getInt("carport_length_id");
+                int carportWidthId = rs.getInt("carport_width_id");
+                int carportTiltId = rs.getInt("carport_tilt_id");
+                int carportRoofTypeId = rs.getInt("carport_rooftype_id");
+                int toolshedLengthId = rs.getInt("toolshed_length_id");
+                int toolshedWidthId = rs.getInt("toolshed_width_id");
+
+                if (carportTiltId == 0 && toolshedLengthId == 0) {
+                    order = new Order(carportLengthId, carportWidthId, carportRoofTypeId);
+                }
+                if (carportTiltId != 0 && toolshedLengthId == 0) {
+                    order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, carportTiltId);
+                }
+                if (carportTiltId == 0 && toolshedLengthId != 0) {
+                    order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, toolshedLengthId, toolshedWidthId);
+                } else {
+                    order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, carportTiltId, toolshedLengthId, toolshedWidthId);
+                }
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+
+        return order;
+
+    }
+
 }
+

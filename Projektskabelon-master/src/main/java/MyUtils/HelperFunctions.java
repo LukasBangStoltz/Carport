@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class HelperFunctions {
 
-    public static boolean checkSkurSize(int toolshed_length, int toolshed_width, int carport_length, int carport_width) {
+    public static boolean checkSkurSize(int toolshedLength, int toolshedWidth, int carportLength, int carportWidth) {
 
         boolean isValid = false;
 
 
-        if (toolshed_length <= carport_length - 30 && toolshed_width <= carport_width - 30) {
+        if (toolshedLength <= carportLength - 30 && toolshedWidth <= carportWidth - 30) {
             isValid = true;
         }
 
-        if (toolshed_length == 0 || toolshed_width == 0) {
+        if (toolshedLength == 0 || toolshedWidth == 0) {
             isValid = true;
         }
 
@@ -73,19 +73,19 @@ public class HelperFunctions {
         return action;
 
     }
-    public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
+    public static void makeFlatCarport(int carportLength, int carportWidth, int toolShedLength, boolean hasToolShed) {
 
-        Calc.understernForOgBag(carport_width);
-        Calc.understernSider(carport_length);
-        Calc.oversternFor(carport_width);
-        Calc.oversternSider(carport_length);
-        Calc.remmeSider(carport_length);
-        Calc.spærTilRem(carport_width, carport_length);
-        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.vandbrædtSider(carport_length);
-        Calc.vandbrædtFor(carport_width);
-        Calc.tagpladerLang(carport_length);
-        Calc.tagpladerKort(carport_length);
+        Calc.understernForOgBag(carportWidth);
+        Calc.understernSider(carportLength);
+        Calc.oversternFor(carportWidth);
+        Calc.oversternSider(carportLength);
+        Calc.remmeSider(carportLength);
+        Calc.spærTilRem(carportWidth, carportLength);
+        Calc.calcStolper(carportLength, toolShedLength, hasToolShed);
+        Calc.vandbrædtSider(carportLength);
+        Calc.vandbrædtFor(carportWidth);
+        Calc.tagpladerLang(carportLength);
+        Calc.tagpladerKort(carportLength);
         Calc.plastmoBundskruer();
         Calc.hulbånd();
         Calc.universalHøjre();
@@ -100,22 +100,22 @@ public class HelperFunctions {
 
     }
 
-    public static void makeFlatCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
+    public static void makeFlatCarportToolShed(int carportLength, int carportWidth, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
-        Calc.understernForOgBag(carport_width);
-        Calc.understernSider(carport_length);
-        Calc.oversternFor(carport_width);
-        Calc.oversternSider(carport_length);
+        Calc.understernForOgBag(carportWidth);
+        Calc.understernSider(carportLength);
+        Calc.oversternFor(carportWidth);
+        Calc.oversternSider(carportLength);
         Calc.lægteTilZDørSkur();
         Calc.løsholterSkurGavle(toolShedWidth);
         Calc.løsholterSkurSider(toolShedLength);
-        Calc.remmeSider(carport_length);
-        Calc.spærTilRem(carport_width, carport_length);
-        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.vandbrædtSider(carport_length);
-        Calc.vandbrædtFor(carport_width);
-        Calc.tagpladerLang(carport_length);
-        Calc.tagpladerKort(carport_length);
+        Calc.remmeSider(carportLength);
+        Calc.spærTilRem(carportWidth, carportLength);
+        Calc.calcStolper(carportLength, toolShedLength, hasToolShed);
+        Calc.vandbrædtSider(carportLength);
+        Calc.vandbrædtFor(carportWidth);
+        Calc.tagpladerLang(carportLength);
+        Calc.tagpladerKort(carportLength);
         Calc.plastmoBundskruer();
         Calc.hulbånd();
         Calc.universalHøjre();
@@ -132,16 +132,16 @@ public class HelperFunctions {
 
     }
 
-    public static void makeRaisedCarport(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
+    public static void makeRaisedCarport(int carportLength, int carportWidth, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
-        Calc.vindskeder(carport_width);
-        Calc.sternbrædderTilSiderCarp(carport_length);
-        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.spærTilRem(carport_width, carport_length);
-        Calc.remmeSider(carport_length);
-        Calc.vandBrædtPåVindskeder(carport_width);
-        Calc.taglægterTilSpær(carport_width);
-        Calc.toplægterTilRygsten(carport_width);
+        Calc.vindskeder(carportWidth);
+        Calc.sternbrædderTilSiderCarp(carportLength);
+        Calc.calcStolper(carportLength, toolShedLength, hasToolShed);
+        Calc.spærTilRem(carportWidth, carportLength);
+        Calc.remmeSider(carportLength);
+        Calc.vandBrædtPåVindskeder(carportWidth);
+        Calc.taglægterTilSpær(carportWidth);
+        Calc.toplægterTilRygsten(carportWidth);
 
 
         Calc.universalVenstre();
@@ -155,8 +155,8 @@ public class HelperFunctions {
         Calc.skruer200stk();
         Calc.skruer300stk();
 
-        Calc.dobbeltSSort(carport_width, carport_length);
-        Calc.rygstenSort(carport_length, carport_width);
+        Calc.dobbeltSSort(carportWidth, carportLength);
+        Calc.rygstenSort(carportLength, carportWidth);
         // todo: Calc.toplægteHolder();
         //todo: Calc.rygstenBeslag();
         Calc.tagstenBindereOgNakkekrog();
@@ -164,20 +164,20 @@ public class HelperFunctions {
 
     }
 
-    public static void makeRaisedCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
-        Calc.vindskeder(carport_width);
-        Calc.sternbrædderTilSiderCarp(carport_length);
+    public static void makeRaisedCarportToolShed(int carportLength, int carportWidth, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
+        Calc.vindskeder(carportWidth);
+        Calc.sternbrædderTilSiderCarp(carportLength);
         Calc.sternbrædderTilSiderSkur(toolShedLength);
-        Calc.calcStolper(carport_length, toolShedLength, hasToolShed);
-        Calc.spærTilRem(carport_width, carport_length);
-        Calc.remmeSider(carport_length);
+        Calc.calcStolper(carportLength, toolShedLength, hasToolShed);
+        Calc.spærTilRem(carportWidth, carportLength);
+        Calc.remmeSider(carportLength);
         Calc.løsholterSkurSider(toolShedLength);
         Calc.løsholterSkurGavle(toolShedWidth);
-        Calc.vandBrædtPåVindskeder(carport_width);
-        Calc.ovenPåTagfodslægte(carport_length);
+        Calc.vandBrædtPåVindskeder(carportWidth);
+        Calc.ovenPåTagfodslægte(carportLength);
         Calc.lægteTilZDørSkur();
-        Calc.taglægterTilSpær(carport_width);
-        Calc.toplægterTilRygsten(carport_width);
+        Calc.taglægterTilSpær(carportWidth);
+        Calc.toplægterTilRygsten(carportWidth);
         // mangler tagpakken
 
 
@@ -195,8 +195,8 @@ public class HelperFunctions {
         Calc.skruer300stk();
 
 
-        Calc.dobbeltSSort(carport_width, carport_length);
-        Calc.rygstenSort(carport_length, carport_width);
+        Calc.dobbeltSSort(carportWidth, carportLength);
+        Calc.rygstenSort(carportLength, carportWidth);
         // todo: Calc.toplægteHolder();
         //todo: Calc.rygstenBeslag();
         Calc.tagstenBindereOgNakkekrog();

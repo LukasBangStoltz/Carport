@@ -2,29 +2,29 @@ package FunctionLayer;
 
 public class CarportLength {
 
-    private int length_id;
-    private int length_cm;
+    private int lengthId;
+    private int lengthCm;
 
-    public CarportLength(int length_id, int length_cm) {
-        this.length_id = length_id;
-        this.length_cm = length_cm;
+    public CarportLength(int lengthId, int lengthCm) {
+        this.lengthId = lengthId;
+        this.lengthCm = lengthCm;
     }
 
 
-    public int getLength_id() {
-        return length_id;
+    public int getLengthId() {
+        return lengthId;
     }
 
-    public void setLength_id(int length_id) {
-        this.length_id = length_id;
+    public void setLengthId(int lengthId) {
+        this.lengthId = lengthId;
     }
 
-    public int getLength_cm() {
-        return length_cm;
+    public int getLengthCm() {
+        return lengthCm;
     }
 
-    public void setLength_cm(int length_cm) {
-        this.length_cm = length_cm;
+    public void setLengthCm(int lengthCm) {
+        this.lengthCm = lengthCm;
     }
 
 }

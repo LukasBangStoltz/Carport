@@ -2,22 +2,22 @@ package FunctionLayer;
 
 public class CarportPart {
 
-    private int carportPart_id;
+    private int carportPartId;
     private String description;
-    private int carport_id;
+    private int carportId;
 
-    public CarportPart(int carportPart_id, String description, int carport_id) {
-        this.carportPart_id = carportPart_id;
+    public CarportPart(int carportPartId, String description, int carportId) {
+        this.carportPartId = carportPartId;
         this.description = description;
-        this.carport_id = carport_id;
+        this.carportId = carportId;
     }
 
-    public int getCarportPart_id() {
-        return carportPart_id;
+    public int getCarportPartId() {
+        return carportPartId;
     }
 
-    public void setCarportPart_id(int carportPart_id) {
-        this.carportPart_id = carportPart_id;
+    public void setCarportPartId(int carportPartId) {
+        this.carportPartId = carportPartId;
     }
 
     public String getDescription() {
@@ -28,11 +28,11 @@ public class CarportPart {
         this.description = description;
     }
 
-    public int getCarport_id() {
-        return carport_id;
+    public int getCarportId() {
+        return carportId;
     }
 
-    public void setCarport_id(int carport_id) {
-        this.carport_id = carport_id;
+    public void setCarportId(int carportId) {
+        this.carportId = carportId;
     }
 }

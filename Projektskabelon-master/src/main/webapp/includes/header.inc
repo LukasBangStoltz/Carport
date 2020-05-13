@@ -180,11 +180,7 @@
 
                 </li>
 
-                <li class="nav-item">
-                    <a href="FrontController?target=redirect&destination=basket">
-                        <img src="images\shoppingCart.png" height="35">
-                    </a>
-                </li>
+
 
             </ul>
         </div>

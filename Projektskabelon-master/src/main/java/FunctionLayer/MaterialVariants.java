@@ -2,32 +2,32 @@ package FunctionLayer;
 
 public class MaterialVariants {
 
-    private int materialVariants_id;
-    private int material_id;
+    private int materialVariantsId;
+    private int materialId;
     private int length;
     private int price;
 
-    public MaterialVariants(int materialVariants_id, int material_id, int length, int price) {
-        this.materialVariants_id = materialVariants_id;
-        this.material_id = material_id;
+    public MaterialVariants(int materialVariantsId, int materialId, int length, int price) {
+        this.materialVariantsId = materialVariantsId;
+        this.materialId = materialId;
         this.length = length;
         this.price = price;
     }
 
-    public int getMaterialVariants_id() {
-        return materialVariants_id;
+    public int getMaterialVariantsId() {
+        return materialVariantsId;
     }
 
-    public void setMaterialVariants_id(int materialVariants_id) {
-        this.materialVariants_id = materialVariants_id;
+    public void setMaterialVariantsId(int materialVariantsId) {
+        this.materialVariantsId = materialVariantsId;
     }
 
-    public int getMaterial_id() {
-        return material_id;
+    public int getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterial_id(int material_id) {
-        this.material_id = material_id;
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 
     public int getLength() {

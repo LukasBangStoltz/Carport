@@ -2,13 +2,13 @@ package FunctionLayer;
 
 public class Material {
 
-    private int materialID;
+    private int materialId;
     private String name;
     private String dimension;
     private String unit;
 
-    public Material(int material_id, String name, String dimension, String unit) {
-        this.materialID = material_id;
+    public Material(int materialId, String name, String dimension, String unit) {
+        this.materialId = materialId;
         this.name = name;
         this.dimension = dimension;
         this.unit = unit;
@@ -16,12 +16,12 @@ public class Material {
 
     }
 
-    public int getMaterialID() {
-        return materialID;
+    public int getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterialID(int materialID) {
-        this.materialID = materialID;
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 
     public String getName() {

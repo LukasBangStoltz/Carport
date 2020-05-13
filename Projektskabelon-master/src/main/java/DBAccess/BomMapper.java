@@ -14,7 +14,7 @@ import java.util.List;
 public class BomMapper {
 
 
-    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
+    public static List<BomLine> getBomLineFromCarport(int carportId) throws LoginSampleException {
         List<BomLine> listOfBomLine = null;
 
         try {
@@ -27,7 +27,7 @@ public class BomMapper {
 
             PreparedStatement ps = con.prepareStatement(SQL);
 
-            ps.setInt(1, carport_id);
+            ps.setInt(1, carportId);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -36,7 +36,7 @@ public class BomMapper {
                     listOfBomLine = new ArrayList<>();
                 }
 
-                int material_id = rs.getInt("material_id");
+                int materialId = rs.getInt("material_id");
                 String name = rs.getString("name");
                 String dimension = rs.getString("dimension");
                 String unit = rs.getString("unit");
@@ -45,8 +45,8 @@ public class BomMapper {
                 String description = rs.getString("description");
                 int quantity = rs.getInt("quantity");
 
-                BomLine bL = new BomLine(material_id, name, dimension, unit, length,
-                        price, description, carport_id,quantity);
+                BomLine bL = new BomLine(materialId, name, dimension, unit, length,
+                        price, description, carportId,quantity);
 
                 listOfBomLine.add(bL);
 

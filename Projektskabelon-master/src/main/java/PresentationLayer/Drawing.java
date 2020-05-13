@@ -13,8 +13,8 @@ public class Drawing extends Command {
 
         int carportWidth = (int) request.getSession().getAttribute("carportWidth");
         int carportLength = (int) request.getSession().getAttribute("carportLength");
-        int toolshed_length = (int) request.getSession().getAttribute("toolshedLength");
-        int toolshed_width = (int) request.getSession().getAttribute("toolshedWidth");
+        int toolshedLength = (int) request.getSession().getAttribute("toolshedLength");
+        int toolshedWidth = (int) request.getSession().getAttribute("toolshedWidth");
         String flatRoof = (String) request.getSession().getAttribute("flatRoof");
         String raisedroof = request.getParameter("raisedRoof");
         boolean hasToolShed = (boolean) request.getSession().getAttribute("hasToolShed");
@@ -30,9 +30,9 @@ public class Drawing extends Command {
 
             case "flatcarport":
 
-                generatedSvgTop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolShed, toolshed_length, toolshed_width);
+                generatedSvgTop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolShed, toolshedLength, toolshedWidth);
 
-                generatedSvgSide = HelperFunctionsDrawing.drawFlatCarportSide(carportLength, hasToolShed, toolshed_length);
+                generatedSvgSide = HelperFunctionsDrawing.drawFlatCarportSide(carportLength, hasToolShed, toolshedLength);
 
                 break;
 

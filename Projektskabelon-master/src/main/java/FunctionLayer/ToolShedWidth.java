@@ -2,27 +2,27 @@ package FunctionLayer;
 
 public class ToolShedWidth {
 
-    private int toolShedWidthId;
-    private int toolShedWidthCm;
+    private int toolShedWidth_id;
+    private int toolShedWidth_cm;
 
-    public ToolShedWidth(int toolShedWidthId, int toolShedWidthCm) {
-        this.toolShedWidthId = toolShedWidthId;
-        this.toolShedWidthCm = toolShedWidthCm;
+    public ToolShedWidth(int toolShedWidth_id, int toolShedWidth_cm) {
+        this.toolShedWidth_id = toolShedWidth_id;
+        this.toolShedWidth_cm = toolShedWidth_cm;
     }
 
-    public int getToolShedWidthId() {
-        return toolShedWidthId;
+    public int getToolShedWidth_id() {
+        return toolShedWidth_id;
     }
 
-    public void setToolShedWidthId(int toolShedWidthId) {
-        this.toolShedWidthId = toolShedWidthId;
+    public void setToolShedWidth_id(int toolShedWidth_id) {
+        this.toolShedWidth_id = toolShedWidth_id;
     }
 
-    public int getToolShedWidthCm() {
-        return toolShedWidthCm;
+    public int getToolShedWidth_cm() {
+        return toolShedWidth_cm;
     }
 
-    public void setToolShedWidthCm(int toolShedWidthCm) {
-        this.toolShedWidthCm = toolShedWidthCm;
+    public void setToolShedWidth_cm(int toolShedWidth_cm) {
+        this.toolShedWidth_cm = toolShedWidth_cm;
     }
 }

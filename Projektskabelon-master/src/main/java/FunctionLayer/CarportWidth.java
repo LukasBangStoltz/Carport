@@ -2,29 +2,29 @@ package FunctionLayer;
 
 public class CarportWidth {
 
-    private int widthId;
-    private int widthCm;
+    private int width_id;
+    private int width_cm;
 
 
-    public CarportWidth(int widthId, int widthCm) {
-        this.widthId = widthId;
-        this.widthCm = widthCm;
+    public CarportWidth(int width_id, int width_cm) {
+        this.width_id = width_id;
+        this.width_cm = width_cm;
     }
 
 
-    public int getWidthId() {
-        return widthId;
+    public int getWidth_id() {
+        return width_id;
     }
 
-    public void setWidthId(int widthId) {
-        this.widthId = widthId;
+    public void setWidth_id(int width_id) {
+        this.width_id = width_id;
     }
 
-    public int getWidthCm() {
-        return widthCm;
+    public int getWidth_cm() {
+        return width_cm;
     }
 
-    public void setWidthCm(int widthCm) {
-        this.widthCm = widthCm;
+    public void setWidth_cm(int width_cm) {
+        this.width_cm = width_cm;
     }
 }

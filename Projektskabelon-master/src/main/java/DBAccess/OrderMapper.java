@@ -9,8 +9,8 @@ public class OrderMapper {
 
     public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 
-        int orderId;
-        int carportId;
+        int orderID;
+        int carport_id;
         int[] IDs = new int[2];
 
         try {
@@ -25,9 +25,9 @@ public class OrderMapper {
             ResultSet ids = ps.getGeneratedKeys();
 
             if (ids.next()) {
-                carportId = ids.getInt(1);
-                IDs[0] = carportId;
-                System.out.println(carportId);
+                carport_id = ids.getInt(1);
+                IDs[0] = carport_id;
+                System.out.println(carport_id);
 
                 if (carport_type.equals("flatroof")) {
 
@@ -37,7 +37,7 @@ public class OrderMapper {
 
 
                     ps.setInt(1, user_id);
-                    ps.setInt(2, carportId);
+                    ps.setInt(2, carport_id);
                     ps.setInt(3, carport_length_id);
                     ps.setInt(4, carport_width_id);
                     ps.setInt(5, carport_rooftype_id);
@@ -55,7 +55,7 @@ public class OrderMapper {
 
 
                     ps.setInt(1, user_id);
-                    ps.setInt(2, carportId);
+                    ps.setInt(2, carport_id);
                     ps.setInt(3, carport_length_id);
                     ps.setInt(4, carport_width_id);
                     ps.setInt(5, carport_tilt_id);
@@ -70,9 +70,9 @@ public class OrderMapper {
 
             ids = ps.getGeneratedKeys();
             if (ids.next()) {
-                orderId = ids.getInt(1);
-                IDs[1] = orderId;
-                System.out.println(orderId);
+                orderID = ids.getInt(1);
+                IDs[1] = orderID;
+                System.out.println(orderID);
             }
 
 
@@ -86,8 +86,8 @@ public class OrderMapper {
 
     public static int[] insertCarportWithToolShed(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 
-        int orderId;
-        int carportId;
+        int orderID;
+        int carport_id;
         int[] IDs = new int[2];
 
         try {
@@ -102,9 +102,9 @@ public class OrderMapper {
             ResultSet ids = ps.getGeneratedKeys();
 
             if (ids.next()) {
-                carportId = ids.getInt(1);
-                IDs[0] = carportId;
-                System.out.println(carportId);
+                carport_id = ids.getInt(1);
+                IDs[0] = carport_id;
+                System.out.println(carport_id);
 
                 if (carport_type.equals("flatroof")) {
 
@@ -114,7 +114,7 @@ public class OrderMapper {
 
 
                     ps.setInt(1, user_id);
-                    ps.setInt(2, carportId);
+                    ps.setInt(2, carport_id);
                     ps.setInt(3, carport_length_id);
                     ps.setInt(4, carport_width_id);
                     ps.setInt(5, carport_rooftype_id);
@@ -134,7 +134,7 @@ public class OrderMapper {
 
 
                     ps.setInt(1, user_id);
-                    ps.setInt(2, carportId);
+                    ps.setInt(2, carport_id);
                     ps.setInt(3, carport_length_id);
                     ps.setInt(4, carport_width_id);
                     ps.setInt(5, carport_tilt_id);
@@ -150,9 +150,9 @@ public class OrderMapper {
 
             ids = ps.getGeneratedKeys();
             if (ids.next()) {
-                orderId = ids.getInt(1);
-                IDs[1] = orderId;
-                System.out.println(orderId);
+                orderID = ids.getInt(1);
+                IDs[1] = orderID;
+                System.out.println(orderID);
             }
 
 

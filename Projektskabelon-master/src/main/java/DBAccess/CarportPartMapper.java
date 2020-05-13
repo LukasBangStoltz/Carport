@@ -18,7 +18,7 @@ public class CarportPartMapper {
             PreparedStatement ps = con.prepareStatement(SQL);
             for (Part bp: listOfParts) {
                 ps.setInt(1, carportID);
-                ps.setInt(2, bp.getMaterialId());
+                ps.setInt(2, bp.getMaterial_id());
 
                 ps.executeUpdate();
             }
@@ -29,7 +29,7 @@ public class CarportPartMapper {
 
             for (Part part : listOfParts) {
                 ps.setInt(1, orderID);
-                ps.setInt(2, part.getMvId());
+                ps.setInt(2, part.getMv_id());
                 ps.setDouble(3, part.getQuantity());
                 ps.setString(4, part.getDescription());
 

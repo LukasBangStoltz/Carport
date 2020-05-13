@@ -4,16 +4,16 @@ public class Part {
 
     private int quantity;
     private String description;
-    private int materialId;
-    private int mvId;
+    private int material_id;
+    private int mv_id;
     private int length;
     private int price;
 
-    public Part(int quantity, String description, int materialId, int mvId, int length, int price) {
+    public Part(int quantity, String description, int material_id, int mv_id, int length, int price) {
         this.quantity = quantity;
         this.description = description;
-        this.materialId = materialId;
-        this.mvId = mvId;
+        this.material_id = material_id;
+        this.mv_id = mv_id;
         this.length = length;
         this.price = price;
     }
@@ -34,20 +34,20 @@ public class Part {
         this.description = description;
     }
 
-    public int getMaterialId() {
-        return materialId;
+    public int getMaterial_id() {
+        return material_id;
     }
 
-    public void setMaterialId(int materialId) {
-        this.materialId = materialId;
+    public void setMaterial_id(int material_id) {
+        this.material_id = material_id;
     }
 
-    public int getMvId() {
-        return mvId;
+    public int getMv_id() {
+        return mv_id;
     }
 
-    public void setMvId(int mvId) {
-        this.mvId = mvId;
+    public void setMv_id(int mv_id) {
+        this.mv_id = mv_id;
     }
 
     public int getLength() {

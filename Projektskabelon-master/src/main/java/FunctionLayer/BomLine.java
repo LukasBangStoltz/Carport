@@ -2,34 +2,34 @@ package FunctionLayer;
 
 public class BomLine {
 
-    private int materialId;
+    private int material_id;
     private String name;
     private String dimension;
     private String unit;
     private int length;
     private int price;
     private String description;
-    private int carportId;
+    private int carport_id;
     private int quantity;
 
-    public BomLine(int materialId, String name, String dimension, String unit, int length, int price, String description, int carportId, int quantity) {
-        this.materialId = materialId;
+    public BomLine(int material_id, String name, String dimension, String unit, int length, int price, String description, int carport_id, int quantity) {
+        this.material_id = material_id;
         this.name = name;
         this.dimension = dimension;
         this.unit = unit;
         this.length = length;
         this.price = price;
         this.description = description;
-        this.carportId = carportId;
+        this.carport_id = carport_id;
         this.quantity = quantity;
     }
 
-    public int getMaterialId() {
-        return materialId;
+    public int getMaterial_id() {
+        return material_id;
     }
 
-    public void setMaterialId(int materialId) {
-        this.materialId = materialId;
+    public void setMaterial_id(int material_id) {
+        this.material_id = material_id;
     }
 
     public String getName() {
@@ -80,12 +80,12 @@ public class BomLine {
         this.description = description;
     }
 
-    public int getCarportId() {
-        return carportId;
+    public int getCarport_id() {
+        return carport_id;
     }
 
-    public void setCarportId(int carportId) {
-        this.carportId = carportId;
+    public void setCarport_id(int carport_id) {
+        this.carport_id = carport_id;
     }
 
     public int getQuantity() {

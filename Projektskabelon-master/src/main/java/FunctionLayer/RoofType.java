@@ -2,20 +2,20 @@ package FunctionLayer;
 
 public class RoofType {
 
-    private int roofId;
+    private int roof_id;
     private String name;
 
-    public RoofType(int roofId, String name) {
-        this.roofId = roofId;
+    public RoofType(int roof_id, String name) {
+        this.roof_id = roof_id;
         this.name = name;
     }
 
-    public int getRoofId() {
-        return roofId;
+    public int getRoof_id() {
+        return roof_id;
     }
 
-    public void setRoofId(int roofId) {
-        this.roofId = roofId;
+    public void setRoof_id(int roof_id) {
+        this.roof_id = roof_id;
     }
 
     public String getName() {

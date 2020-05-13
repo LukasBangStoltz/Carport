@@ -2,27 +2,27 @@ package FunctionLayer;
 
 public class RoofTilt {
 
-    private int roofTiltId;
-    private int roofTiltDegree;
+    private int roofTilt_id;
+    private int roofTilt_degree;
 
-    public RoofTilt(int roofTiltId, int roofTiltDegree) {
-        this.roofTiltId = roofTiltId;
-        this.roofTiltDegree = roofTiltDegree;
+    public RoofTilt(int roofTilt_id, int roofTilt_degree) {
+        this.roofTilt_id = roofTilt_id;
+        this.roofTilt_degree = roofTilt_degree;
     }
 
-    public int getRoofTiltId() {
-        return roofTiltId;
+    public int getRoofTilt_id() {
+        return roofTilt_id;
     }
 
-    public void setRoofTiltId(int roofTiltId) {
-        this.roofTiltId = roofTiltId;
+    public void setRoofTilt_id(int roofTilt_id) {
+        this.roofTilt_id = roofTilt_id;
     }
 
-    public int getRoofTiltDegree() {
-        return roofTiltDegree;
+    public int getRoofTilt_degree() {
+        return roofTilt_degree;
     }
 
-    public void setRoofTiltDegree(int roofTiltDegree) {
-        this.roofTiltDegree = roofTiltDegree;
+    public void setRoofTilt_degree(int roofTilt_degree) {
+        this.roofTilt_degree = roofTilt_degree;
     }
 }

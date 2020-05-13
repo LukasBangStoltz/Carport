@@ -69,7 +69,7 @@ public class UserMapper {
     }
     public static int getUserId(String email) {
 
-        int userId = 0;
+        int user_id = 0;
         try {
             Connection connection = Connector.connection();
             PreparedStatement statement = connection.prepareStatement("Select user_id from user where email = ?");
@@ -78,7 +78,7 @@ public class UserMapper {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                userId = resultSet.getInt("user_id");
+                user_id = resultSet.getInt("user_id");
             }
 
         } catch (ClassNotFoundException e) {
@@ -87,7 +87,7 @@ public class UserMapper {
             e.printStackTrace();
         }
 
-        return userId;
+        return user_id;
     }
 
 }

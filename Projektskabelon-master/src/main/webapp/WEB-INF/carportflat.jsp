@@ -71,7 +71,7 @@
                         <select class="form-control" name="carportlength" id="carportlength">
                             <c:forEach var="length" items="${applicationScope.lengthList}">
 
-                                <option value="${length.length_id}">${length.length_cm}</option>
+                                <option value="${length.lengthId}">${length.lengthCm}</option>
 
                             </c:forEach>
 
@@ -86,7 +86,7 @@
                         <select class="form-control" name="carportwidth" id="carportwidth">
 
                             <c:forEach var="width" items="${applicationScope.widthList}">
-                                <option value="${width.width_id}">${width.width_cm}</option>
+                                <option value="${width.widthId}">${width.widthCm}</option>
                             </c:forEach>
 
 
@@ -98,7 +98,7 @@
                         <select class="form-control" name="rooftype" id="rooftype">
                             <c:forEach var="flatrooftype" items="${applicationScope.flatrooftypelist}">
 
-                                <option value="${flatrooftype.roof_id}">${flatrooftype.name}</option>
+                                <option value="${flatrooftype.roofId}">${flatrooftype.name}</option>
 
                             </c:forEach>
 
@@ -126,7 +126,7 @@
 
                             <c:forEach var="toolshedlength" items="${applicationScope.toolshedlengthslist}">
 
-                                <option value="${toolshedlength.toolShed_id}">${toolshedlength.toolShed_cm}</option>
+                                <option value="${toolshedlength.toolShedId}">${toolshedlength.toolShedCm}</option>
 
                             </c:forEach>
 
@@ -141,7 +141,7 @@
 
                             <c:forEach var="toolshedwidth" items="${applicationScope.toolshedwidthslist}">
 
-                                <option value="${toolshedwidth.toolShedWidth_id}">${toolshedwidth.toolShedWidth_cm}</option>
+                                <option value="${toolshedwidth.toolShedWidthId}">${toolshedwidth.toolShedWidthCm}</option>
 
                             </c:forEach>
 

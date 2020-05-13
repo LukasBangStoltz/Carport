@@ -85,7 +85,7 @@
 
         <div class="col-1 text-right">
             <form action="FrontController" method="post">
-                <input type="hidden" name="target" value="setegning"/>
+                <input type="hidden" name="target" value="drawing"/>
                 <button type="button" class="btn btn-info">Se tegning</button>
             </form>
         </div>

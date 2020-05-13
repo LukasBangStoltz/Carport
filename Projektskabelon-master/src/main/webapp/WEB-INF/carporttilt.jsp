@@ -73,7 +73,7 @@
                         <select class="form-control" name="carportlength" id="carportlength">
                             <c:forEach var="length" items="${applicationScope.lengthList}">
 
-                                <option value="${length.lengthId}">${length.lengthCm}</option>
+                                <option value="${length.length_id}">${length.length_cm}</option>
 
                             </c:forEach>
 
@@ -87,7 +87,7 @@
                         <select class="form-control" name="carportwidth" id="carportwidth">
 
                             <c:forEach var="width" items="${applicationScope.widthList}">
-                                <option value="${width.widthId}">${width.widthCm}</option>
+                                <option value="${width.width_id}">${width.width_cm}</option>
                             </c:forEach>
 
 
@@ -99,7 +99,7 @@
                         <select class="form-control" name="rooftype"id="rooftype">
 
                         <c:forEach var="raisedRoof" items="${applicationScope.raisedrooftypelist}">
-                            <option value="${raisedRoof.roofId}">${raisedRoof.name} </option>
+                            <option value="${raisedRoof.roof_id}">${raisedRoof.name} </option>
                         </c:forEach>
 
                         </select>
@@ -111,7 +111,7 @@
 a
                            <c:forEach var="roofdegree" items="${applicationScope.raisedroofdegreelist}">
 
-                               <option value="${roofdegree.roofTiltId}">${roofdegree.roofTiltDegree} grader</option>
+                               <option value="${roofdegree.roofTilt_id}">${roofdegree.roofTilt_degree} grader</option>
 
                            </c:forEach>
 
@@ -137,7 +137,7 @@ a
 
                                     <c:forEach var="toolshedlength" items="${applicationScope.toolshedlengthslist}">
 
-                                        <option value="${toolshedlength.toolShedId}">${toolshedlength.toolShedCm}</option>
+                                        <option value="${toolshedlength.toolShed_id}">${toolshedlength.toolShed_cm}</option>
 
                                     </c:forEach>
 
@@ -152,7 +152,7 @@ a
 
                             <c:forEach var="toolshedwidth" items="${applicationScope.toolshedwidthslist}">
 
-                                <option value="${toolshedwidth.toolShedWidthId}">${toolshedwidth.toolShedWidthCm}</option>
+                                <option value="${toolshedwidth.toolShedWidth_id}">${toolshedwidth.toolShedWidth_cm}</option>
 
                             </c:forEach>
 

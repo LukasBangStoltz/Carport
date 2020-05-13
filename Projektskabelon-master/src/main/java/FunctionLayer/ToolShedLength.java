@@ -14,15 +14,15 @@ public class ToolShedLength {
         return toolShedLengthId;
     }
 
-    public void setToolShed_id(int toolShedLengthId) {
-        this.toolShedLengthId = toolShedLengthId;
+    public void setToolShed_id(int toolShedLength_id) {
+        this.toolShedLengthId = toolShedLength_id;
     }
 
     public int getToolShed_cm() {
         return toolShedLengthCm;
     }
 
-    public void setToolShed_cm(int toolShedLengthCm) {
-        this.toolShedLengthCm = toolShedLengthCm;
+    public void setToolShed_cm(int toolShedLength_cm) {
+        this.toolShedLengthCm = toolShedLength_cm;
     }
 }

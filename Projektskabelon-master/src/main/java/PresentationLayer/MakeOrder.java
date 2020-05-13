@@ -69,7 +69,7 @@ public class MakeOrder extends Command {
 
 
             int carport_id = 0;
-            int order_id;
+            int order_id = 0;
             int[] IDs;
 
             switch (action) {
@@ -123,9 +123,9 @@ public class MakeOrder extends Command {
 
             }
 
-            request.getSession().setAttribute("bomlist", InitializeLists.getBomList(carport_id));
+            request.getSession().setAttribute("bomlist", InitializeLists.getBomList(order_id));
 
-            return "bomLine";
+            return "bomline";
 
         } else {
 

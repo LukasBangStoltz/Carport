@@ -1,7 +1,6 @@
 package FunctionLayer;
 
 import DBAccess.*;
-import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -73,8 +72,8 @@ public class LogicFacade {
         return MaterialMapper.GetMaterials();
     }
 
-    public static List<BomLine> getBomLineFromCarport(int carport_id) throws LoginSampleException {
-        return BomMapper.getBomLineFromCarport(carport_id);
+    public static List<BomLine> getBomLineFromCarport(int orderId) throws LoginSampleException {
+        return BomMapper.getBomLineForCarport(orderId);
     }
 
     public static int getUserId(String email) {

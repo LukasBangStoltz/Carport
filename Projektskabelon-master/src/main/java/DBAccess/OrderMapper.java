@@ -188,15 +188,19 @@ public class OrderMapper {
                 int toolshedLengthId = rs.getInt("toolshed_length_id");
                 int toolshedWidthId = rs.getInt("toolshed_width_id");
 
+                // Carport flad
                 if (carportTiltId == 0 && toolshedLengthId == 0) {
                     order = new Order(carportLengthId, carportWidthId, carportRoofTypeId);
                 }
+                // Carport hældning
                 if (carportTiltId != 0 && toolshedLengthId == 0) {
                     order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, carportTiltId);
                 }
+                // Carport flad med skur
                 if (carportTiltId == 0 && toolshedLengthId != 0) {
                     order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, toolshedLengthId, toolshedWidthId);
                 } else {
+                    // carport hældning med skur
                     order = new Order(carportLengthId, carportWidthId, carportRoofTypeId, carportTiltId, toolshedLengthId, toolshedWidthId);
                 }
             }

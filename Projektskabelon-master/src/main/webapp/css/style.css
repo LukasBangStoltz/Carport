@@ -1,5 +1,30 @@
-body {
+
+
+html, body {
     background-color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#footer{
+    position: relative;
+    clear: both;
+}
+
+#main{
+    overflow: auto;
+    padding-bottom: 20px;
+}
+
+.row{
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+
+}
+
+#container{
+    min-height: 100%;
 }
 
 li {
@@ -11,10 +36,6 @@ li:first-child {
     margin: 0;
 }
 
-footer {
-    padding-top: 5vh;
-    padding-bottom: 2vh;
-}
 
 .content {
     height: 50vh;
@@ -23,6 +44,8 @@ footer {
 
 .containerFooter {
     background: linear-gradient(to right, #B8B8B8 0%, lightgrey 100%);
+    padding-top: 5vh;
+    padding-bottom: 2vh;
 }
 
 .copyright, .impressum {

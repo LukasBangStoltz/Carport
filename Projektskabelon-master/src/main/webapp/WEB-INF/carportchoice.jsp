@@ -1,14 +1,8 @@
-<%@ page import="MyUtils.InitializeLists" %><%--
-  Created by IntelliJ IDEA.
-  User: Bruger
-  Date: 20-04-2020
-  Time: 12:25
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="MyUtils.InitializeLists" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../includes/header.inc" %>
 <%@include file="../includes/initializearraylister.inc" %>
 
@@ -71,7 +65,7 @@
                 <c:if test="${requestScope.error!= null}">
 
                 <div class="alert alert-danger" role="alert">
-                    <h2 class="text-center">Der er opstået en</h2>
+                    <h2 class="text-center">Der er opstået en fejl</h2>
 
                     <h6 class="text-center text-danger"> ${requestScope.error}</h6>
 

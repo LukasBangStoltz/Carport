@@ -55,7 +55,6 @@ public class ManageRequest extends Command {
                 int toolshedWidth = LogicFacade.getToolShedWidthsFromId(toolShedWidthId);
 
 
-
                 //Sætte attributterne til JSP siden
                 request.getSession().setAttribute("carportlength", carportLength);
                 request.getSession().setAttribute("carportwidth", carportWidth);
@@ -74,8 +73,6 @@ public class ManageRequest extends Command {
                 toolshedLength = (int) request.getSession().getAttribute("toolshedlength");
                 toolshedWidth = (int) request.getSession().getAttribute("toolshedwidth");
                 Boolean hasToolshed = HelperFunctions.hasToolShed(toolshedLength, toolshedWidth);
-
-
 
 
                 String svgdrawingtop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolshed, toolshedLength, toolshedWidth);
@@ -99,7 +96,7 @@ public class ManageRequest extends Command {
                 LogicFacade.authorizeRequest(authorizeOrderId);
                 request.getServletContext().setAttribute("requestList", InitializeLists.initRequestList());
 
-                return "requestpage";
+                return "allorders";
         }
 
 

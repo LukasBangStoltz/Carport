@@ -1,10 +1,11 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -53,7 +54,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="FrontController?target=redirect&destination=employeepage">Home</a>
+                <a class="nav-link" href="FrontController?target=redirect&destination=employeepage">Forside</a>
             </li>
             <li class="nav-item">
                 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -63,7 +64,7 @@
                 </c:if>
 
             <li class="nav-item">
-                <a class="nav-link" href="FrontController?target=redirect&destination=requestpage"
+                <a class="nav-link" href="FrontController?target=redirect&destination=allorders"
                    onclick="document.getElementById('id01').style.display='block'"
                    style="width:auto;">Forespørgsler</a>
             </li>

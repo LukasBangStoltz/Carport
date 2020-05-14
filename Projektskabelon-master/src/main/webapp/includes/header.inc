@@ -1,8 +1,9 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
          <!DOCTYPE html>
          <html lang="en">
          <head>
-             <meta charset="UTF-8">
+
 
              <link rel="stylesheet" type="text/css" href="css/style.css">
              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -49,7 +50,7 @@
 
                  <ul class="navbar-nav ml-auto">
                      <li class="nav-item">
-                         <a class="nav-link" href="FrontController?target=redirect&destination=index">Home</a>
+                         <a class="nav-link" href="FrontController?target=redirect&destination=index">Forside</a>
                      </li>
                      <li class="nav-item">
                          <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -171,18 +172,28 @@
 
                              </div>
                          </c:if>
-                         <c:if test="${sessionScope.email != null}">
-
-                             <a class="nav-link" href="#" style="width:auto">${sessionScope.email}</a>
-
-                         </c:if>
 
                      </li>
 
                      <li class="nav-item">
-                         <a href="FrontController?target=redirect&destination=basket">
-                             <img src="images\shoppingCart.png" height="35">
-                         </a>
+
+                     <c:if test="${sessionScope.email != null}">
+
+
+                       <a class="nav-link" href="#" style="width:auto">Mine forespørgsler</a>
+
+                        </c:if>
+
+                     </li>
+
+                     <li class="nav-item">
+
+
+                          <c:if test="${sessionScope.email != null}">
+
+                          <a class="nav-link" href="#" style="width:auto"> ${sessionScope.email}</a>
+
+                          </c:if>
                      </li>
 
                  </ul>

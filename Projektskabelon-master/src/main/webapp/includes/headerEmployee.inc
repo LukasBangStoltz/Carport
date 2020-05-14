@@ -43,7 +43,7 @@
 
 <div class="navbar navbar-expand-lg navbar-dark"
      style="background: linear-gradient(to right, #004687 30%, #0066ff 100%);">
-    <a href="FrontController?target=redirect&destination=index">
+    <a href="FrontController?target=redirect&destination=employeepage">
         <img src="images/logo.png" height="80" alt="Logo fog "/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu">

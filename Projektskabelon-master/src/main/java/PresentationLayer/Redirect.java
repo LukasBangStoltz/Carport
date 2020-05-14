@@ -20,6 +20,8 @@ public class Redirect extends Command {
             case "basket": break;
             case "loginpage" : break;
             case "requestpage" : break;
+            case "employeepage" : break;
+
         }
 
         return destination;

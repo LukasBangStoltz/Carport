@@ -12,13 +12,14 @@
 
 
 
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1 class="text-center my-5">Hello ${sessionScope.email} </h1>
 
 
 
-        You are now logged in as a EMPLOYEE of our wonderful site.
+
         </div>
 </div>
+
 
 <%@include file="../includes/footer.inc" %>
 

@@ -10,7 +10,7 @@
             <div class="col">
                 <h1 class="text-center my-5">Tegning over din carport</h1> <br><br><br>
                 <div class="my-3">
-                    ${requestScope.svgdrawingtop}
+                    ${sessionScope.svgdrawingtop}
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
             <div class="col"></div>
 
             <div class="col">
-                ${requestScope.svgdrawingside}
+                ${sessionScope.svgdrawingside}
             </div>
 
             <div class="col"></div>

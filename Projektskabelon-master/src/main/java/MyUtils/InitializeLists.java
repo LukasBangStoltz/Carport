@@ -194,5 +194,21 @@ public class InitializeLists {
 
     }
 
+    public static List<Request> initRequestList() {
 
+
+            try {
+                requestLists = LogicFacade.getAllRequests();
+            } catch (LoginSampleException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+        return requestLists;
+
+    }
 }

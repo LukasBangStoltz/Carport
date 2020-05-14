@@ -53,7 +53,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="FrontController?target=redirect&destination=index">Home</a>
+                <a class="nav-link" href="FrontController?target=redirect&destination=employeepage">Home</a>
             </li>
             <li class="nav-item">
                 <link rel="stylesheet" type="text/css" href="css/style.css">

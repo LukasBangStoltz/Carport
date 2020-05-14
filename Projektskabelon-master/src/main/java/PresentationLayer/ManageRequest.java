@@ -5,6 +5,8 @@ import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
 import MyUtils.HelperFunctions;
 import MyUtils.HelperFunctionsDrawing;
+import MyUtils.InitializeLists;
+import sun.rmi.runtime.Log;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +23,7 @@ public class ManageRequest extends Command {
         String authorize = request.getParameter("authorize");
 
 
-        String action = HelperFunctions.CheckActionRequest(orderNumber, seeDrawing, seeBomLine);
+        String action = HelperFunctions.CheckActionRequest(orderNumber, seeDrawing, seeBomLine, authorize);
 
 
         switch (action) {
@@ -40,7 +42,7 @@ public class ManageRequest extends Command {
                 int carportWidthId = order.getCarportWidthId();
                 int carportRoofTypeId = order.getCarportRoofTypeId();
                 int carportTiltId = order.getCarportRoofTiltId();
-                int toolShedLength = order.getToolshedLengthId();
+                int toolShedLengthId = order.getToolshedLengthId();
                 int toolShedWidthId = order.getToolshedWidthId();
 
 
@@ -49,32 +51,55 @@ public class ManageRequest extends Command {
                 int carportWidth = LogicFacade.getCarportWidthFromId(carportWidthId);
                 String carportRoofType = LogicFacade.getCarportRoofTypeFromId(carportRoofTypeId);
                 int carportTilt = LogicFacade.getCarportTiltFromId(carportTiltId);
-                int toolshedLength = LogicFacade.getToolShedLengthsFromId(toolShedLength);
+                int toolshedLength = LogicFacade.getToolShedLengthsFromId(toolShedLengthId);
                 int toolshedWidth = LogicFacade.getToolShedWidthsFromId(toolShedWidthId);
 
 
 
                 //Sætte attributterne til JSP siden
-                request.setAttribute("carportlength", carportLength);
-                request.setAttribute("carportwidth", carportWidth);
-                request.setAttribute("carportrooftype", carportRoofType);
-                request.setAttribute("carporttilt", carportTilt);
-                request.setAttribute("toolshedlength", toolshedLength);
-                request.setAttribute("toolshedwidth", toolshedWidth);
-                request.setAttribute("ordernumber", orderNumber);
+                request.getSession().setAttribute("carportlength", carportLength);
+                request.getSession().setAttribute("carportwidth", carportWidth);
+                request.getSession().setAttribute("carportrooftype", carportRoofType);
+                request.getSession().setAttribute("carporttilt", carportTilt);
+                request.getSession().setAttribute("toolshedlength", toolshedLength);
+                request.getSession().setAttribute("toolshedwidth", toolshedWidth);
+                request.getSession().setAttribute("ordernumber", orderNumber);
 
 
                 return "orderinfo";
 
             case "seedrawing":
+                carportLength = (int) request.getSession().getAttribute("carportlength");
+                carportWidth = (int) request.getSession().getAttribute("carportwidth");
+                toolshedLength = (int) request.getSession().getAttribute("toolshedlength");
+                toolshedWidth = (int) request.getSession().getAttribute("toolshedwidth");
+                Boolean hasToolshed = HelperFunctions.hasToolShed(toolshedLength, toolshedWidth);
 
 
 
+
+                String svgdrawingtop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolshed, toolshedLength, toolshedWidth);
+                String svgdrawingside = HelperFunctionsDrawing.drawFlatCarportSide(carportLength, hasToolshed, toolshedLength);
+
+                request.getSession().setAttribute("svgdrawingtop", svgdrawingtop);
+                request.getSession().setAttribute("svgdrawingside", svgdrawingside);
 
 
                 return "drawing";
 
+            case "seebomline":
 
+                int bomOrderId = Integer.parseInt(seeBomLine);
+                request.getSession().setAttribute("bomlist", LogicFacade.getBomLineFromCarport(bomOrderId));
+
+                return "bomline";
+
+            case "authorize":
+                int authorizeOrderId = Integer.parseInt(authorize);
+                LogicFacade.authorizeRequest(authorizeOrderId);
+                request.getServletContext().setAttribute("requestList", InitializeLists.initRequestList());
+
+                return "requestpage";
         }
 
 

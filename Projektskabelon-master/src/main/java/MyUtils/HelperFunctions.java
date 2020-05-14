@@ -22,11 +22,11 @@ public class HelperFunctions {
 
     }
 
-    public static boolean hasToolShed(int skurLength, int skurWidth) {
+    public static boolean hasToolShed(int toolshedLength, int toolshedWidth) {
 
         boolean hasToolShed = true;
 
-        if (skurLength == 0 || skurWidth == 0) {
+        if (toolshedLength == 0 || toolshedWidth == 0) {
 
             hasToolShed = false;
 
@@ -75,23 +75,23 @@ public class HelperFunctions {
 
     }
 
-    public static String CheckActionRequest(String orderNumber, String seeDrawing, String seeBomLine) {
-        String action = "";
-        if(orderNumber != null){
-           action = "seeorder";
-        }
-        if(seeDrawing != null){
-            action = "seedrawing";
-        }
-        if(seeBomLine != null){
-            action = "seebomline";
-        } else{
+    public static String CheckActionRequest(String orderNumber, String seeDrawing, String seeBomLine, String authorize) {
 
-            action = "authorize";
+        if (orderNumber != null) {
+            return "seeorder";
         }
-        return action;
-
+        if (seeDrawing != null) {
+            return "seedrawing";
+        }
+        if (seeBomLine != null) {
+            return "seebomline";
+        }
+        if (authorize != null) {
+            return "authorize";
+        }
+        return "seeorder";
     }
+
 
 
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {

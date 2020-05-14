@@ -84,7 +84,7 @@
 
 
                         <div class="form-group col-md-7 mt-2">
-                            <label for="carportwidth">Carport bredde</label>
+                            <label for="carportwidth"><p>Carport bredde</p></label>
                             <select class="form-control" name="carportwidth" id="carportwidth">
 
                                 <c:forEach var="width" items="${applicationScope.widthList}">

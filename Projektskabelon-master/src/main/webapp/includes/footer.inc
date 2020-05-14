@@ -1,9 +1,10 @@
 <div id="footer" class="row" style="background: linear-gradient(to right, #B8B8B8 0%, lightgrey 100%);">
 
-    <div class="row">
+
+    <div class="row" style="margin: auto;">
         <div class="col">
             <ul>
-                <li class="col-xs-6 col-sm-2">
+                <li class="col-xs-6 col-sm-2 mt-3">
                     <a href="https://www.facebook.com/fogtraelastbyggecenter/">
                         <img class="logo"
                              src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_facebook-128.png">
@@ -13,7 +14,7 @@
         </div>
         <div class="col">
             <ul>
-                <li class="col-xs-6 col-sm-2">
+                <li class="col-xs-6 col-sm-2 mt-3">
                     <a href="https://www.instagram.com/fogtraelastbyggecenter/">
                         <img class="logo"
                              src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media_photo-128.png">
@@ -21,7 +22,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col">
+        <div class="col mt-3">
             <ul>
                 <h4>Adresse: </h4>
                 <a href="https://www.google.dk/maps/place/N%C3%B8rgaardsvej+3,+2800+Kongens+Lyngby/@55.7702008,12.5048934,17z/data=!3m1!4b1!4m5!3m4!1s0x46524e6cf23ef2e1:0x5fe7d19f27285031!8m2!3d55.7702008!4d12.5070821">
@@ -29,7 +30,7 @@
                 </a>
             </ul>
         </div>
-        <div class="col">
+        <div class="col mt-3">
             <ul>
                 <h4>Telefon: </h4>
                 <a href="tel:+45 45 87 10 01">
@@ -38,7 +39,7 @@
 
             </ul>
         </div>
-        <div class="col">
+        <div class="col mt-3">
             <ul>
                 <h4>Email: </h4>
                 <a href="mailto:info@johannesfog.dk" target="_top">

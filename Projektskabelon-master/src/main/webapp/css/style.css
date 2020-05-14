@@ -22,6 +22,10 @@ html, body {
 
 }
 
+.logo{
+    height: 8vh;
+}
+
 #container{
     min-height: 100%;
 }
@@ -51,9 +55,7 @@ li:first-child {
     text-align: center;
 }
 
-.logo {
-    height: 8vh;
-}
+
 
 .jumbotron {
     background-color: transparent !important;
@@ -122,9 +124,6 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
-    padding: 16px;
-}
 
 span.psw {
     float: right;

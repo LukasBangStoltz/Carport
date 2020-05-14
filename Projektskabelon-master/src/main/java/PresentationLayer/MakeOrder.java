@@ -24,9 +24,18 @@ public class MakeOrder extends Command {
         String raisedroof = request.getParameter("raisedroof");
 
 
-
         // få email ud fra sessionen, altså den der er logget ind
         String email = String.valueOf(request.getSession().getAttribute("email"));
+
+        System.out.println(email.length());
+
+        if (email.equals("null")) {
+
+            request.setAttribute("error", "Du skal være logget ind for at kunne lave en forespørgsel");
+
+            return "carportflat";
+
+        }
 
         //regne de aktuelle længder, bredde etc ud fra det id vi henter fra JSP-siden
         int carport_length = LogicFacade.getCarportLengthFromId(carport_length_id);
@@ -41,8 +50,6 @@ public class MakeOrder extends Command {
         String action = HelperFunctions.checkAction(flatroof, raisedroof, hasToolShed);
 
 
-
-
         // gemme attributer på sessionscopet
         request.getSession().setAttribute("carportLength", carport_length);
         request.getSession().setAttribute("carportWidth", carport_width);
@@ -52,15 +59,6 @@ public class MakeOrder extends Command {
         request.getSession().setAttribute("carportType", carportType);
         request.getSession().setAttribute("flatRoof", flatroof);
         request.getSession().setAttribute("raisedRoof", raisedroof);
-
-
-
-
-
-
-
-
-
 
 
         if (isValid) {

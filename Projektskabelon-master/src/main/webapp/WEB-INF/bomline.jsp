@@ -5,7 +5,7 @@
 
 <div id="container">
     <div id="main">
-        <h3 class="text-center my-5"> Styklisten til din carport </h3>
+        <h3 class="text-center my-5"> Styklisten til carporten </h3>
 
         <div class="row">
             <div class="col-2"></div>

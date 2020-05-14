@@ -5,6 +5,25 @@
 
 <div id="container">
     <div id="main">
+
+        <div class="row mt-5">
+
+            <div class="col text-center">
+
+                <c:if test="${requestScope.error!= null}">
+
+                <div class="alert alert-danger" role="alert">
+                    <h2 class="text-center">Der er opstået en fejl</h2>
+
+                    <h6 class="text-center text-danger"> ${requestScope.error}</h6>
+
+                    </c:if>
+                </div>
+            </div>
+
+
+        </div>
+
         <div class="row">
 
             <div class="col-1"></div>
@@ -152,7 +171,7 @@
                         </div>
 
                         <div class="col-md-7 my-4">
-                            <button class="btn btn-primary btn-md active" role="button" aria-pressed="true">Læg i kurv
+                            <button class="btn btn-primary btn-md active" role="button" aria-pressed="true">Send forespørgsel
                             </button>
                         </div>
 

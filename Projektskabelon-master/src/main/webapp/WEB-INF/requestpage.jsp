@@ -20,7 +20,7 @@
         <h2 class="text-center my-5 font-weight-bold">Oversigt over forespørgsler</h2>
 
         <form action="FrontController" method="post">
-            <input type="hidden" name="target" value="managerequests">
+            <input type="hidden" name="target" value="managerequest">
             <table class="table table-striped my-3">
 
                 <c:forEach var="requestItem" items="${applicationScope.requestList}">

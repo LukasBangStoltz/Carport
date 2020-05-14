@@ -11,23 +11,22 @@
 
 <div class="container-fluid">
 
-    <div class="row my-3">
+    <div class="row mb-5">
 
 
         <div class="col-9"></div>
 
     </div>
 
-    <div class="jumbotron" style="font-weight: bold">
-        <h1 class="text-center">Ordre information</h1>
-    </div>
+    <h1 class="text-center my-5 ">Ordre information</h1>
 
-    <div class="row">
+
+    <div class="row mb-3">
 
         <div class="col-4"></div>
 
-        <div class="col-4 my-3">
-            <table class="table">
+        <div class="col-4 ">
+            <table class="table table-striped">
                 <tbody>
                 <tr>
                     <th scope="row">Carport længde</th>
@@ -39,11 +38,11 @@
                 </tr>
                 <tr>
                     <th scope="row">Carport tag</th>
-                    <td>${requestScope.carportroof}</td>
+                    <td>${requestScope.carportrooftype}</td>
                 </tr>
                 <tr>
                     <th scope="row">Taghældning</th>
-                    <td>${requestScope.rooftilt}</td>
+                    <td>${requestScope.carporttilt}</td>
                 </tr>
                 <tr>
                     <th scope="row">Redskabsrums længde</th>
@@ -65,28 +64,27 @@
     <div class="row mb-2">
 
         <div class="col-4"></div>
+        <form action="FrontController" method="post">
+        <input type="hidden" name="target" value="managerequest">
+            <div class="col-1 text-right">
 
-        <div class="col-1 text-right">
-            <form action="FrontController" method="post">
-                <input type="hidden" name="target" value="drawing"/>
-                <button type="button" class="btn btn-info">Se tegning</button>
-            </form>
-        </div>
+                <button type="submit" name="seedrawing" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Se tegning
+                </button>
+            </div>
 
-        <div class="col-2 text-left">
-            <form action="FrontController" method="post">
-                <input type="hidden" name="target" value="gembestilling"/>
-                <button type="button" class="btn btn-primary">Se stykliste</button>
-            </form>
-        </div>
-
-        <div class="col-1 text-right">
-            <form action="FrontController" method="post">
+            <div class="col-2 text-left">
+                <button type="submit" name="seebomline" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Se stykliste
+                </button>
+            </div>
+            <div class="col-1 text-right">
                 <input type="hidden" name="target" value="køb"/>
-                <button type="button" class="btn btn-primary">Godkend</button>
-            </form>
-        </div>
-
+                <button type="submit" name="authorize" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Godkend
+                </button>
+            </div>
+        </form>
         <div class="col-4"></div>
 
     </div>

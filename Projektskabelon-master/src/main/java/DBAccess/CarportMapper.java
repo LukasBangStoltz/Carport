@@ -303,5 +303,49 @@ public class CarportMapper {
         return toolshed_width;
     }
 
+    public static String getCarportRoofTypeFromId(int carportRoofTypeId) {
 
+        String carportRoofType = "";
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from rooftype where rooftype_id = ? ");
+            statement.setInt(1, carportRoofTypeId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                carportRoofType = resultSet.getString("rooftype_name");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return carportRoofType;
+    }
+
+    public static int getCarportTiltFromId(int carportTiltId) {
+
+        int carportTilt = 0;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from carport_tilt where tilt_id = ? ");
+            statement.setInt(1, carportTiltId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                carportTilt = resultSet.getInt("tilt_degree");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return carportTilt;
+    }
 }

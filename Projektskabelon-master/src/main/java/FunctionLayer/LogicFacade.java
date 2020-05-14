@@ -97,12 +97,27 @@ public class LogicFacade {
         return CarportMapper.getToolShedWidthsFromId(toolshed_width_id);
     }
 
+    public static String getCarportRoofTypeFromId(int carportRoofTypeId) {
+
+        return CarportMapper.getCarportRoofTypeFromId(carportRoofTypeId);
+
+    }
+
+    public static int getCarportTiltFromId(int carportTiltId) {
+        return CarportMapper.getCarportTiltFromId(carportTiltId);
+    }
+
     public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
         return RequestMapper.getAllRequests();
     }
+
     public static Order getOrder(int orderId) throws LoginSampleException {
         return OrderMapper.getOrder(orderId);
     }
 
-
+    public static void authorizeRequest(int orderId) throws LoginSampleException {
+        RequestMapper.authorizeRequest(orderId);
     }
+
+
+}

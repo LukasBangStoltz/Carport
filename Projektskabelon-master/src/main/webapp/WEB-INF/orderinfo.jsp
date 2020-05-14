@@ -12,16 +12,16 @@
 <div id="container">
     <div id="main">
 
+
         <div class="row my-3">
+
 
 
             <div class="col-9"></div>
 
         </div>
 
-        <div class="jumbotron" style="font-weight: bold">
-            <h1 class="text-center">Ordre information</h1>
-        </div>
+
 
         <div class="row">
 
@@ -61,34 +61,36 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
 
         <div class="row mb-2">
 
-            <div class="col-4"></div>
 
+        <div class="col-4"></div>
+        <form action="FrontController" method="post">
+        <input type="hidden" name="target" value="managerequest">
             <div class="col-1 text-right">
-                <form action="FrontController" method="post">
-                    <input type="hidden" name="target" value="drawing"/>
-                    <button type="button" class="btn btn-info">Se tegning</button>
-                </form>
+
+                <button type="submit" name="seedrawing" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Se tegning
+                </button>
             </div>
 
             <div class="col-2 text-left">
-                <form action="FrontController" method="post">
-                    <input type="hidden" name="target" value="gembestilling"/>
-                    <button type="button" class="btn btn-primary">Se stykliste</button>
-                </form>
+                <button type="submit" name="seebomline" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Se stykliste
+                </button>
             </div>
-
             <div class="col-1 text-right">
-                <form action="FrontController" method="post">
-                    <input type="hidden" name="target" value="køb"/>
-                    <button type="button" class="btn btn-primary">Godkend</button>
-                </form>
+                <input type="hidden" name="target" value="køb"/>
+                <button type="submit" name="authorize" value="${request.ordernumber}"
+                        class="btn btn-outline-primary"> Godkend
+                </button>
             </div>
+        </form>
+        <div class="col-4"></div>
 
-            <div class="col-4"></div>
 
         </div>
     </div>

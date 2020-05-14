@@ -57,10 +57,11 @@ public class HelperFunctions {
         return action;
 
     }
+
     public static String checkActionDrawing(String flatCarPort, String raisedCarPort) {
         String action = "";
 
-        if (flatCarPort != null){
+        if (flatCarPort != null) {
             action = "flatcarport";
 
         }
@@ -73,6 +74,26 @@ public class HelperFunctions {
         return action;
 
     }
+
+    public static String CheckActionRequest(String orderNumber, String seeDrawing, String seeBomLine) {
+        String action = "";
+        if(orderNumber != null){
+           action = "seeorder";
+        }
+        if(seeDrawing != null){
+            action = "seedrawing";
+        }
+        if(seeBomLine != null){
+            action = "seebomline";
+        } else{
+
+            action = "authorize";
+        }
+        return action;
+
+    }
+
+
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);
@@ -208,4 +229,5 @@ public class HelperFunctions {
         }
 
     }
+
 }

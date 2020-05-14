@@ -5,16 +5,20 @@
 --%>
 <%@include file="../includes/headerEmployee.inc" %>
 
+<div id="container">
+        <div id="main">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Employee home page</title>
 
-        
+
 
         <h1>Hello ${sessionScope.email} </h1>
 
 
 
         You are now logged in as a EMPLOYEE of our wonderful site.
+        </div>
+</div>
 
 <%@include file="../includes/footer.inc" %>
 

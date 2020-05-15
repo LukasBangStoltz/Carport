@@ -117,7 +117,6 @@ public class MakeOrder extends Command {
                     LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);
                     HelperFunctions.resetBom();
 
-
                     break;
 
             }
@@ -125,7 +124,7 @@ public class MakeOrder extends Command {
             request.getSession().setAttribute("bomlist", InitializeLists.getBomList(order_id));
             request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer(user_id));
 
-            return "bomline";
+            return "allorderscustomer";
 
         } else {
 

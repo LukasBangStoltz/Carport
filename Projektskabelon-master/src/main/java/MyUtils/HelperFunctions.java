@@ -92,6 +92,22 @@ public class HelperFunctions {
         return "seeorder";
     }
 
+    public static String CheckActionRequestCustomer(String orderNumber, String buyOrderNumber, String seedrawing, String bomLineNumber){
+        if(orderNumber != null){
+            return "seeorder";
+        }
+        if(buyOrderNumber != null){
+            return "buyorder";
+        }
+        if(seedrawing != null){
+            return "seedrawing";
+        }
+        if(bomLineNumber != null){
+            return "seebomline";
+        }
+        return "seeorder";
+    }
+
 
 
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {

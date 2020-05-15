@@ -197,7 +197,6 @@ public class InitializeLists {
 
     public static List<Request> initRequestList() {
 
-
             try {
                 requestLists = LogicFacade.getAllRequests();
             } catch (LoginSampleException e) {

@@ -65,7 +65,7 @@ public class ManageRequestAdmin extends Command {
                 request.getSession().setAttribute("ordernumber", orderNumber);
 
 
-                return "orderinfo";
+                return "orderinfoadmin";
 
             case "seedrawing":
                 carportLength = (int) request.getSession().getAttribute("carportlength");
@@ -100,6 +100,6 @@ public class ManageRequestAdmin extends Command {
         }
 
 
-        return "orderinfo";
+        return "orderinfoadmin";
     }
 }

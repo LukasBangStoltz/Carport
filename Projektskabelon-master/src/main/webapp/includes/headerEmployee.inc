@@ -64,7 +64,7 @@
                 </c:if>
 
             <li class="nav-item">
-                <a class="nav-link" href="FrontController?target=redirect&destination=allorders"
+                <a class="nav-link" href="FrontController?target=redirect&destination=allordersadmin"
                    onclick="document.getElementById('id01').style.display='block'"
                    style="width:auto;">Forespørgsler</a>
             </li>

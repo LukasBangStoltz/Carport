@@ -26,6 +26,7 @@ public class MakeOrder extends Command {
 
         // få email ud fra sessionen, altså den der er logget ind
         String email = String.valueOf(request.getSession().getAttribute("email"));
+        int user_id = LogicFacade.getUserId(email);
 
         System.out.println(email.length());
 
@@ -63,7 +64,7 @@ public class MakeOrder extends Command {
 
         if (isValid) {
 
-            int user_id = LogicFacade.getUserId(email);
+            user_id = LogicFacade.getUserId(email);
 
 
             int carport_id = 0;
@@ -122,6 +123,7 @@ public class MakeOrder extends Command {
             }
 
             request.getSession().setAttribute("bomlist", InitializeLists.getBomList(order_id));
+            request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer(user_id));
 
             return "bomline";
 

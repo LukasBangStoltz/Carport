@@ -21,7 +21,6 @@
                  request.getServletContext().setAttribute("toolshedwidthslist", InitializeLists.getAllToolShedWidths());
             }
             if (request.getServletContext().getAttribute("requestList") == null) {
-                 request.getServletContext().setAttribute("requestList", InitializeLists.getRequestList());
+                 request.getServletContext().setAttribute("requestList", InitializeLists.initRequestList());
             }
-
-        %>
+     %>

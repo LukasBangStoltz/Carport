@@ -180,7 +180,7 @@
                      <c:if test="${sessionScope.email != null}">
 
 
-                       <a class="nav-link" href="#" style="width:auto">Mine forespørgsler</a>
+                       <a class="nav-link" href="FrontController?target=redirect&destination=allorderscustomer" style="width:auto">Mine forespørgsler</a>
 
                         </c:if>
 

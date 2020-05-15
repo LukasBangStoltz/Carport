@@ -20,6 +20,7 @@ public class InitializeLists {
     private static List<MaterialVariants> matVariantsList = null;
     private static List<BomLine> bomLineList = null;
     private static List<Request> requestLists = null;
+    private static List<Request> requestListCustomer = null;
 
     public static List<CarportWidth> getCarportWidthList() {
 
@@ -211,4 +212,23 @@ public class InitializeLists {
         return requestLists;
 
     }
+
+    public static List<Request> initRequestListCustomer(int userId) {
+
+
+        try {
+            requestListCustomer = LogicFacade.getAllRequestsCustomer(userId);
+        } catch (LoginSampleException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        return requestListCustomer;
+
+    }
+
 }

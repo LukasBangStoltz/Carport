@@ -11,7 +11,7 @@ import sun.rmi.runtime.Log;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ManageRequest extends Command {
+public class ManageRequestAdmin extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
@@ -96,7 +96,7 @@ public class ManageRequest extends Command {
                 LogicFacade.authorizeRequest(authorizeOrderId);
                 request.getServletContext().setAttribute("requestList", InitializeLists.initRequestList());
 
-                return "allorders";
+                return "allordersadmin";
         }
 
 

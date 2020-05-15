@@ -10,6 +10,40 @@ import java.util.List;
 
 public class RequestMapper {
 
+    public static List<Request> getAllRequestsCustomer(int userId) throws LoginSampleException, SQLException, ClassNotFoundException {
+
+        List<Request> requestList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM orders WHERE user_id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ps.setInt(1, userId);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int order_id = rs.getInt("order_id");
+                int user_id = rs.getInt("user_id");
+                boolean is_authorized = rs.getBoolean("is_authorized");
+
+                if (requestList == null) {
+                    requestList = new ArrayList<>();
+                }
+
+                Request r = new Request(order_id, user_id, is_authorized);
+                requestList.add(r);
+
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return requestList;
+    }
+
     public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
 
         List<Request> requestList = null;

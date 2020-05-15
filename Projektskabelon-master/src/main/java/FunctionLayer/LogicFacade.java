@@ -123,5 +123,12 @@ public class LogicFacade {
         return RequestMapper.getAllRequestsCustomer(userId);
     }
 
+    public static void buyRequest(int orderId) throws LoginSampleException {
+        RequestMapper.buyRequest(orderId);
+    }
+
+    public static boolean checkIfBought(int orderId) {
+        return RequestMapper.checkIfBought(orderId);
+    }
 
 }

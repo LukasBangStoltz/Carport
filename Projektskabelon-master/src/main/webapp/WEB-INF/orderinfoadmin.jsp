@@ -60,14 +60,8 @@
 
             <div class="col-5"></div>
             <div class="text-center">
-            <form action="FrontController" method="post">
-                <input type="hidden" name="target" value="managerequest">
-
-
-                    <button type="submit" name="seedrawing" value="${sessionScope.ordernumber}"
-                            class="btn btn-outline-primary"> Se tegning
-                    </button>
-
+                <form action="FrontController" method="post">
+                    <input type="hidden" name="target" value="managerequestadmin">
 
 
                     <button type="submit" name="seebomline" value="${sessionScope.ordernumber}"
@@ -75,12 +69,16 @@
                     </button>
 
 
+                    <button type="submit" name="seedrawing" value="${sessionScope.ordernumber}"
+                            class="btn btn-outline-primary"> Se tegning
+                    </button>
+
 
                     <button type="submit" name="authorize" value="${sessionScope.ordernumber}"
                             class="btn btn-outline-primary"> Godkend
                     </button>
 
-            </form>
+                </form>
             </div>
             <div class="col-4"></div>
 

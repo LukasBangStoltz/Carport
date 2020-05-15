@@ -4,18 +4,23 @@ public class Request {
 
     private int orderId;
     private int customerId;
-    private boolean status;
+    private boolean isAuthorized;
+    private boolean isBought;
 
-    public Request(int orderId, int customerId, boolean status) {
-        this.orderId = orderId;
-        this.customerId = customerId;
-        this.status = status;
-    }
+
 
     public Request(int orderId, int customerId) {
         this.orderId = orderId;
         this.customerId = customerId;
     }
+
+    public Request(int orderId, int customerId, boolean isAuthorized, boolean isBought) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.isAuthorized = isAuthorized;
+        this.isBought = isBought;
+    }
+
 
     public int getOrderId() {
         return orderId;
@@ -33,11 +38,19 @@ public class Request {
         this.customerId = customerId;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isAuthorized() {
+        return isAuthorized;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setAuthorized(boolean authorized) {
+        isAuthorized = authorized;
+    }
+
+    public boolean isBought() {
+        return isBought;
+    }
+
+    public void setBought(boolean bought) {
+        isBought = bought;
     }
 }

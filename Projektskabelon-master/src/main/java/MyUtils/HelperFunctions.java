@@ -1,5 +1,8 @@
 package MyUtils;
 
+import FunctionLayer.BomLine;
+
+import java.awt.*;
 import java.util.ArrayList;
 
 public class HelperFunctions {
@@ -92,22 +95,21 @@ public class HelperFunctions {
         return "seeorder";
     }
 
-    public static String CheckActionRequestCustomer(String orderNumber, String buyOrderNumber, String seedrawing, String bomLineNumber){
-        if(orderNumber != null){
+    public static String CheckActionRequestCustomer(String orderNumber, String buyOrderNumber, String seedrawing, String bomLineNumber) {
+        if (orderNumber != null) {
             return "seeorder";
         }
-        if(buyOrderNumber != null){
+        if (buyOrderNumber != null) {
             return "buyorder";
         }
-        if(seedrawing != null){
+        if (seedrawing != null) {
             return "seedrawing";
         }
-        if(bomLineNumber != null){
+        if (bomLineNumber != null) {
             return "seebomline";
         }
         return "seeorder";
     }
-
 
 
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
@@ -245,5 +247,18 @@ public class HelperFunctions {
         }
 
     }
+
+    public static int getTotalPrice(ArrayList<BomLine> bomLineList) {
+        int sum = 0;
+
+        for (BomLine bomLine : bomLineList) {
+
+            sum += bomLine.getPrice() * bomLine.getQuantity();
+
+        }
+        return sum;
+
+    }
+
 
 }

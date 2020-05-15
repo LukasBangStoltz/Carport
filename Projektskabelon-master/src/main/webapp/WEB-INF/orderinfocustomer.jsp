@@ -36,16 +36,20 @@
 
             <div class="col-4"></div>
 
-            <div class="col-4 my-3">
-                <table class="table">
+
+            <div class="col-4 my-4">
+                <h2 class="text-center mb-5"> Oversigt over din carport </h2>
+
+
+                <table class="table mt-4">
                     <tbody>
                     <tr>
                         <th scope="row">Carport længde</th>
-                        <td>${sessionScope.carportlength}</td>
+                        <td>${sessionScope.carportlength} cm </td>
                     </tr>
                     <tr>
                         <th scope="row">Carport bredde</th>
-                        <td>${sessionScope.carportwidth}</td>
+                        <td>${sessionScope.carportwidth} cm</td>
                     </tr>
                     <tr>
                         <th scope="row">Carport tag</th>
@@ -53,19 +57,19 @@
                     </tr>
                     <tr>
                         <th scope="row">Taghældning</th>
-                        <td>${sessionScope.carporttilt}</td>
+                        <td>${sessionScope.carporttilt} grader</td>
                     </tr>
                     <tr>
                         <th scope="row">Redskabsrums længde</th>
-                        <td>${sessionScope.toolshedlength}</td>
+                        <td>${sessionScope.toolshedlength} cm</td>
                     </tr>
                     <tr>
                         <th scope="row">Redskabsrums bredde</th>
-                        <td>${sessionScope.toolshedwidth}</td>
+                        <td>${sessionScope.toolshedwidth} cm</td>
                     </tr>
                     <tr>
-                        <th scope="row">Kommentarer</th>
-                        <td>${sessionScope.comments}</td>
+                        <th scope="row">Samlet pris</th>
+                        <td><p class="font-weight-bold">${sessionScope.totalprice} kr.</p></td>
                     </tr>
                     </tbody>
                 </table>

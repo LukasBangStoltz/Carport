@@ -9,9 +9,10 @@ public class Request {
 
 
 
-    public Request(int orderId, int customerId) {
+    public Request(int orderId, int customerId, boolean isAuthorized) {
         this.orderId = orderId;
         this.customerId = customerId;
+        this.isAuthorized = isAuthorized;
     }
 
     public Request(int orderId, int customerId, boolean isAuthorized, boolean isBought) {

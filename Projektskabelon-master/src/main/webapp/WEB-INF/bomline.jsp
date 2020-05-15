@@ -6,7 +6,7 @@
 
 <div id="container">
     <div id="main">
-        <h3 class="text-center my-5"> Styklisten til carporten </h3>
+        <h2 class="text-center my-5"> Styklisten til carporten </h2>
 
         <div class="row">
             <div class="col-2"></div>
@@ -21,6 +21,8 @@
                         <th scope="col">Antal</th>
                         <th scope="col">Enhed</th>
                         <th scope="col">Beskrivelse</th>
+                        <th scope="col">Pris</th>
+
 
                     </tr>
                     </thead>
@@ -34,6 +36,7 @@
                             <td>${bomitems.quantity}</td>
                             <td>${bomitems.unit}</td>
                             <td>${bomitems.description}</td>
+                            <td>${bomitems.price}</td>
                         </tr>
 
 

@@ -78,7 +78,7 @@
 
                                      <div class="container">
                                          <label for="email"><b>Email</b></label>
-                                         <input type="text" placeholder="Indtast email" id="email" name="email" required>
+                                          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Indtast email">
 
                                          <label for="passwordregister1"><b>Password</b></label>
                                          <input type="password" placeholder="Indtast password" id="passwordregister1"

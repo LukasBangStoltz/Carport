@@ -41,6 +41,15 @@
                                         class="btn btn-outline-primary"> Se ordre
                                 </button>
 
+                                <c:if test="${!requestItem.authorized}">
+
+                                    <button type="submit" name="buy" value="${requestItem.orderId}"
+                                            class="btn btn-outline-danger disabled"> Afventer godkendelse
+                                    </button>
+                                </c:if>
+
+
+
                                 <c:if test="${requestItem.authorized && !requestItem.bought}">
 
                                     <button type="submit" name="buy" value="${requestItem.orderId}"
@@ -56,6 +65,7 @@
                                     </button>
 
                                 </c:if>
+
 
                             </td>
 

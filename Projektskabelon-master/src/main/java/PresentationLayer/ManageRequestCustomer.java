@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import FunctionLayer.BomLine;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
@@ -9,6 +10,7 @@ import MyUtils.InitializeLists;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class ManageRequestCustomer extends Command {
 
@@ -51,6 +53,10 @@ public class ManageRequestCustomer extends Command {
                 int toolshedLength = LogicFacade.getToolShedLengthsFromId(toolShedLengthId);
                 int toolshedWidth = LogicFacade.getToolShedWidthsFromId(toolShedWidthId);
 
+                //finde total prisen for carporten
+                ArrayList<BomLine> bomLineList = (ArrayList<BomLine>) LogicFacade.getBomLineFromCarport(orderNumberInt);
+                int totalPrice = HelperFunctions.getTotalPrice(bomLineList);
+
 
                 //Sætte attributterne til JSP siden
                 request.getSession().setAttribute("carportlength", carportLength);
@@ -60,6 +66,7 @@ public class ManageRequestCustomer extends Command {
                 request.getSession().setAttribute("toolshedlength", toolshedLength);
                 request.getSession().setAttribute("toolshedwidth", toolshedWidth);
                 request.getSession().setAttribute("ordernumber", orderNumber);
+                request.getSession().setAttribute("totalprice", totalPrice);
 
                 return "orderinfocustomer";
 

@@ -39,7 +39,7 @@
             <div class="card mx-auto" style="width: 40rem;">
                 <div class="card-body">
                     <h5 color: dimgray; font-family: sans-serif; font-weight: bold>
-                        QUICK-BYG TILBUD - CARPORT MED FLADT TAG
+                        QUICK-BYG TILBUD - CARPORT MED FLADT TAG ELLER MED HÆLDNING
                         Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en
                         skitsetegning
                         på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
@@ -47,8 +47,7 @@
                         Tilbud og skitsetegning fremsendes med post hurtigst muligt.
                         Ved bestilling medfølger standardbyggevejledning.
 
-                        Udfyld nedenstående omhyggeligt og klik på "Bestil tilbud"
-                        Felter markeret * SKAL udfyldes!
+
                     </h5>
                 </div>
 

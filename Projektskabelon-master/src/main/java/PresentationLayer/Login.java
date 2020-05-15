@@ -29,16 +29,19 @@ public class Login extends Command {
         session.setAttribute("role", user.getRole());
         session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
         int userId = LogicFacade.getUserId(email);
-
-
-        if (request.getSession().getAttribute("requestListCustomer") == null) {
-            request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer(userId));
-        }
+        session.setAttribute("userId", userId);
 
 
         if (user.getRole().equals("employee")) {
-            destination = "employeepage";
+            if (request.getSession().getAttribute("requestListAdmin") == null) {
+                request.getSession().setAttribute("requestListAdmin", InitializeLists.initRequestList());
+            }
+            destination = "allordersadmin";
+
         } else {
+            if (request.getSession().getAttribute("requestListCustomer") == null) {
+                request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer(userId));
+            }
             destination = "index";
         }
 

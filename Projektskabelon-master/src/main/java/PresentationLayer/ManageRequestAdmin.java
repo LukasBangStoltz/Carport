@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import FunctionLayer.BomLine;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
@@ -10,6 +11,7 @@ import sun.rmi.runtime.Log;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class ManageRequestAdmin extends Command {
     @Override
@@ -55,6 +57,11 @@ public class ManageRequestAdmin extends Command {
                 int toolshedWidth = LogicFacade.getToolShedWidthsFromId(toolShedWidthId);
 
 
+                //finde total prisen for carporten
+                ArrayList<BomLine> bomLineList = (ArrayList<BomLine>) LogicFacade.getBomLineFromCarport(orderNumberInt);
+                int totalPrice = HelperFunctions.getTotalPrice(bomLineList);
+
+
                 //Sætte attributterne til JSP siden
                 request.getSession().setAttribute("carportlength", carportLength);
                 request.getSession().setAttribute("carportwidth", carportWidth);
@@ -63,6 +70,7 @@ public class ManageRequestAdmin extends Command {
                 request.getSession().setAttribute("toolshedlength", toolshedLength);
                 request.getSession().setAttribute("toolshedwidth", toolshedWidth);
                 request.getSession().setAttribute("ordernumber", orderNumber);
+                request.getSession().setAttribute("totalprice", totalPrice);
 
 
                 return "orderinfoadmin";
@@ -92,9 +100,12 @@ public class ManageRequestAdmin extends Command {
                 return "bomline";
 
             case "authorize":
+
                 int authorizeOrderId = Integer.parseInt(authorize);
+
                 LogicFacade.authorizeRequest(authorizeOrderId);
-                request.getServletContext().setAttribute("requestList", InitializeLists.initRequestList());
+
+                request.getSession().setAttribute("requestListAdmin", InitializeLists.initRequestList());
 
                 return "allordersadmin";
         }

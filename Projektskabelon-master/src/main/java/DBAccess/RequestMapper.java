@@ -51,7 +51,7 @@ public class RequestMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM orders WHERE is_authorized = false";
+            String SQL = "SELECT * FROM orders";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
@@ -59,12 +59,13 @@ public class RequestMapper {
             while (rs.next()) {
                 int order_id = rs.getInt("order_id");
                 int user_id = rs.getInt("user_id");
+                boolean isAuthorized = rs.getBoolean("is_authorized");
 
                 if (requestList == null) {
                     requestList = new ArrayList<>();
                 }
 
-                Request r = new Request(order_id, user_id);
+                Request r = new Request(order_id, user_id, isAuthorized);
                 requestList.add(r);
 
             }

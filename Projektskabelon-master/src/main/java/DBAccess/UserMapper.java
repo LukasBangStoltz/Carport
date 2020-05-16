@@ -41,6 +41,7 @@ public class UserMapper {
     }
 
     public static User login(String email, String password) throws LoginSampleException {
+        User user;
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM user "
@@ -57,15 +58,16 @@ public class UserMapper {
                 String adress = rs.getString("adress");
                 String phoneNumber = rs.getString("phonenumber");
                 String city = rs.getString("city");
-                User user = new User(name,adress,phoneNumber,email,password,city,role);
+                user = new User(name,adress,phoneNumber,email,password,city,role);
                 user.setId(id);
                 return user;
             } else {
-                throw new LoginSampleException("Could not validate user");
+                throw new LoginSampleException("Brugeren findes ikke");
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
+
     }
     public static int getUserId(String email) {
 

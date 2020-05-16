@@ -6,12 +6,13 @@
 <div id="container">
     <div id="main">
 
-        <div class="row">
+        <div class="row mt-5">
 
             <div class="col"></div>
 
             <div class="col text-center">
                 <div class="error">
+
                     <c:if test="${requestScope.error!= null}">
 
                     <div class="alert alert-danger" role="alert">
@@ -19,7 +20,11 @@
 
                         <h6 class="text-center text-danger"> ${requestScope.error}</h6>
 
+
                         </c:if>
+                        <a href="FrontController?target=redirect&destination=index" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Til forsiden</a>
+
+
                     </div>
                 </div>
             </div>
@@ -27,7 +32,7 @@
         </div>
     </div>
 </div>
-<a href="FrontController?target=redirect&destination=index"> Til forsiden</a>
+
 
 
 <%@include file="../includes/footer.inc" %>

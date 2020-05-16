@@ -77,32 +77,32 @@
                                      </div>
 
                                      <div class="container">
-                                         <label for="email"><b>Email</b></label>
+                                         <label for="email"><b>Email*</b></label>
                                           <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Indtast email">
 
-                                         <label for="passwordregister1"><b>Password</b></label>
+                                         <label for="passwordregister1"><b>Password*</b></label>
                                          <input type="password" placeholder="Indtast password" id="passwordregister1"
                                                 name="password1"
                                                 required>
 
-                                         <label for="passwordregister2"><b>Gentag Password</b></label>
+                                         <label for="passwordregister2"><b>Gentag Password*</b></label>
                                          <input type="password" placeholder="Gentag Password" id="passwordregister2"
                                                 name="password2"
                                                 required>
 
-                                         <label for="name"><b>Navn</b></label>
+                                         <label for="name"><b>Navn*</b></label>
                                          <input type="text" placeholder="Indtast navn" id="name" name="name"
                                                 required>
 
-                                         <label for="adress"><b>Adresse</b></label>
+                                         <label for="adress"><b>Adresse*</b></label>
                                          <input type="text" placeholder="Indtast adresse" id="adress" name="adress"
                                                 required>
 
-                                         <label for="city"><b>By</b></label>
+                                         <label for="city"><b>By*</b></label>
                                          <input type="text" placeholder="Indtast by" id="city" name="city"
                                                 required>
 
-                                         <label for="phoneNumber"><b>Telefonnummer</b></label>
+                                         <label for="phoneNumber"><b>Telefonnummer*</b></label>
                                          <input type="text" placeholder="Indtast telefonnummer" id="phoneNumber"
                                                 name="phoneNumber"
                                                 required>

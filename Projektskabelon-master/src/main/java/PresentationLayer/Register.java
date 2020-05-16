@@ -30,8 +30,9 @@ public class Register extends Command {
             session.setAttribute("role", user.getRole());
             return "index";
         } else {
-            throw new LoginSampleException("the two passwords did not match");
+            request.setAttribute("error","Passwords skal være ens");
         }
+        return "index";
     }
 
 }

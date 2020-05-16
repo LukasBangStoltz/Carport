@@ -65,7 +65,7 @@
                          <c:if test="${sessionScope.email == null}">
 
                              <a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'"
-                                style="width:auto;">Ny kunde</a>
+                                style="width:auto;">Opret bruger</a>
                              <div id="id01" class="modal">
 
                                  <form class="modal-content animate" action="FrontController" method="post">
@@ -118,7 +118,7 @@
                                          <button type="button" onclick="document.getElementById('id01').style.display='none'"
                                                  class="cancelbtn">Cancel
                                          </button>
-                                         <span class="psw">Forgot <a href="#">password?</a></span>
+                                       
                                      </div>
                                  </form>
 
@@ -147,11 +147,12 @@
                                      </div>
 
                                      <div class="container">
-                                         <label for="email1"><b>Email</b></label>
-                                         <input type="text" placeholder="Enter Username" id="email1" name="email" required>
+
+                                        <label for="email1"><b>Email*</b></label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Indtast email" required>
 
                                          <label for="passwordlogin"><b>Password</b></label>
-                                         <input type="password" placeholder="Enter Password" id="passwordlogin"
+                                         <input type="password" placeholder="Indtast password" id="passwordlogin"
                                                 name="password"
                                                 required>
 

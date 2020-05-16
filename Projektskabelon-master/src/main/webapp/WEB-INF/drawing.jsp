@@ -1,4 +1,6 @@
+<%@ page import="MyUtils.InitializeLists" %>
 <%@include file="../includes/header.inc" %>
+
 
 <div id="container">
     <div id="main">

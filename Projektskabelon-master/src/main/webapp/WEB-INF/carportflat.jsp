@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="MyUtils.InitializeLists" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../includes/header.inc" %>
 
@@ -10,12 +11,20 @@
 
             <div class="col text-center">
 
+
                 <c:if test="${requestScope.error!= null}">
 
                 <div class="alert alert-danger" role="alert">
                     <h2 class="text-center">Der er opstået en fejl</h2>
 
                     <h6 class="text-center text-danger"> ${requestScope.error}</h6>
+
+                    <row>
+                    <a class="btn btn-primary btn-sm active" href="#" onclick="document.getElementById('id01').style.display='block'"
+                       style="width:auto;">Opret bruger</a>
+                    <a class="btn btn-primary btn-sm active" href="#" onclick="document.getElementById('id02').style.display='block'"
+                       style="width:auto;">Login</a>
+                    </row>
 
                     </c:if>
                 </div>

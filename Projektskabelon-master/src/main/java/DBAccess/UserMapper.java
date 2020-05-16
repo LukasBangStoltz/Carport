@@ -25,8 +25,8 @@ public class UserMapper {
             ps.setString(2, user.getAdress());
             ps.setString(3, user.getPhoneNumber());
             ps.setString(4, user.getEmail());
-            ps.setString(5, user.getCity());
-            ps.setString(6, user.getPassword());
+            ps.setString(5, user.getPassword());
+            ps.setString(6, user.getCity());
             ps.setString(7, user.getRole());
 
             ps.executeUpdate();

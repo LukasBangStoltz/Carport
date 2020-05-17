@@ -4,8 +4,6 @@
 <%@include file="../includes/headerEmployee.inc" %>
 <%@include file="../includes/initializearraylister.inc" %>
 
-
-
 <div id="container">
     <div id="main">
         <div class="row">
@@ -27,6 +25,7 @@
                             <td><p style="color: black">Ordre ID: ${requestItem.orderId}</p></td>
                             <td>
 
+
                                 <button type="submit" name="seeorder" value="${requestItem.orderId}"
                                         class="btn btn-outline-primary"> Se ordre
                                 </button>
@@ -34,7 +33,7 @@
                                 <c:if test="${requestItem.authorized}">
 
                                     <button type="submit" name="buy" value="${requestItem.orderId}"
-                                            class="btn btn-outline-success disabled"> Godkendt
+                                            class="btn btn-outline-success" disabled> Godkendt
                                     </button>
 
                                 </c:if>

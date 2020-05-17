@@ -20,6 +20,10 @@
             if (request.getServletContext().getAttribute("toolshedwidthslist") == null) {
                  request.getServletContext().setAttribute("toolshedwidthslist", InitializeLists.getAllToolShedWidths());
             }
-
-
+             if (request.getSession().getAttribute("requestListAdmin") == null) {
+            request.getSession().setAttribute("requestListAdmin", InitializeLists.initRequestList());
+            }
+              if (request.getSession().getAttribute("requestListCustomer") == null) {
+              request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer((int) session.getAttribute("userId")));
+              }
      %>

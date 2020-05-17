@@ -33,15 +33,11 @@ public class Login extends Command {
 
 
         if (user.getRole().equals("employee")) {
-            if (request.getSession().getAttribute("requestListAdmin") == null) {
-                request.getSession().setAttribute("requestListAdmin", InitializeLists.initRequestList());
-            }
+
             destination = "allordersadmin";
 
         } else {
-            if (request.getSession().getAttribute("requestListCustomer") == null) {
-                request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer(userId));
-            }
+
             destination = "index";
         }
 

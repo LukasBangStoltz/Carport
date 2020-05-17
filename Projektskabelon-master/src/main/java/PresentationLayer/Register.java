@@ -12,6 +12,7 @@ public class Register extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
@@ -28,6 +29,12 @@ public class Register extends Command {
             session.setAttribute("email", email);
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
+
+
+            int userId = LogicFacade.getUserId(email);
+            session.setAttribute("userId", userId);
+
+
             return "index";
         } else {
             request.setAttribute("error","Passwords skal være ens");

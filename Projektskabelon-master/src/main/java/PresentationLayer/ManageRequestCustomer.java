@@ -106,7 +106,7 @@ public class ManageRequestCustomer extends Command {
 
                 } else {
 
-                    request.setAttribute("error", "Køb venligst carporten for at tilgå styklisten");
+                    request.setAttribute("error", "Carporten skal være købt for at tilgås");
                     return "orderinfocustomer";
                 }
 

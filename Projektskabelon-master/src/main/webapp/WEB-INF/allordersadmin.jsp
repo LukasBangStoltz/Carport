@@ -2,7 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="MyUtils.InitializeLists" %>
 <%@include file="../includes/headerEmployee.inc" %>
-<%@include file="../includes/initializearraylister.inc" %>
+
+<%if (request.getSession().getAttribute("requestListAdmin") == null) {
+request.getSession().setAttribute("requestListAdmin", InitializeLists.initRequestList());
+}%>
 
 <div id="container">
     <div id="main">

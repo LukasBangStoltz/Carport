@@ -3,15 +3,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="MyUtils.InitializeLists" %>
 <%@include file="../includes/header.inc" %>
-<%@include file="../includes/initializearraylister.inc" %>
+
+<%if (request.getSession().getAttribute("requestListCustomer") == null) {
+request.getSession().setAttribute("requestListCustomer", InitializeLists.initRequestListCustomer((int) session.getAttribute("userId")));
+}%>
 
 
 <div id="container">
     <div id="main">
 
-
-
-
+        
         <div class="row">
 
 

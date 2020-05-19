@@ -4,7 +4,6 @@ import FunctionLayer.*;
 import FunctionLayer.CarportWidth;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class InitializeLists {
@@ -181,7 +180,7 @@ public class InitializeLists {
 
         if(requestLists == null) {
             try {
-                requestLists = LogicFacade.getAllRequests();
+                requestLists = LogicFacade.getAllRequestsAdmin();
             } catch (LoginSampleException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
@@ -198,7 +197,7 @@ public class InitializeLists {
     public static List<Request> initRequestList() {
 
             try {
-                requestLists = LogicFacade.getAllRequests();
+                requestLists = LogicFacade.getAllRequestsAdmin();
             } catch (LoginSampleException e) {
                 e.printStackTrace();
             } catch (SQLException e) {

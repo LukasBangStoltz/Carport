@@ -37,7 +37,10 @@ public class UserMapperTest {
             try ( Statement stmt = testConnection.createStatement() ) {
                 stmt.execute( "drop table if exists user" );
                 stmt.execute( "create table user like carport.user" );
-                stmt.execute( "insert into user select * from carport.user" );
+                stmt.execute( "insert into user VALUES " +
+                        "(1, 'jens', 'vej', '40', 'email', 'password', 'by', 'role'), "+
+                        "(2, 'Phillip Andersen', 'Tornehegnet 7', '42913009', 'phillip_andersen@hotmail.com', 'Taastrup', '1234', 'customer')");
+
             }
 
         } catch ( ClassNotFoundException | SQLException ex ) {
@@ -76,7 +79,7 @@ public class UserMapperTest {
     public void testGetUserId(){
         String email = "phillip_andersen@hotmail.com";
         int userId = UserMapper.getUserId(email);
-        int userIdExpected = 5;
+        int userIdExpected = 2;
         assertEquals(userIdExpected, userId);
     }
 
@@ -95,7 +98,7 @@ public class UserMapperTest {
       //Vi fylder en liste med alle users
         List<User> userList = UserMapper.getAllUsers();
         // vi tjekker nu om listen har det korrekte antal users
-        assertThat(userList, hasSize(10));
+        assertThat(userList, hasSize(2));
     }
 
 }

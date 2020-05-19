@@ -6,21 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Carport" />
-        <module name="prejektSkabelon" />
-        <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
-        <module name="Projektskabelon" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Carport" options="-endorseddirs &quot;C:\Users\sumit\OneDrive\Skrivebord\2 semester carportprojekt\Carport\Projektskabelon-master\target/endorsed&quot;" />
-      <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed&quot;" />
-      <module name="Projektskabelon" options="-endorseddirs $USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed" />
       <module name="Projektskabelon-master" options="-endorseddirs &quot;C:\Users\chris\Desktop\2.Sem Eksamen\Carport\Projektskabelon-master\target/endorsed&quot;" />
-      <module name="prejektSkabelon" options="-endorseddirs &quot;$USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed&quot;" />
     </option>
   </component>
 </project>

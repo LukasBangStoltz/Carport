@@ -129,6 +129,28 @@ public class RequestMapper {
         return isBought;
 
     }
+    public static boolean checkIfAuthorized (int orderId){
 
+        boolean isAuthorized = false;
+        try {
+            Connection connection = Connector.connection();
+            PreparedStatement statement = connection.prepareStatement("Select * from orders where order_id = ?");
+            statement.setInt(1, orderId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                isAuthorized = resultSet.getBoolean("is_authorized");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return isAuthorized;
+
+    }
 
 }

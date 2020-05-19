@@ -1,13 +1,19 @@
 package DBAccess;
 
+import FunctionLayer.LogicFacade;
+import FunctionLayer.LoginSampleException;
+import FunctionLayer.Order;
+import FunctionLayer.Request;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import static org.hamcrest.Matchers.*;
+
 import static org.junit.Assert.*;
 
 
@@ -35,7 +41,13 @@ public class RequestMapperTest {
             try ( Statement stmt = testConnection.createStatement() ) {
                 stmt.execute( "drop table if exists orders " );
                 stmt.execute( "create table orders like carport.orders" );
-                stmt.execute( "insert into orders select * from carport.orders" );
+                stmt.execute("drop table if exists carport");
+                stmt.execute("create table carport like carport.carport");
+                stmt.execute( "insert into orders (user_id, carport_id, carport_length_id, carport_width_id, carport_rooftype_id) VALUES "  +
+                        "(1, 1, 1, 1, 1 )");
+                stmt.execute( "insert into orders (user_id, carport_id, carport_length_id, carport_width_id, carport_rooftype_id) VALUES "  +
+                        "(2, 2, 2, 2, 2 )");
+
             }
 
         } catch ( ClassNotFoundException | SQLException ex ) {
@@ -45,41 +57,58 @@ public class RequestMapperTest {
     }
 
     @Test
-    public void getAllRequestsCustomer() {
+    public void getAllRequestsCustomer() throws LoginSampleException, SQLException, ClassNotFoundException {
+        //Tjekker om antal requst passer til en user
 
-
-
-
-    }
-
-    @Test
-    public void getAllRequestsAdmin() {
-
-
-
-
-    }
-
-    @Test
-    public void authorizeRequest() {
+        int userId = 1;
+        ArrayList<Request> list = (ArrayList<Request>) LogicFacade.getAllRequestsCustomer(userId);
+        int expected = 1;
+        assertThat(list, hasSize(expected));
 
 
 
     }
 
     @Test
-    public void buyRequest() {
+    public void getAllRequestsAdmin() throws LoginSampleException, SQLException, ClassNotFoundException {
+
+        ArrayList<Request> list = (ArrayList<Request>) LogicFacade.getAllRequestsAdmin();
+        int expected = 2;
+        assertThat(list, hasSize(expected));
 
 
 
     }
 
     @Test
-    public void checkIfBought() {
+    public void authorizeRequest() throws LoginSampleException {
 
 
+        int[] ids = LogicFacade.insertCarport("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
+        int orderId = ids[1];
 
+
+        boolean isAuthorized = LogicFacade.checkIfAuthorized(orderId);
+
+        assertFalse(isAuthorized);
+        LogicFacade.authorizeRequest(orderId);
+
+        isAuthorized = LogicFacade.checkIfAuthorized(orderId);
+        assertTrue(isAuthorized);
 
 
     }
+
+    @Test
+    public void buyRequest() throws LoginSampleException {
+        int[] ids = LogicFacade.insertCarport("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
+        int orderId = ids[1];
+        LogicFacade.buyRequest(orderId);
+        boolean isBought = LogicFacade.checkIfBought(orderId);
+        assertTrue(isBought);
+
+
+    }
+
+
 }

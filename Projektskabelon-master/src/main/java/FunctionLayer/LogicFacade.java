@@ -107,7 +107,7 @@ public class LogicFacade {
         return CarportMapper.getCarportTiltFromId(carportTiltId);
     }
 
-    public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
+    public static List<Request> getAllRequestsAdmin() throws LoginSampleException, SQLException, ClassNotFoundException {
         return RequestMapper.getAllRequestsAdmin();
     }
 
@@ -134,5 +134,7 @@ public class LogicFacade {
     public static List<User> getAllUsers() throws LoginSampleException {
         return UserMapper.getAllUsers();
     }
-
+    public static boolean checkIfAuthorized (int orderId){
+        return RequestMapper.checkIfAuthorized(orderId);
+    }
 }

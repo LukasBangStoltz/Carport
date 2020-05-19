@@ -12,7 +12,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasse vi anvender til at opererer med databasen, specielt tabels: materials og material_variants
+ */
+
 public class MaterialMapper {
+
+    /**
+     *
+     * @return List<Material> En liste af Material objekts, altså allt de materialer vi har i vores database i tablet materials
+     * @throws LoginSampleException
+     */
 
     public static List<Material> GetMaterials() throws LoginSampleException {
         List<Material> materialList = null;
@@ -44,6 +54,12 @@ public class MaterialMapper {
         }
         return materialList;
     }
+
+    /**
+     *
+     * @return List<MaterialVariants> En liste af MaterialVariants objekts, altså allt de materialer_variants vi har i vores database i tablet materials
+     * @throws LoginSampleException
+     */
 
     public static List<MaterialVariants> GetMaterialVariants() throws LoginSampleException {
         List<MaterialVariants> matVariantsList = null;

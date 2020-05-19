@@ -7,7 +7,30 @@ import FunctionLayer.Order;
 import java.sql.*;
 import java.util.ArrayList;
 
+
+/**
+ * En klasse vi bruger til at opererer med databasen, herunder tabels: carport og orders
+ */
+
+
+
+
 public class OrderMapper {
+
+    /**
+     *
+     * @param carport_type
+     * @param hasToolShed
+     * @param user_id
+     * @param carport_length_id
+     * @param carport_width_id
+     * @param carport_tilt_id
+     * @param carport_rooftype_id
+     * @param toolshed_length_id
+     * @param toolshed_width_id
+     * @return int[] array der består af det genererede carportId på første indeks og det generede orderId på andet indeks.
+     * @throws LoginSampleException
+     */
 
 
     public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
@@ -85,6 +108,21 @@ public class OrderMapper {
 
         return IDs;
     }
+
+    /**
+     *
+     * @param carport_type
+     * @param hasToolShed
+     * @param user_id
+     * @param carport_length_id
+     * @param carport_width_id
+     * @param carport_tilt_id
+     * @param carport_rooftype_id
+     * @param toolshed_length_id
+     * @param toolshed_width_id
+     * @return int[] array der består af det genererede carportId på første indeks og det generede orderId på andet indeks.
+     * @throws LoginSampleException
+     */
 
     public static int[] insertCarportWithToolShed(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 

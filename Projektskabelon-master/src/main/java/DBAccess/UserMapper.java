@@ -1,6 +1,7 @@
 package DBAccess;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Material;
 import FunctionLayer.User;
 
 import java.sql.Connection;
@@ -8,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The purpose of UserMapper is to...
@@ -88,8 +91,56 @@ public class UserMapper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return user_id;
     }
+
+    public static List<User> getAllUsers() throws LoginSampleException {
+        List<User> userList = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM user";
+
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                if (userList == null) {
+                    userList = new ArrayList<>();
+                }
+
+
+                String name = rs.getString("name");
+                String adress = rs.getString("adress");
+                String phoneNumber = rs.getString("phonenumber");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                String city = rs.getString("city");
+                String role = rs.getString("role");
+
+
+                User user = new User(name, adress, phoneNumber, email, password, city, role);
+                userList.add(user);
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return userList;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -45,7 +45,7 @@ public class RequestMapper {
         return requestList;
     }
 
-    public static List<Request> getAllRequests() throws LoginSampleException, SQLException, ClassNotFoundException {
+    public static List<Request> getAllRequestsAdmin() throws LoginSampleException, SQLException, ClassNotFoundException {
 
         List<Request> requestList = null;
 

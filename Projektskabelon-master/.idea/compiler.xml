@@ -9,6 +9,7 @@
         <module name="Carport" />
         <module name="Projektskabelon" />
         <module name="ProjektSkabelon-master" />
+        <module name="Projektskabelon-master" />
         <module name="prejektSkabelon" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="Carport" options="-endorseddirs &quot;C:\Users\sumit\OneDrive\Skrivebord\2 semester carportprojekt\Carport\Projektskabelon-master\target/endorsed&quot;" />
       <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed&quot;" />
       <module name="Projektskabelon" options="-endorseddirs $USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed" />
+      <module name="Projektskabelon-master" options="-endorseddirs C:\Users\phill\Desktop\Carport\Projektskabelon-master\target/endorsed" />
       <module name="prejektSkabelon" options="-endorseddirs &quot;$USER_HOME$/2 semster carportprojekt/Carport/Projektskabelon-master/target/endorsed&quot;" />
     </option>
   </component>

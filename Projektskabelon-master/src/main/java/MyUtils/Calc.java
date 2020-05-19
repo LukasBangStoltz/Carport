@@ -109,14 +109,16 @@ public class Calc {
         }
     }
 
-    public static void spærTilRem(int carportWidth, int carportLength) {
+    public static int spærTilRem(int carportWidth, int carportLength) {
+        int spærNeeded = 0;
+
 
         for (MaterialVariants mv : materialVariantsList) {
             if (mv.getMaterial_id() == 4) {
                 if (carportWidth <= mv.getLength()) {
 
                     int spaceBetweenSpær = 55;
-                    int spærNeeded = carportLength / spaceBetweenSpær;
+                    spærNeeded = carportLength / spaceBetweenSpær;
 
                     carportPartList.add(new Part(spærNeeded, "Spær, monteres på rem ", mv.getMaterial_id(),
                             mv.getMaterialVariants_id(), mv.getLength(), mv.getPrice()));
@@ -124,6 +126,7 @@ public class Calc {
                 }
             }
         }
+        return spærNeeded;
     }
 
     public static void vandbrædtSider(int carportLength) {
@@ -395,7 +398,7 @@ public class Calc {
 
     }
 
-    public static void calcStolper(int carportLength, int toolShedLength, boolean hasToolShed) {
+    public static int calcStolper(int carportLength, int toolShedLength, boolean hasToolShed) {
 
         int quantity = 0;
         if (!hasToolShed) {
@@ -403,8 +406,11 @@ public class Calc {
 
             if (quantity == 2) {
                 quantity = 4;
+
+                return quantity;
             }
 
+            return quantity;
         }
 
         if (hasToolShed) {
@@ -412,6 +418,8 @@ public class Calc {
             int quantityCarport = (int) Math.ceil((((((carportLength - 110) - toolShedLength) / 300) * 2)) + 2);
             int quantityToolShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
             quantity = quantityCarport + quantityToolShed;
+
+            return quantity;
         }
 
         for (MaterialVariants mv : materialVariantsList) {
@@ -421,6 +429,8 @@ public class Calc {
                 break;
             }
         }
+
+        return quantity;
     }
 
     // rasied carport træ

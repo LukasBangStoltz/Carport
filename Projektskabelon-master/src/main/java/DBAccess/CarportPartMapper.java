@@ -6,9 +6,19 @@ import FunctionLayer.LoginSampleException;
 import java.sql.*;
 import java.util.List;
 
+/**
+ * Klasse vi bruger til at oprerer med databasen, herunder tabels: carport_part og bom
+ */
+
 public class CarportPartMapper {
 
-
+    /**
+     * Metode vi bruger til at de materiale der skal bruges til en bestemt ordre, herunder i carport_part og bom.
+     * @param orderID
+     * @param listOfParts
+     * @param carportID
+     * @throws LoginSampleException
+     */
 
     public static void insertCarportPart(int orderID, List<Part> listOfParts, int carportID ) throws LoginSampleException {
 

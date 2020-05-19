@@ -8,7 +8,21 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * En klasse der opererer på databasen, specielt tabel: order
+ */
+
+
 public class RequestMapper {
+
+    /**
+     *
+     * @param userId
+     * @return List<Request> En liste af Request objekter ud fra et givent userId
+     * @throws LoginSampleException
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
 
     public static List<Request> getAllRequestsCustomer(int userId) throws LoginSampleException, SQLException, ClassNotFoundException {
 
@@ -45,6 +59,14 @@ public class RequestMapper {
         return requestList;
     }
 
+    /**
+     *
+     * @return List<Request> En liste af Request objekter med alle ordre/requests fra databasen.
+     * @throws LoginSampleException
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
+
     public static List<Request> getAllRequestsAdmin() throws LoginSampleException, SQLException, ClassNotFoundException {
 
         List<Request> requestList = null;
@@ -77,6 +99,12 @@ public class RequestMapper {
         return requestList;
     }
 
+    /**
+     * Metode vi bruger til at godkende en ordre ud fra et givent ordreId
+     * @param orderId
+     * @throws LoginSampleException
+     */
+
     public static void authorizeRequest(int orderId) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -90,6 +118,12 @@ public class RequestMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+
+    /**
+     * Metode vi bruger til at godkende et køb fra kundens side
+     * @param orderId
+     * @throws LoginSampleException
+     */
 
     public static void buyRequest(int orderId) throws LoginSampleException {
         try {
@@ -105,6 +139,12 @@ public class RequestMapper {
         }
 
     }
+
+    /**
+     *
+     * @param orderId
+     * @return boolean som enten returnere true eller false, alt efter om et givent ordre er købt eller ej
+     */
 
     public static boolean checkIfBought(int orderId) {
 
@@ -129,6 +169,12 @@ public class RequestMapper {
         return isBought;
 
     }
+
+    /**
+     * Metode vi bruge til at tjekke om en ordre er godkendt eller ej
+     * @param orderId
+     * @return boolean som enten returnere true eller false, alt efter om et givent ordre er godkendt eller ej
+     */
     public static boolean checkIfAuthorized (int orderId){
 
         boolean isAuthorized = false;

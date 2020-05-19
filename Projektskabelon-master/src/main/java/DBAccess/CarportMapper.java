@@ -9,7 +9,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasse der opererer på vores database. Specielt med fokus på at fylde forskellige lister med objekter, som vi bruge til at
+ * trække ud på dropdowns på JSP-siden.
+ * @author Phillip og Sumit
+ */
+
 public class CarportMapper {
+
+    /**
+     *
+     * @return List<CarportWidth> En liste af alle de CarportWidth objekter, vi har i databasen
+     * @throws LoginSampleException
+     *
+     */
 
 
     public static List<CarportWidth> GetAllWidths() throws LoginSampleException {
@@ -40,6 +53,12 @@ public class CarportMapper {
         return carportWidthList;
     }
 
+    /**
+     *
+     * @return List<CarportLength> En liste af CarportLength objekter, vi har i databasen
+     * @throws LoginSampleException
+     */
+
     public static List<CarportLength> GetAllLengths() throws LoginSampleException {
         List<CarportLength> carportLengthList = null;
 
@@ -67,6 +86,12 @@ public class CarportMapper {
         }
         return carportLengthList;
     }
+
+    /**
+     *
+     * @return List<RoofType> En liste af RoofType objekter som tilhører carporte med fladtag, vi har i databasen
+     * @throws LoginSampleException
+     */
 
     public static List<RoofType> GetAllFlatRoofTypes() throws LoginSampleException {
         List<RoofType> flatRoofTypeList = null;
@@ -96,6 +121,12 @@ public class CarportMapper {
         return flatRoofTypeList;
     }
 
+    /**
+     *
+     * @return List<RoofType> En liste af RoofType objekter, som tilhører carporte med rejsning, vi har i databasen
+     * @throws LoginSampleException
+     */
+
     public static List<RoofType> GetAllRaisedRoofTypes() throws LoginSampleException {
         List<RoofType> raisedRoofTypeList = null;
 
@@ -124,6 +155,13 @@ public class CarportMapper {
         return raisedRoofTypeList;
     }
 
+    /**
+     *
+     * @return List<RoofTilt> En liste af RoofTilt objekter, som tilhører carporte med rejsning, vi har i databasen
+     * @throws LoginSampleException
+     */
+
+
     public static List<RoofTilt> GetAllRaisedRoofDegress() throws LoginSampleException {
         List<RoofTilt> raisedRoofDegressList = null;
 
@@ -151,6 +189,12 @@ public class CarportMapper {
         }
         return raisedRoofDegressList;
     }
+
+    /**
+     *
+     * @return List<ToolShedLength> En liste af ToolShedLength objekter, vi har i databasen
+     * @throws LoginSampleException
+     */
 
     public static List<ToolShedLength> GetAllToolShedLengths() throws LoginSampleException {
         List<ToolShedLength> toolShedLengthList = null;
@@ -182,6 +226,12 @@ public class CarportMapper {
 
     }
 
+    /**
+     *
+     * @return List<ToolShedWidth> En liste af ToolShedWidth objekter, vi har i databasen
+     * @throws LoginSampleException
+     */
+
     public static List<ToolShedWidth> GetAllToolShedWidths() throws LoginSampleException {
         List<ToolShedWidth> toolShedWidthList = null;
 
@@ -210,6 +260,11 @@ public class CarportMapper {
         return toolShedWidthList;
     }
 
+    /**
+     *
+     * @param carport_length_id
+     * @return int i cm som er selve carportlængden for det carport_length_id
+     */
 
     public static int getCarportLengthFromId(int carport_length_id) {
 
@@ -234,6 +289,12 @@ public class CarportMapper {
         return carport_length;
     }
 
+    /**
+     *
+     * @param carport_width_id
+     * @return int i cm som er selve carportbredden for det carport_width_id
+     */
+
     public static int getCarportWidthFromId(int carport_width_id) {
 
         int carport_width = 0;
@@ -256,6 +317,12 @@ public class CarportMapper {
 
         return carport_width;
     }
+
+    /**
+     *
+     * @param toolshed_length_id
+     * @return int i cm som er selve skurlængden for det toolshed_length_id
+     */
 
     public static int getToolShedLengthsFromId(int toolshed_length_id) {
 
@@ -280,6 +347,12 @@ public class CarportMapper {
         return toolshed_length;
     }
 
+    /**
+     *
+     * @param toolshed_width_id
+     * @return int i cm som er selve skurbredden for det toolshed_width_id
+     */
+
     public static int getToolShedWidthsFromId(int toolshed_width_id) {
 
         int toolshed_width = 0;
@@ -303,6 +376,12 @@ public class CarportMapper {
         return toolshed_width;
     }
 
+    /**
+     *
+     * @param carportRoofTypeId
+     * @return String med selve rooftype navnet ud fra et carportRoofTypeId
+     */
+
     public static String getCarportRoofTypeFromId(int carportRoofTypeId) {
 
         String carportRoofType = "";
@@ -325,6 +404,12 @@ public class CarportMapper {
 
         return carportRoofType;
     }
+
+    /**
+     *
+     * @param carportTiltId
+     * @return int i grader som fås ud fra et carportTildId
+     */
 
     public static int getCarportTiltFromId(int carportTiltId) {
 

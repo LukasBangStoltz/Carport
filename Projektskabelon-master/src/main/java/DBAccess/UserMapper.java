@@ -13,11 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The purpose of UserMapper is to...
- *
- * @author kasper
+ * Klasse vi bruger til at opererer med databasen, specielt med tabel user
  */
 public class UserMapper {
+
+    /**
+     * Metode vi bruger til at lave en ny bruger.
+     * @param user objekt med name, adress, phonenumber, email, password, city, role
+     * @throws LoginSampleException
+     */
 
     public static void createUser(User user) throws LoginSampleException {
         try {
@@ -42,6 +46,14 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+
+    /**
+     *
+     * @param email
+     * @param password
+     * @return User objekt når der bliver logget ind.
+     * @throws LoginSampleException
+     */
 
     public static User login(String email, String password) throws LoginSampleException {
         User user;
@@ -72,6 +84,12 @@ public class UserMapper {
         }
 
     }
+
+    /**
+     *
+     * @param email
+     * @return int som er userId'et ud fra en given email
+     */
     public static int getUserId(String email) {
 
         int user_id = 0;
@@ -93,6 +111,12 @@ public class UserMapper {
         }
         return user_id;
     }
+
+    /**
+     * Metode vi bruger i vores integrationstest
+     * @return List<User> En liste af user objekter
+     * @throws LoginSampleException
+     */
 
     public static List<User> getAllUsers() throws LoginSampleException {
         List<User> userList = null;
@@ -129,18 +153,4 @@ public class UserMapper {
         }
         return userList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

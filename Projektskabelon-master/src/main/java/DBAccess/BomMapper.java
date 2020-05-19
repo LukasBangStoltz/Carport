@@ -11,7 +11,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Indeholder en metode der opererer på databasen, med fokus på følgende tabels: orders, bom, carport, material_variants og materials
+ *
+ */
+
+
 public class BomMapper {
+
+
+    /**
+     *
+     * @param orderId
+     * @return List<BomLine> En liste af BomLine objekter, der specifikt tilhører en ordre
+     * @throws LoginSampleException
+     */
 
 
     public static List<BomLine> getBomLineForCarport(int orderId) throws LoginSampleException {

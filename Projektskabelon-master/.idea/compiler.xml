@@ -6,7 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+
+        <module name="Carport" />
+        <module name="Projektskabelon" />
+        <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
+        <module name="prejektSkabelon" />
+
+        <module name="Projektskabelon-master" />
+
       </profile>
     </annotationProcessing>
   </component>

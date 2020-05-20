@@ -1,5 +1,9 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Vores objekt for materialer
+ */
 public class Material {
 
     private int materialID;
@@ -7,6 +11,13 @@ public class Material {
     private String dimension;
     private String unit;
 
+    /**
+     *
+     * @param material_id
+     * @param name
+     * @param dimension
+     * @param unit
+     */
     public Material(int material_id, String name, String dimension, String unit) {
         this.materialID = material_id;
         this.name = name;

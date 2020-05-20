@@ -1,5 +1,11 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Vores bomline objekt
+ */
+
+
 public class BomLine {
 
     private int material_id;
@@ -12,6 +18,18 @@ public class BomLine {
     private int carport_id;
     private int quantity;
 
+    /**
+     *
+     * @param material_id
+     * @param name
+     * @param dimension
+     * @param unit
+     * @param length
+     * @param price
+     * @param description
+     * @param carport_id
+     * @param quantity
+     */
     public BomLine(int material_id, String name, String dimension, String unit, int length, int price, String description, int carport_id, int quantity) {
         this.material_id = material_id;
         this.name = name;

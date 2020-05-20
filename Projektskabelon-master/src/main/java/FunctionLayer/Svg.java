@@ -1,5 +1,11 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores constructor til Svg og vores metoder
+ * til at lave forskellige figurer med svg
+ */
+
 public class Svg {
 
     private int width;
@@ -17,6 +23,14 @@ public class Svg {
     private final String textWidthTemplate = "<text style=\"text-anchor: middle\" transform=\"translate(%d,%d) rotate(-90)\">%d cm</text>\n";
     private final String textLengthTemplate = "<text style=\"text-anchor: middle\" x=\"%d\" y=\"%d\"> %d cm</text>\n";
 
+    /**
+     *
+     * @param width
+     * @param height
+     * @param viewbox
+     * @param x
+     * @param y
+     */
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
         this.height = height;
@@ -30,10 +44,24 @@ public class Svg {
       //  svg.append(String.format(rectAngleTemplate, translate1, translate2, x, y, height, width));
     //}
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param height
+     * @param width
+     */
     public void addRect(int x, int y, int height, int width){
         svg.append(String.format(rectTemplate, x, y, height, width));
     }
 
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     */
     public void addDashLine(int x1, int y1, int x2, int y2){
         svg.append(String.format(dashLineTemplate,x1,y1,x2,y2));
     }
@@ -42,10 +70,17 @@ public class Svg {
         svg.append(String.format(lineTemplate,x1,y1,x2,y2));
     }
 
+    /**
+     *
+     * @param drawing
+     */
     public void addSvgDrawing (Svg drawing){
         svg.append(drawing.toString());
     }
 
+    /**
+     *
+     */
     public void addArrowsDefs(){
         String defs = " <defs>\n" +
                 "        <marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\">\n" +
@@ -60,18 +95,37 @@ public class Svg {
         svg.append(String.format(defs));
     }
 
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     */
     public void addArrows(int x1, int y1, int x2, int y2){
 
         svg.append(String.format(arrowTemplate, x1, y1, x2, y2));
 
     }
 
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param width
+     */
     public void addWidthText(int x1, int y1, int width){
 
         svg.append(String.format(textWidthTemplate, x1, y1, width));
 
     }
 
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param height
+     */
     public void addLengthText(int x1, int y1, int height){
 
         svg.append(String.format(textLengthTemplate, x1, y1, height));

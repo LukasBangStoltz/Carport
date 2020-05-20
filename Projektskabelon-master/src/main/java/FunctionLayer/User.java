@@ -1,9 +1,8 @@
 package FunctionLayer;
 
 /**
- * The purpose of User is to...
- *
  * @author kasper
+ * Indeholder vores constructor til user
  */
 public class User {
 
@@ -16,8 +15,16 @@ public class User {
     private String city;
     private String role;
 
-
-
+    /**
+     * 
+     * @param name
+     * @param adress
+     * @param phoneNumber
+     * @param email
+     * @param password
+     * @param city
+     * @param role
+     */
     public User(String name, String adress, String phoneNumber, String email, String password, String city, String role) {
 
         this.name = name;

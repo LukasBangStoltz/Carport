@@ -1,10 +1,20 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores constructor til RoofType
+ */
+
 public class RoofType {
 
     private int roof_id;
     private String name;
 
+    /**
+     *
+     * @param roof_id
+     * @param name
+     */
     public RoofType(int roof_id, String name) {
         this.roof_id = roof_id;
         this.name = name;

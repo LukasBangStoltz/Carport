@@ -1,5 +1,10 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores part obejkt constructor
+ */
+
 public class Part {
 
     private int quantity;
@@ -9,6 +14,15 @@ public class Part {
     private int length;
     private int price;
 
+    /**
+     *
+     * @param quantity
+     * @param description
+     * @param material_id
+     * @param mv_id
+     * @param length
+     * @param price
+     */
     public Part(int quantity, String description, int material_id, int mv_id, int length, int price) {
         this.quantity = quantity;
         this.description = description;

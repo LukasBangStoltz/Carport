@@ -7,9 +7,23 @@ import MyUtils.HelperFunctionsDrawing;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Denne klasse laver svg tegninger ud fra de mål kundens vælger
+ * @author Kernen
+ */
+
 public class Drawing extends Command {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @return drawingpage
+     * @throws LoginSampleException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+
 
         int carportWidth = (int) request.getSession().getAttribute("carportWidth");
         int carportLength = (int) request.getSession().getAttribute("carportLength");

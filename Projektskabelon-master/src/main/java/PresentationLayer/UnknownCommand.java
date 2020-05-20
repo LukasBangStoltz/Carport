@@ -5,11 +5,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- The purpose of UnknownCommand is to...
-
- @author kasper
+ * Denne klasse kaster en error hvis noget går galt
+ * @author Kernen
  */
 public class UnknownCommand extends Command {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws LoginSampleException
+     */
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {

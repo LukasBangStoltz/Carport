@@ -7,20 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Carport" />
-        <module name="prejektSkabelon" />
+        <module name="Projektskabelon" />
         <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
-        <module name="Projektskabelon" />
+        <module name="prejektSkabelon" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-
-      <module name="Projektskabelon-master" options="-endorseddirs C:\Users\phill\Desktop\Carport\Projektskabelon-master\target/endorsed" />
-
       <module name="Projektskabelon-master" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
-
     </option>
   </component>
 </project>

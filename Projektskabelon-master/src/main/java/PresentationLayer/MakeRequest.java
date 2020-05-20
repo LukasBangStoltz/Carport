@@ -7,7 +7,21 @@ import MyUtils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Denne klasse tager værdierne som kunden vælger og laver en carport for
+ * at den kan blive godkendt af admin
+ *@author Kernen
+ */
+
 public class MakeRequest extends Command {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @return carportchoice
+     * @throws LoginSampleException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 

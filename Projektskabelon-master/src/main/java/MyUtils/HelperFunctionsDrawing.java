@@ -2,8 +2,18 @@ package MyUtils;
 
 import FunctionLayer.Svg;
 
+/**
+ * Indeholder hjælpefunktioner til at generere en Svg tegning
+ */
+
 public class HelperFunctionsDrawing {
 
+    /**
+     * @param carportLength
+     * @param hasToolShed
+     * @param toolShedLength
+     * @return en String med Svg kode til at generere en carport med fladt tag fra siden
+     */
     public static String drawFlatCarportSide(int carportLength, boolean hasToolShed, int toolShedLength){
         String generatedSvg = "";
 
@@ -65,6 +75,14 @@ public class HelperFunctionsDrawing {
         return generatedSvg;
     }
 
+    /**
+     * @param carportLength
+     * @param carportWidth
+     * @param hasToolShed
+     * @param toolShedLength
+     * @param toolShedWidth
+     * @return en String med Svg kode til at generere en carport med fladt tag, set ovenfra
+     */
     public static String drawFlatCarportTop(int carportLength, int carportWidth, boolean hasToolShed, int toolShedLength, int toolShedWidth) {
 
         String generatedSvg = "";

@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Indeholder alle metoder
+ * Indeholder hjælpefunktioner som vi anvender i vores PresentationLayer
  */
 public class HelperFunctions {
 
@@ -59,7 +59,8 @@ public class HelperFunctions {
      * @param flatCarPort
      * @param raisedCarPort
      * @param hasToolShed
-     * @return
+     * Vi laver en String alt efter kundens valg
+     * @return en String som vi bruger i MakeRequest klasse
      */
     public static String checkAction(String flatCarPort, String raisedCarPort, boolean hasToolShed) {
         String action = "";
@@ -82,6 +83,12 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param flatCarPort
+     * @param raisedCarPort
+     * Vi laver en String som vi bruger i Drawing til at vide hvilken Svg tegning der skal laves
+     * @return en String som vi bruger i Drawing
+     */
     public static String checkActionDrawing(String flatCarPort, String raisedCarPort) {
         String action = "";
 
@@ -99,7 +106,15 @@ public class HelperFunctions {
 
     }
 
-    public static String CheckActionRequest(String orderNumber, String seeDrawing, String seeBomLine, String authorize) {
+    /**
+     * @param orderNumber
+     * @param seeDrawing
+     * @param seeBomLine
+     * @param authorize
+     * Vi laver en String som vi bruger i ManageRequestAdmin
+     * @return en String alt efter Admins valg
+     */
+    public static String CheckActionRequestAdmin(String orderNumber, String seeDrawing, String seeBomLine, String authorize) {
 
         if (orderNumber != null) {
             return "seeorder";
@@ -116,6 +131,14 @@ public class HelperFunctions {
         return "seeorder";
     }
 
+    /**
+     * @param orderNumber
+     * @param buyOrderNumber
+     * @param seedrawing
+     * @param bomLineNumber
+     * Vi laver en String som vi bruger i ManageRequestAdmin
+     * @return en String alt efter kundens valg
+     */
     public static String CheckActionRequestCustomer(String orderNumber, String buyOrderNumber, String seedrawing, String bomLineNumber) {
         if (orderNumber != null) {
             return "seeorder";
@@ -132,7 +155,13 @@ public class HelperFunctions {
         return "seeorder";
     }
 
-
+    /**
+     * @param carport_length
+     * @param carport_width
+     * @param toolShedLength
+     * @param hasToolShed
+     * Der kaldes på alle udregningsmetoderne, til at lave en flad carport, fra Calc klassen
+     */
     public static void makeFlatCarport(int carport_length, int carport_width, int toolShedLength, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);
@@ -160,6 +189,14 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param carport_length
+     * @param carport_width
+     * @param toolShedLength
+     * @param toolShedWidth
+     * @param hasToolShed
+     * Der kaldes alle udregningsmetoderne, til at lave en flad carport med skur, fra Calc klassen
+     */
     public static void makeFlatCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
         Calc.understernForOgBag(carport_width);
@@ -192,6 +229,14 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param carport_length
+     * @param carport_width
+     * @param toolShedLength
+     * @param toolShedWidth
+     * @param hasToolShed
+     * Der kaldes alle udregningsmetoderne, til at lave en carport med hældning, fra Calc klassen
+     */
     public static void makeRaisedCarport(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
 
         Calc.vindskeder(carport_width);
@@ -224,6 +269,14 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param carport_length
+     * @param carport_width
+     * @param toolShedLength
+     * @param toolShedWidth
+     * @param hasToolShed
+     * Der kaldes alle udregningsmetoderne, til at lave en carport med hældning og skur, fra Calc klassen
+     */
     public static void makeRaisedCarportToolShed(int carport_length, int carport_width, int toolShedLength, int toolShedWidth, boolean hasToolShed) {
         Calc.vindskeder(carport_width);
         Calc.sternbrædderTilSiderCarp(carport_length);
@@ -262,6 +315,10 @@ public class HelperFunctions {
         Calc.tagstenBindereOgNakkekrog();
     }
 
+    /**
+     * Her resetter vi vores carportPartList til når der skal laves en ny carport.
+     * Vi genbruger den samme ArrayList i stedet for at lave flere
+     */
     public static void resetBom() {
         if (Calc.carportPartList != null) {
             Calc.carportPartList = new ArrayList<>();
@@ -269,6 +326,10 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param bomLineList
+     * @return summen af af alle carportParts til en carport
+     */
     public static int getTotalPrice(ArrayList<BomLine> bomLineList) {
         int sum = 0;
 

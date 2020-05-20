@@ -6,6 +6,10 @@ import FunctionLayer.CarportWidth;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Her initialiserer vi alle vores ArrayLister der bruges i systemet
+ */
+
 public class InitializeLists {
 
     private static List<CarportWidth> widthList = null;

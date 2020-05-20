@@ -8,7 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Registerklassen gør at man kan oprette til en bruger til at købe carporte
+ * @author Kernen
+ */
+
 public class Register extends Command {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @return index
+     * @throws LoginSampleException
+     */
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {

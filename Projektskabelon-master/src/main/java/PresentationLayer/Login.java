@@ -10,12 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * The purpose of Login is to...
- *
- * @author kasper
+ * Denne klasse afgør ud fra hvilket login om man dirigeres over til admin eller customer page
+ * @author Kernen
  */
 public class Login extends Command {
 
+
+    /**
+     * @param request
+     * @param response
+     * @return destination
+     * @throws LoginSampleException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         String email = request.getParameter("email");

@@ -7,7 +7,6 @@ import FunctionLayer.Order;
 import MyUtils.HelperFunctions;
 import MyUtils.HelperFunctionsDrawing;
 import MyUtils.InitializeLists;
-import sun.rmi.runtime.Log;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +38,7 @@ public class ManageRequestAdmin extends Command {
         String authorize = request.getParameter("authorize");
 
 
-        String action = HelperFunctions.CheckActionRequest(orderNumber, seeDrawing, seeBomLine, authorize);
+        String action = HelperFunctions.CheckActionRequestAdmin(orderNumber, seeDrawing, seeBomLine, authorize);
 
 
         switch (action) {

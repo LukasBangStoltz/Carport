@@ -12,8 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
+/**
+ * I denne klasse kan man som kunde se sine ordre, købe, se tegning og se styklisten hvis carporten er købt
+ * @author Kernen
+ *
+ */
+
 public class ManageRequestCustomer extends Command {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return allorderscustomer
+     * @throws LoginSampleException
+     */
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {

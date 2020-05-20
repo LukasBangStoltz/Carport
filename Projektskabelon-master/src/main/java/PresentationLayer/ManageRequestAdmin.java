@@ -13,7 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
+/**
+ * I denne klasse kan admin se ordren, styklisten, og tegningen for den valgte carport
+ * @author Kernen
+ *
+ */
+
 public class ManageRequestAdmin extends Command {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @return orderinfoadmin
+     * @throws LoginSampleException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 

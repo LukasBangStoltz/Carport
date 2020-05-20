@@ -1,5 +1,10 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores constructors til de 4 forskellige udfald af carporte
+ */
+
 public class Order {
 
     private int carportLengthId;
@@ -10,6 +15,12 @@ public class Order {
     private int toolshedWidthId;
 
 
+    /**
+     *
+     * @param carportLengthId
+     * @param carportWidthId
+     * @param carportRoofTypeId
+     */
     //Flad carport uden skur
     public Order(int carportLengthId, int carportWidthId, int carportRoofTypeId) {
         this.carportLengthId = carportLengthId;
@@ -17,6 +28,14 @@ public class Order {
         this.carportRoofTypeId = carportRoofTypeId;
     }
 
+    /**
+     *
+     * @param carportLengthId
+     * @param carportWidthId
+     * @param carportRoofTypeId
+     * @param toolshedLengthId
+     * @param toolshedWidthId
+     */
     //Flad carport med skur
     public Order(int carportLengthId, int carportWidthId, int carportRoofTypeId, int toolshedLengthId, int toolshedWidthId) {
         this.carportLengthId = carportLengthId;
@@ -26,6 +45,13 @@ public class Order {
         this.toolshedWidthId = toolshedWidthId;
     }
 
+    /**
+     *
+     * @param carportLengthId
+     * @param carportWidthId
+     * @param carportRoofTypeId
+     * @param carportRoofTiltId
+     */
     //Hældning carport uden skur
     public Order(int carportLengthId, int carportWidthId, int carportRoofTypeId, int carportRoofTiltId) {
         this.carportLengthId = carportLengthId;
@@ -34,6 +60,15 @@ public class Order {
         this.carportRoofTiltId = carportRoofTiltId;
     }
 
+    /**
+     *
+     * @param carportLengthId
+     * @param carportWidthId
+     * @param carportRoofTypeId
+     * @param carportRoofTiltId
+     * @param toolshedLengthId
+     * @param toolshedWidthId
+     */
     //Hældning carport med skur
     public Order(int carportLengthId, int carportWidthId, int carportRoofTypeId, int carportRoofTiltId, int toolshedLengthId, int toolshedWidthId) {
         this.carportLengthId = carportLengthId;

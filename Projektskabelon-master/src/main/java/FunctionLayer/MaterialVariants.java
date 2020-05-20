@@ -1,5 +1,10 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Vores materiale variant objekt klasse
+ */
+
 public class MaterialVariants {
 
     private int materialVariants_id;
@@ -7,6 +12,13 @@ public class MaterialVariants {
     private int length;
     private int price;
 
+    /**
+     *
+     * @param materialVariants_id
+     * @param material_id
+     * @param length
+     * @param price
+     */
     public MaterialVariants(int materialVariants_id, int material_id, int length, int price) {
         this.materialVariants_id = materialVariants_id;
         this.material_id = material_id;

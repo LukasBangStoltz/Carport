@@ -6,9 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * The purpose of LogicFacade is to...
- *
- * @author kasper
+ * @author Kernen
+ * Her samles alle DBAcces metoder. Klassen bruges som et mellemled, mellem databasen og præsentationslaget
  */
 public class LogicFacade {
 

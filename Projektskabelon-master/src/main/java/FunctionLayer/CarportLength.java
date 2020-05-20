@@ -1,10 +1,19 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ *Vores objekt for længden af carporten
+ */
 public class CarportLength {
 
     private int length_id;
     private int length_cm;
 
+    /**
+     *
+     * @param length_id
+     * @param length_cm
+     */
     public CarportLength(int length_id, int length_cm) {
         this.length_id = length_id;
         this.length_cm = length_cm;

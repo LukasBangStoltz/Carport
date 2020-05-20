@@ -1,11 +1,15 @@
 package FunctionLayer;
 
 /**
- * The purpose of LoginSampleException is to...
- * @author kasper
+ *
+ * @author Kernen
+ * LoginSampleExeption kan kaste custom error beskeder
  */
 public class LoginSampleException extends Exception {
-
+    /**
+     *
+     * @param msg
+     */
     public LoginSampleException(String msg) {
         super(msg);
     }

@@ -1,5 +1,10 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores 2 constructorere til Request objektet
+ */
+
 public class Request {
 
     private int orderId;
@@ -7,14 +12,25 @@ public class Request {
     private boolean isAuthorized;
     private boolean isBought;
 
-
-
+    /**
+     *
+     * @param orderId
+     * @param customerId
+     * @param isAuthorized
+     */
     public Request(int orderId, int customerId, boolean isAuthorized) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.isAuthorized = isAuthorized;
     }
 
+    /**
+     *
+     * @param orderId
+     * @param customerId
+     * @param isAuthorized
+     * @param isBought
+     */
     public Request(int orderId, int customerId, boolean isAuthorized, boolean isBought) {
         this.orderId = orderId;
         this.customerId = customerId;

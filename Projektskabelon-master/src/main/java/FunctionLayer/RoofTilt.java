@@ -1,10 +1,20 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Indeholder vores constructor til RoofTilt
+ */
+
 public class RoofTilt {
 
     private int roofTilt_id;
     private int roofTilt_degree;
 
+    /**
+     *
+     * @param roofTilt_id
+     * @param roofTilt_degree
+     */
     public RoofTilt(int roofTilt_id, int roofTilt_degree) {
         this.roofTilt_id = roofTilt_id;
         this.roofTilt_degree = roofTilt_degree;

@@ -1,11 +1,19 @@
 package FunctionLayer;
 
+/**
+ * @author Kernen
+ * Vores objekt for bredden af en carport
+ */
 public class CarportWidth {
 
     private int width_id;
     private int width_cm;
 
-
+    /**
+     *
+     * @param width_id
+     * @param width_cm
+     */
     public CarportWidth(int width_id, int width_cm) {
         this.width_id = width_id;
         this.width_cm = width_cm;

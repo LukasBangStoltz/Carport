@@ -5,8 +5,18 @@ import FunctionLayer.BomLine;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Indeholder alle metoder
+ */
 public class HelperFunctions {
 
+    /**
+     * @param toolshed_length
+     * @param toolshed_width
+     * @param carport_length
+     * @param carport_width
+     * @return true eller false, alt efter hvad kunden indtaster af skur bredde og længde
+     */
     public static boolean checkSkurSize(int toolshed_length, int toolshed_width, int carport_length, int carport_width) {
 
         boolean isValid = false;
@@ -25,6 +35,11 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param toolshedLength
+     * @param toolshedWidth
+     * @return true eller false, alt efter om man har vælgt skur eller ej
+     */
     public static boolean hasToolShed(int toolshedLength, int toolshedWidth) {
 
         boolean hasToolShed = true;
@@ -40,6 +55,12 @@ public class HelperFunctions {
 
     }
 
+    /**
+     * @param flatCarPort
+     * @param raisedCarPort
+     * @param hasToolShed
+     * @return
+     */
     public static String checkAction(String flatCarPort, String raisedCarPort, boolean hasToolShed) {
         String action = "";
 

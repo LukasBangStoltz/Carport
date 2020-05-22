@@ -89,7 +89,7 @@ public class MakeRequest extends Command {
 
                 case "flatcarport":
 
-                    IDs = LogicFacade.insertCarport(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
+                    IDs = LogicFacade.insertCarportAndOrder(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
                     carport_id = IDs[0];
                     order_id = IDs[1];
 
@@ -113,7 +113,7 @@ public class MakeRequest extends Command {
 
                 case "raisedroof":
 
-                    IDs = LogicFacade.insertCarport(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
+                    IDs = LogicFacade.insertCarportAndOrder(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
                     carport_id = IDs[0];
                     order_id = IDs[1];
                     HelperFunctions.makeRaisedCarport(carport_length, carport_width, toolshed_length, toolshed_width, hasToolShed);

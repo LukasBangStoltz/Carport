@@ -33,7 +33,7 @@ public class OrderMapper {
      */
 
 
-    public static int[] insertCarport(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
+    public static int[] insertCarportAndOrder(String carport_type, boolean hasToolShed, int user_id, int carport_length_id, int carport_width_id, int carport_tilt_id, int carport_rooftype_id, int toolshed_length_id, int toolshed_width_id) throws LoginSampleException {
 
         int orderID;
         int carport_id;

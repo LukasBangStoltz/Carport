@@ -2,7 +2,6 @@ package DBAccess;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.Order;
 import FunctionLayer.Request;
 import org.junit.Before;
 import org.junit.Test;
@@ -81,7 +80,7 @@ public class RequestMapperTest {
 
     @Test
     public void authorizeRequest() throws LoginSampleException {
-        int[] ids = LogicFacade.insertCarport("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
+        int[] ids = LogicFacade.insertCarportAndOrder("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
         int orderId = ids[1];
 
         boolean isAuthorized = LogicFacade.checkIfAuthorized(orderId);
@@ -93,7 +92,7 @@ public class RequestMapperTest {
 
     @Test
     public void buyRequest() throws LoginSampleException {
-        int[] ids = LogicFacade.insertCarport("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
+        int[] ids = LogicFacade.insertCarportAndOrder("flatroof", false, 1, 2, 2, 2, 2, 0, 0);
         int orderId = ids[1];
         boolean isBought = LogicFacade.checkIfBought(orderId);
         assertFalse(isBought);

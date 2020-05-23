@@ -72,7 +72,13 @@ public class ManageRequestAdmin extends Command {
 
                 //finde total prisen for carporten
                 ArrayList<BomLine> bomLineList = (ArrayList<BomLine>) LogicFacade.getBomLineFromCarport(orderNumberInt);
+
+
                 int totalPrice = HelperFunctions.getTotalPrice(bomLineList);
+                request.getSession().setAttribute("totalprice", totalPrice);
+
+
+
 
 
                 //Sætte attributterne til JSP siden
@@ -83,7 +89,7 @@ public class ManageRequestAdmin extends Command {
                 request.getSession().setAttribute("toolshedlength", toolshedLength);
                 request.getSession().setAttribute("toolshedwidth", toolshedWidth);
                 request.getSession().setAttribute("ordernumber", orderNumber);
-                request.getSession().setAttribute("totalprice", totalPrice);
+
 
 
                 return "orderinfoadmin";

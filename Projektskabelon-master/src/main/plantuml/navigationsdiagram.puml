@@ -1,0 +1,75 @@
+@startuml
+
+Title Fog Carport Projekt
+
+
+state NotLoggedOn{
+
+
+[*] --> index.jsp
+index.jsp --> carportchoice.jsp: byg carport
+carportchoice.jsp --> carportflat.jsp: flad carport
+carportchoice.jsp --> carporttilt.jsp: carport rejsning
+carportflat.jsp ---> loginNAVBAR: fejl: login
+carporttilt.jsp ---> loginNAVBAR: fejl: login
+carportflat.jsp ---> nykundeNAVBAR: fejl: opret login
+carporttilt.jsp ---> nykundeNAVBAR: fejl: opret login
+index.jsp --> loginNAVBAR: log på
+loginNAVBAR --> loginNAVBAR: forkert login
+index.jsp -down-> nykundeNAVBAR: opret login
+nykundeNAVBAR --> nykundeNAVBAR: forkert input
+loginNAVBAR -right-> LoggedOn: Succes
+nykundeNAVBAR --> LoggedOn: Succes
+
+}
+
+state LoggedOn{
+LoggedOn --> kunde
+LoggedOn --> admin
+
+logud -up-> NotLoggedOn
+
+
+state kunde{
+state "index.jsp" as indexloggedon
+state "carportchoice.jsp" as choice
+state "carportflat.jsp" as flat
+state "carporttilt.jsp" as tilt
+
+
+indexloggedon ---> choice
+choice --> flat: flad carport
+choice --> tilt: carport rejsning
+flat --> allorderscustomer.jsp: send forespørgsel
+tilt --> allorderscustomer.jsp: send forspørgsel
+indexloggedon --> allorderscustomer.jsp:forespørgsler NAVBAR
+allorderscustomer.jsp -->  allorderscustomer.jsp: køb forespørgsel
+allorderscustomer.jsp --> orderinfocustomer.jsp: se ordre
+orderinfocustomer.jsp --> drawing.jsp: se tegning
+orderinfocustomer.jsp --> bomline.jsp: hvis købt
+
+
+}
+
+
+
+
+
+state admin{
+state "bomline.jsp" as bomlineadmin
+state "drawing.jsp" as drawingadmin
+
+
+allordersadmin.jsp -->  allordersadmin.jsp: godkend forespørgsel
+allordersadmin.jsp --> orderinfoadmin.jsp: se ordre
+orderinfoadmin.jsp --> drawingadmin: se tegning
+orderinfoadmin.jsp --> bomlineadmin: se stykliste
+
+}
+
+
+}
+
+
+
+@enduml

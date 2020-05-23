@@ -40,6 +40,7 @@ public class BomMapper {
                     "INNER JOIN material_variants mv on b.mv_id = mv.mv_id\n" +
                     "INNER JOIN materials m on mv.material_id = m.material_id where o.order_id = ?;";
 
+
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ps.setInt(1, orderId);

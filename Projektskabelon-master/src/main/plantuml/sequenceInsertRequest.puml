@@ -1,0 +1,52 @@
+@startuml
+
+autonumber
+Title Send forespørgsel (flad carport uden skur)
+actor bruger
+
+boundary carportchoice.jsp
+boundary carportflat.jsp
+boundary allorderscustomer.jsp
+
+bruger -> carportchoice.jsp: start
+carportchoice.jsp -> InitializeLists: GetAllLists
+InitializeLists --> carportchoice.jsp: ArrayLists
+carportchoice.jsp -> carportflat.jsp: Redirect:
+
+box PresentationLayer
+control FrontController
+carportflat.jsp -> FrontController: doPost()
+FrontController -> FrontController: ProcessRequest()
+FrontController -> Command: from()
+Command --> FrontController: MakeRequest
+FrontController -> MakeRequest: execute()
+end box
+
+box LogicFacade
+MakeRequest -> LogicFacade: insertCarportAndOrder()
+end box
+
+box DBAcess
+LogicFacade -> OrderMapper: insertCarportAndOrder()
+end box
+
+
+database carportDB
+OrderMapper --> carportDB: executeUpdate()
+carportDB --> OrderMapper: OK
+OrderMapper --> LogicFacade: OK
+LogicFacade --> MakeRequest: OK
+MakeRequest --> FrontController: allorderscustomer
+FrontController --> allorderscustomer.jsp: forward()
+
+
+
+
+
+
+
+
+
+
+
+@enduml

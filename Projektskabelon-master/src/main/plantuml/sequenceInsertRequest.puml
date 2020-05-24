@@ -22,17 +22,27 @@ Command --> FrontController: MakeRequest
 FrontController -> MakeRequest: execute()
 end box
 
+box MyUtils
+
+MakeRequest -> HelperFunctions: makeFlatCarport()
+
+end box
+
+
 box LogicFacade
 MakeRequest -> LogicFacade: insertCarportAndOrder()
+MakeRequest -> LogicFacade: makeFlatCarport()
 end box
 
 box DBAcess
 LogicFacade -> OrderMapper: insertCarportAndOrder()
+LogicFacade -> CarportPartMapper: makeFlatCarport()
 end box
 
 
 database carportDB
-OrderMapper --> carportDB: executeUpdate()
+CarportPartMapper -> carportDB: executeUpdate()
+OrderMapper -> carportDB: executeUpdate()
 carportDB --> OrderMapper: OK
 OrderMapper --> LogicFacade: OK
 LogicFacade --> MakeRequest: OK

@@ -14,7 +14,6 @@ abstract class Command {
 
     private static HashMap<String, Command> commands;
 
-
     private static void initCommands() {
         commands = new HashMap<>();
         commands.put( "login", new Login() );

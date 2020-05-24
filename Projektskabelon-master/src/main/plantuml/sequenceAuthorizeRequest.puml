@@ -1,0 +1,34 @@
+@startuml
+
+title "Godkend forespørgsel Admin - Sekvensdiagram"
+
+actor Admin
+boundary allordersadmin.jsp
+Admin -> allordersadmin.jsp: start
+box PresentationLayer
+control FrontController
+allordersadmin.jsp -> FrontController: doPost()
+FrontController -> FrontController: proccesRequest()
+FrontController -> Command: from()
+Command --> FrontController: ManageRequestAdmin
+FrontController -> ManageRequestAdmin: execute()
+end box
+box LogicFacade
+ManageRequestAdmin -> LogicFacade: authorizeRequest()
+end box
+box DBAcces
+LogicFacade -> RequestMapper: authorizeRequest()
+end box
+RequestMapper -> CarportDB: executeUpdate()
+
+CarportDB --> RequestMapper: OK
+RequestMapper --> LogicFacade: OK
+LogicFacade --> ManageRequestAdmin: OK
+ManageRequestAdmin --> FrontController: allordersadmin
+FrontController --> allordersadmin.jsp: forward()
+database CarportDB
+
+
+
+
+@enduml

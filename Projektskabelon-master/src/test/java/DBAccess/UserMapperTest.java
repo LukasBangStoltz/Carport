@@ -70,7 +70,7 @@ public class UserMapperTest {
 
     @Test
     public void testLogin03() throws LoginSampleException {
-        // Jens is supposed to be a customer
+        // phillip is supposed to be a customer
         User user = UserMapper.login( "phillip_andersen@hotmail.com", "Taastrup" );
         assertEquals( "customer", user.getRole() );
     }

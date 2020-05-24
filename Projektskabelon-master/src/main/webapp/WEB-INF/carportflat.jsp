@@ -91,7 +91,7 @@
 
 
                     <form action="FrontController" method="post">
-                        <input type="hidden" name="target" value="makeorder">
+                        <input type="hidden" name="target" value="makerequest">
                         <input type="hidden" name="flatroof" value="carportflatroof">
                         <input type="hidden" name="roofdegree" value="0">
                         <input type="hidden" name="carporttype" value="flatroof">

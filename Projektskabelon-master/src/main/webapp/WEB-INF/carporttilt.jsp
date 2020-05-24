@@ -85,7 +85,7 @@
 
 
                     <form action="FrontController" method="post">
-                        <input type="hidden" name="target" value="makeorder">
+                        <input type="hidden" name="target" value="makerequest">
                         <input type="hidden" name="raisedroof" value="carportwithtilt">
                         <input type="hidden" name="carporttype" value="raisedroof">
 

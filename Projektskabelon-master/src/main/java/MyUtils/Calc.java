@@ -526,7 +526,7 @@ public class Calc {
         if (!hasToolShed) {
             quantity = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
 
-            if (quantity == 2) {
+            if (quantity < 4) {
                 quantity = 4;
 
                 return quantity;

@@ -41,7 +41,6 @@ request.getSession().setAttribute("requestListAdmin", InitializeLists.initReques
 
                                 </c:if>
 
-
                                 <c:if test="${!requestItem.authorized}">
 
                                     <button type="submit" name="authorize" value="${requestItem.orderId}"

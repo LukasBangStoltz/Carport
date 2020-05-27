@@ -53,11 +53,12 @@ public class OrderMapper {
             if (ids.next()) {
                 carport_id = ids.getInt(1);
                 IDs[0] = carport_id;
-                System.out.println(carport_id);
+
 
                 if (carport_type.equals("flatroof")) {
 
-                    SQL = "INSERT INTO orders (user_id, carport_id, carport_length_id, carport_width_id, carport_rooftype_id) VALUES (?,?,?,?,?)";
+                    SQL = "INSERT INTO orders (user_id, carport_id, carport_length_id, carport_width_id, carport_rooftype_id) " +
+                            "VALUES (?,?,?,?,?)";
 
                     ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 

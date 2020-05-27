@@ -45,7 +45,6 @@ public class Drawing extends Command {
             case "flatcarport":
 
                 generatedSvgTop = HelperFunctionsDrawing.drawFlatCarportTop(carportLength, carportWidth, hasToolShed, toolshed_length, toolshed_width);
-
                 generatedSvgSide = HelperFunctionsDrawing.drawFlatCarportSide(carportLength, hasToolShed, toolshed_length);
 
                 break;

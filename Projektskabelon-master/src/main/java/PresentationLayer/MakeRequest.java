@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Denne klasse tager værdierne som kunden vælger og laver en carport for
  * at den kan blive godkendt af admin
- *@author Kernen
+ *
+ * @author Kernen
  */
 
 public class MakeRequest extends Command {
 
     /**
-     *
      * @param request
      * @param response
      * @return carportchoice
@@ -62,6 +62,7 @@ public class MakeRequest extends Command {
         // kalde på vores helperfunctions til at afgøre hvilken carport ordren består af
         boolean hasToolShed = HelperFunctions.hasToolShed(toolshed_length_id, toolshed_width_id);
         boolean isValid = HelperFunctions.checkSkurSize(toolshed_length, toolshed_width, carport_length, carport_width);
+
         String action = HelperFunctions.checkAction(flatroof, raisedroof, hasToolShed);
 
 
@@ -90,8 +91,9 @@ public class MakeRequest extends Command {
                 case "flatcarport":
 
                     IDs = LogicFacade.insertCarportAndOrder(carportType, hasToolShed, user_id, carport_length_id, carport_width_id, carport_rooftype_id, carport_tilt_id, toolshed_length_id, toolshed_width_id);
-                    carport_id = IDs[0];
-                    order_id = IDs[1];
+
+                                carport_id = IDs[0];
+                                    order_id = IDs[1];
 
                     HelperFunctions.makeFlatCarport(carport_length, carport_width, toolshed_length, hasToolShed);
                     LogicFacade.insertCarportPart(order_id, Calc.carportPartList, carport_id);

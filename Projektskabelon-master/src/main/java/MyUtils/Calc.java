@@ -532,7 +532,6 @@ public class Calc {
                 return quantity;
             }
 
-            return quantity;
         }
 
         if (hasToolShed) {
@@ -541,7 +540,6 @@ public class Calc {
             int quantityToolShed = (int) Math.ceil((((carportLength - 110) / 300) * 2)) + 2;
             quantity = quantityCarport + quantityToolShed;
 
-            return quantity;
         }
 
         for (MaterialVariants mv : materialVariantsList) {

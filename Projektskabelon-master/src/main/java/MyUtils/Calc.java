@@ -529,7 +529,6 @@ public class Calc {
             if (quantity < 4) {
                 quantity = 4;
 
-                return quantity;
             }
 
         }
